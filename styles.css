@@ -340,30 +340,15 @@ nav {
    PAGE HERO
    ============================================================ */
 .page-hero {
-  min-height: 52vh;
+  min-height: auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 160px max(48px, calc((100vw - 1100px) / 2)) 72px;
-  background: #fff;
-  border-bottom: 1px solid rgba(0, 0, 0, .07);
+  padding: 120px max(48px, calc((100vw - 1100px) / 2)) 48px;
+  background: linear-gradient(225deg, #71BCE3, #9EC877);
+  border-bottom: none;
   position: relative;
   overflow: hidden;
-}
-
-.page-hero.gradient {
-  background: #fff;
-  border-bottom: 1px solid rgba(0, 0, 0, .07);
-}
-
-.page-hero.light {
-  background: var(--bg);
-  border-bottom: 1px solid rgba(0, 0, 0, .07);
-}
-
-.page-hero.dark {
-  background: var(--dark-section);
-  border-bottom: none;
 }
 
 .hero-eyebrow {
@@ -371,8 +356,8 @@ nav {
   font-size: 11px;
   font-weight: 600;
   letter-spacing: .22em;
-  color: var(--blue);
-  margin-bottom: 28px;
+  color: rgba(255, 255, 255, .6);
+  margin-bottom: 24px;
   display: flex;
   align-items: center;
   gap: 14px;
@@ -383,38 +368,20 @@ nav {
   display: block;
   width: 40px;
   height: 1.5px;
-  background: var(--grad);
+  background: rgba(255, 255, 255, .4);
   flex-shrink: 0;
-}
-
-.page-hero.dark .hero-eyebrow {
-  color: rgba(255, 255, 255, .5);
-}
-
-.page-hero.dark .hero-eyebrow::before {
-  background: rgba(255, 255, 255, .25);
 }
 
 .page-hero-title {
   font-family: 'Noto Sans JP', sans-serif;
-  font-size: clamp(36px, 5.5vw, 72px);
+  font-size: clamp(22px, 2.5vw, 38px);
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -.03em;
-  margin-bottom: 28px;
-  color: var(--dark);
-  max-width: 800px;
-}
-
-.page-hero.dark .page-hero-title {
+  margin-bottom: 0;
   color: #fff;
-}
-
-.page-hero-sub {
-  font-size: 15px;
-  line-height: 1.8;
-  max-width: 500px;
-  color: #888;
+  white-space: nowrap;
+  max-width: none;
 }
 
 .page-hero.dark .page-hero-sub {
