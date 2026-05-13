@@ -45,16 +45,36 @@
 
     /* CLIENT FUSION */
     .fusion-block { background: #fff; border-radius: 20px; padding: 64px; margin-bottom: 24px; border: 1px solid rgba(0,0,0,.05); }
-    .fusion-block.has-img { display: grid; grid-template-columns: 1fr 420px; gap: 56px; align-items: center; }
     .fusion-label { font-family: 'Rubik', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: .2em; color: var(--blue); margin-bottom: 16px; }
-    .fusion-title { font-size: clamp(24px, 3vw, 40px); font-weight: 700; margin-bottom: 24px; line-height: 1.3; }
-    .fusion-body { font-size: 15px; line-height: 2; color: #555; max-width: 680px; }
-    .fusion-img { border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; }
-    .fusion-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .fusion-title { font-size: clamp(24px, 3vw, 36px); font-weight: 700; margin-bottom: 24px; line-height: 1.3; }
+    .fusion-def { background: linear-gradient(225deg, rgba(113,188,227,.08), rgba(158,200,119,.08)); border-radius: 12px; padding: 24px 28px; margin-bottom: 28px; border-left: 4px solid var(--blue); }
+    .fusion-def-text { font-size: 15px; font-weight: 700; line-height: 1.7; color: var(--dark); }
+    .fusion-body { font-size: 15px; line-height: 2.1; color: #555; margin-bottom: 48px; }
+    .fusion-understanding { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .fu-card { background: var(--bg); border-radius: 16px; padding: 32px; }
+    .fu-num { font-family: 'Rubik', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: .2em; color: var(--blue); margin-bottom: 12px; }
+    .fu-title { font-size: 15px; font-weight: 700; margin-bottom: 16px; line-height: 1.4; }
+    .fu-points { list-style: none; }
+    .fu-points li { font-size: 13px; line-height: 1.7; padding: 9px 0; border-bottom: 1px solid #e8e4df; color: #555; display: flex; gap: 10px; align-items: flex-start; }
+    .fu-points li:last-child { border-bottom: none; }
+    .fu-points li::before { content: ''; display: block; width: 5px; height: 5px; border-radius: 50%; background: var(--green); margin-top: 7px; flex-shrink: 0; }
 
     /* ONE-STOP */
     .flow-block { background: #fff; border-radius: 20px; padding: 64px; margin-bottom: 80px; border: 1px solid rgba(0,0,0,.05); }
-    .flow-steps { display: flex; align-items: center; gap: 0; margin-top: 40px; }
+    .flow-body { font-size: 15px; line-height: 2.1; color: #555; margin-bottom: 40px; }
+    .comparison { width: 100%; border-collapse: collapse; border-radius: 16px; overflow: hidden; margin-bottom: 48px; }
+    .comparison thead tr { background: var(--dark); }
+    .comparison thead th { padding: 16px 24px; font-family: 'Rubik', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .1em; text-align: left; }
+    .comparison thead th:first-child { color: rgba(255,255,255,.4); width: 140px; }
+    .comparison thead th.col-general { color: rgba(255,255,255,.5); }
+    .comparison thead th.col-anomaly { color: var(--green); }
+    .comparison tbody tr { border-bottom: 1px solid #f0ede8; }
+    .comparison tbody tr:last-child { border-bottom: none; }
+    .comparison tbody td { padding: 20px 24px; font-size: 13px; line-height: 1.7; vertical-align: top; }
+    .comparison tbody td:first-child { font-weight: 700; font-size: 12px; color: #999; background: var(--bg); border-right: 1px solid #f0ede8; }
+    .comparison tbody td.col-general { color: #777; background: #fff; border-right: 1px solid #f0ede8; }
+    .comparison tbody td.col-anomaly { color: var(--dark); font-weight: 600; background: rgba(113,188,227,.04); }
+    .flow-steps { display: flex; align-items: center; gap: 0; }
     .flow-step { flex: 1; text-align: center; position: relative; }
     .flow-step:not(:last-child)::after { content: '→'; position: absolute; right: -16px; top: 28px; font-size: 20px; color: var(--blue); font-family: 'Rubik', sans-serif; }
     .flow-step-circle { width: 60px; height: 60px; border-radius: 50%; background: var(--grad); margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-family: 'Rubik', sans-serif; font-size: 11px; font-weight: 600; color: #fff; letter-spacing: .05em; }
@@ -72,7 +92,7 @@
     @media (max-width: 1024px) {
       .services-grid { grid-template-columns: repeat(2, 1fr); }
       .mvv-grid { grid-template-columns: repeat(2, 1fr); }
-      .fusion-block.has-img { grid-template-columns: 1fr; }
+      .fusion-understanding { grid-template-columns: 1fr; }
       .flow-phases { grid-template-columns: 1fr; gap: 1px; }
       .partner-grid { grid-template-columns: 1fr; }
     }
@@ -82,6 +102,7 @@
       .fusion-block { padding: 40px 24px; }
       .platform-block { padding: 40px 24px; }
       .flow-block { padding: 40px 24px; }
+      .comparison thead th, .comparison tbody td { padding: 12px 14px; font-size: 12px; }
       .flow-steps { flex-direction: column; gap: 32px; }
       .flow-step:not(:last-child)::after { content: '↓'; right: auto; top: auto; bottom: -24px; left: 50%; transform: translateX(-50%); }
     }
@@ -309,22 +330,74 @@
     </div>
 
     <div class="section-label reveal">05 <span>——</span> CLIENT FUSION</div>
-    <div class="fusion-block has-img reveal">
-      <div>
-        <p class="fusion-label">CLIENT FUSION</p>
-        <h3 class="fusion-title">クライアントフュージョン</h3>
-        <p class="fusion-body">成果が出ているクライアントを分析すると、「当社がクライアントの事業・顧客・会社を深く理解している」かつ「クライアントが成果を出すために重要なことを理解している」状態で取り組めているケースがほとんどです。<br><br>この状態を「クライアントフュージョン」と名付け、すべての案件で実現を目指しています。展示会同行・営業視察・サービス体験まで行い、クライアントの事業を深く理解した上で施策を設計します。</p>
+    <div class="fusion-block reveal">
+      <p class="fusion-label">CLIENT FUSION</p>
+      <h3 class="fusion-title">クライアントフュージョン</h3>
+      <div class="fusion-def">
+        <p class="fusion-def-text">クライアントと支援会社（代理店）が成果を出すために共通認識を持ち、それぞれの役割を実行している状態。</p>
       </div>
-      <div class="fusion-img">
-        <img src="/business/photo.jpg" alt="クライアントフュージョン">
+      <p class="fusion-body">アノマリーマーケティングは、支援を行う上でクライアントの理解を最重要視しています。成果の出ているクライアントを分析すると、「当社がクライアントの事業・顧客・会社について深く理解している」と共に「当社のことや成果を出すために重要なことを理解していただいた状態」で取り組みができているケースがほとんどでした。<br><br>そのような成果を出しやすい状態を「クライアントフュージョン」と名付け、すべての案件でお互いが理解した上で取り組みができるように整理しています。</p>
+      <div class="fusion-understanding">
+        <div class="fu-card">
+          <p class="fu-num">UNDERSTANDING 01</p>
+          <p class="fu-title">共通認識</p>
+          <ul class="fu-points">
+            <li>成果を出すために必要な考え方・進め方をすり合わせる</li>
+            <li>お互いが大事にしたいことやスタンスを共有し、相互信頼の基盤を構築する</li>
+          </ul>
+        </div>
+        <div class="fu-card">
+          <p class="fu-num">UNDERSTANDING 02</p>
+          <p class="fu-title">コミュニケーション理解</p>
+          <ul class="fu-points">
+            <li>クライアントの組織慣習・体制を理解する</li>
+            <li>担当者のスタイル・意思決定プロセスまで把握する</li>
+          </ul>
+        </div>
+        <div class="fu-card">
+          <p class="fu-num">UNDERSTANDING 03</p>
+          <p class="fu-title">事業理解</p>
+          <ul class="fu-points">
+            <li>商材・サービスの深い理解</li>
+            <li>ターゲット（消費者）理解</li>
+            <li>競合理解</li>
+            <li>クライアントからの正確な情報提供</li>
+          </ul>
+        </div>
       </div>
     </div>
 
     <div class="section-label reveal">06 <span>——</span> ONE-STOP MODEL</div>
     <div class="flow-block reveal">
       <p class="fusion-label">一気通貫モデル</p>
-      <h3 class="fusion-title">リード獲得から契約まで支援する理由</h3>
-      <p class="fusion-body">一般的な代理店ではリード獲得をゴールとしますが、獲得したリードが実際に契約に至って初めて売上が上がります。当社では「契約」までワンストップで支援することでクライアント企業の売上向上を実現します。</p>
+      <h3 class="fusion-title">リード獲得から契約まで、一気通貫で考える</h3>
+      <p class="flow-body">広告運用をする中でリード獲得（資料請求・お問い合わせ等）だけでなく、契約までを考えてアプローチします。所属するすべての広告運用者が営業を経験する仕組みを持っているため、リード最大化ではなく、契約数最大化をするための運用が可能です。</p>
+      <table class="comparison">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="col-general">一般的な広告代理店</th>
+            <th class="col-anomaly">アノマリーマーケティング</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>支援範囲</td>
+            <td class="col-general">サイト訪問数からリード獲得（資料請求・お問い合わせ）まで</td>
+            <td class="col-anomaly">契約まで見て広告運用を実施。売上・契約数を最終KPIとして支援</td>
+          </tr>
+          <tr>
+            <td>運用体制</td>
+            <td class="col-general">営業・運用・入稿・分析と、各役割ごとに担当者が分かれて運用</td>
+            <td class="col-anomaly">営業から運用まで、一人のコンサルタントが専任で担当。コミュニケーション齟齬が起きない</td>
+          </tr>
+          <tr>
+            <td>ソリューション</td>
+            <td class="col-general">広告運用の範囲内での改善にとどまる</td>
+            <td class="col-anomaly">LP・クリエイティブはもちろん、マーケティング全体を見て最適なソリューションを提案</td>
+          </tr>
+        </tbody>
+      </table>
       <div class="flow-steps">
         <div class="flow-step">
           <div class="flow-step-circle">広告</div>
