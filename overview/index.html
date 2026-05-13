@@ -31,7 +31,17 @@
     .feature-body { font-size: 14px; line-height: 2; color: #555; }
 
     /* CULTURE CODE */
+    .culture-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; margin-bottom: 48px; }
+    .culture-intro-heading { font-size: clamp(18px, 2vw, 26px); font-weight: 700; line-height: 1.5; margin-bottom: 24px; }
+    .culture-intro-body { font-size: 14px; line-height: 2.1; color: #555; }
+    .culture-quote { background: var(--grad); border-radius: 16px; padding: 40px 48px; }
+    .culture-quote-mark { font-family: 'Rubik', sans-serif; font-size: 48px; font-weight: 700; color: rgba(255,255,255,.3); line-height: .8; margin-bottom: 16px; }
+    .culture-quote-text { font-size: 16px; font-weight: 700; line-height: 1.8; color: #fff; margin-bottom: 20px; }
+    .culture-quote-note { font-size: 12px; color: rgba(255,255,255,.65); line-height: 1.8; }
     .speakerdeck-wrap { margin-bottom: 80px; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,.08); }
+    @media (max-width: 768px) {
+      .culture-intro { grid-template-columns: 1fr; gap: 32px; }
+    }
 
     /* LINKS */
     .more-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
@@ -190,6 +200,19 @@
     <div class="section-label reveal">03 <span>——</span> CULTURE CODE</div>
     <div class="section-header reveal">
       <h2 class="section-heading">カルチャーコード</h2>
+    </div>
+    <div class="culture-intro reveal">
+      <div>
+        <p class="culture-intro-heading">なぜ、カルチャーコードをつくったのか。</p>
+        <p class="culture-intro-body">組織が小さいうちは、代表が直接価値観を伝えられる。しかし人が増えるにつれ、それは難しくなる。<br><br>制度や給与制度をどれだけ整えても、「何を大切にして働くか」が共有されていなければ、チームはバラバラになる。だからこそ私たちは、明文化することを選んだ。<br><br>アノマリーマーケティングで働くとはどういうことか。何を大切にするのか。何を許容しないのか。このカルチャーコードは、会社の「空気」を言語化したものです。</p>
+      </div>
+      <div>
+        <div class="culture-quote">
+          <div class="culture-quote-mark">"</div>
+          <p class="culture-quote-text">理想ではなく、実際に私たちがやっていること。それを言語化したのがカルチャーコードです。</p>
+          <p class="culture-quote-note">このスライドは、入社初日にすべてのメンバーに共有しています。採用候補者にも、選考前に読んでもらっています。「合う・合わない」を、お互いに確認するために。</p>
+        </div>
+      </div>
     </div>
     <div class="speakerdeck-wrap reveal">
       <iframe class="speakerdeck-iframe" src="https://speakerdeck.com/player/afbc0f70394a482686a7c6c14958f59b" style="border:0; padding:0; margin:0; background:transparent; width:100%; aspect-ratio:710/399; display:block;" frameborder="0" allowtransparency="true" allowfullscreen="allowfullscreen"></iframe>
