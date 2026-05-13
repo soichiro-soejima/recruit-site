@@ -30,25 +30,8 @@
     .feature-sub { font-family: 'Rubik', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .15em; color: var(--blue); margin-bottom: 16px; }
     .feature-body { font-size: 14px; line-height: 2; color: #555; }
 
-    /* FIT */
-    .fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 80px; }
-    .fit-card { border-radius: 20px; padding: 48px; }
-    .fit-card.fit-yes { background: #fff; border: 1px solid rgba(0,0,0,.05); }
-    .fit-card.fit-no { background: var(--dark-section); }
-    .fit-label { font-family: 'Rubik', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .2em; margin-bottom: 24px; }
-    .fit-yes .fit-label { color: var(--green); }
-    .fit-no .fit-label { color: rgba(255,255,255,.3); }
-    .fit-heading { font-size: 20px; font-weight: 700; margin-bottom: 24px; line-height: 1.4; }
-    .fit-yes .fit-heading { color: var(--dark); }
-    .fit-no .fit-heading { color: #fff; }
-    .fit-list { list-style: none; }
-    .fit-list li { font-size: 14px; padding: 12px 0; border-bottom: 1px solid; display: flex; gap: 12px; align-items: center; line-height: 1.6; }
-    .fit-yes .fit-list li { color: #444; border-color: #f0ede8; }
-    .fit-no .fit-list li { color: rgba(255,255,255,.65); border-color: rgba(255,255,255,.07); }
-    .fit-yes .fit-list li:last-child { border-bottom: none; }
-    .fit-no .fit-list li:last-child { border-bottom: none; }
-    .fit-yes .fit-list li::before { content: '○'; color: var(--green); font-weight: 700; flex-shrink: 0; }
-    .fit-no .fit-list li::before { content: '×'; color: #e07070; font-weight: 700; flex-shrink: 0; font-family: 'Rubik', sans-serif; }
+    /* CULTURE CODE */
+    .speakerdeck-wrap { margin-bottom: 80px; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,.08); }
 
     /* LINKS */
     .more-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
@@ -204,34 +187,12 @@
       </div>
     </div>
 
-    <div class="section-label reveal">03 <span>——</span> CULTURE FIT</div>
+    <div class="section-label reveal">03 <span>——</span> CULTURE CODE</div>
     <div class="section-header reveal">
-      <h2 class="section-heading">こんな人と、働きたい。</h2>
+      <h2 class="section-heading">カルチャーコード</h2>
     </div>
-    <div class="fit-grid reveal">
-      <div class="fit-card fit-yes">
-        <p class="fit-label">GOOD FIT — 合っている人</p>
-        <p class="fit-heading">自分でゴリゴリ進めたい人</p>
-        <ul class="fit-list">
-          <li>指示を待つより、自分で考えて動きたい</li>
-          <li>成果と報酬が直結している環境で働きたい</li>
-          <li>広告だけでなく、事業全体に関わりたい</li>
-          <li>ビジネスリテラシーを本気で上げたい</li>
-          <li>素直にフィードバックを吸収できる</li>
-          <li>業界経験がなくても、やる気で勝負したい</li>
-        </ul>
-      </div>
-      <div class="fit-card fit-no">
-        <p class="fit-label">NOT A FIT — 合わない人</p>
-        <p class="fit-heading">手取り足取り教えてほしい人</p>
-        <ul class="fit-list">
-          <li>細かく指示してもらわないと動けない</li>
-          <li>安定した給与体系を最優先にしたい</li>
-          <li>決められた業務だけをこなしたい</li>
-          <li>リモートワーク・フレックスが必須</li>
-          <li>大人数の組織でキャリアを積みたい</li>
-        </ul>
-      </div>
+    <div class="speakerdeck-wrap reveal">
+      <iframe class="speakerdeck-iframe" src="https://speakerdeck.com/player/afbc0f70394a482686a7c6c14958f59b" style="border:0; padding:0; margin:0; background:transparent; width:100%; aspect-ratio:710/399; display:block;" frameborder="0" allowtransparency="true" allowfullscreen="allowfullscreen"></iframe>
     </div>
 
     <div class="section-label reveal">04 <span>——</span> MORE</div>
