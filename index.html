@@ -84,25 +84,11 @@
     .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
     .card { background: #fff; border-radius: 16px; overflow: hidden; transition: transform .3s, box-shadow .3s; cursor: pointer; }
     .card:hover { transform: translateY(-6px); box-shadow: 0 20px 48px rgba(0,0,0,.1); }
-    .card-image { height: 200px; display: flex; align-items: center; justify-content: center; background: #f0ede8; position: relative; overflow: hidden; }
+    .card-image { height: 280px; display: flex; align-items: center; justify-content: center; background: #f0ede8; position: relative; overflow: hidden; }
     .card-image img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-    .card-num { position: absolute; top: 16px; left: 20px; font-family: 'Rubik', sans-serif; font-size: 11px; font-weight: 500; color: #bbb; letter-spacing: .08em; }
-    .img-circle { width: 80px; height: 80px; border-radius: 50%; background: var(--grad); }
-    .img-dots { display: grid; grid-template-columns: repeat(3, 16px); gap: 8px; }
-    .img-dots span { width: 16px; height: 16px; border-radius: 50%; }
-    .img-dots span:nth-child(1) { background: var(--blue); }
-    .img-dots span:nth-child(2) { background: var(--green); }
-    .img-dots span:nth-child(3) { background: var(--blue); opacity: .5; }
-    .img-dots span:nth-child(4) { background: var(--dark); opacity: .15; }
-    .img-dots span:nth-child(5) { background: var(--blue); opacity: .3; }
-    .img-dots span:nth-child(6) { background: var(--green); opacity: .6; }
-    .img-dots span:nth-child(7) { background: var(--green); opacity: .4; }
-    .img-dots span:nth-child(8) { background: var(--blue); opacity: .8; }
-    .img-dots span:nth-child(9) { background: var(--dark); opacity: .1; }
-    .img-arch { width: 70px; height: 90px; background: var(--dark); border-radius: 35px 35px 0 0; opacity: .15; }
-    .card-body { padding: 24px; }
-    .card-title { font-size: 16px; font-weight: 700; margin-bottom: 12px; line-height: 1.5; }
-    .card-text { font-size: 13px; line-height: 1.8; color: #777; margin-bottom: 20px; }
+    .card-num { position: absolute; top: 16px; left: 20px; font-family: 'Rubik', sans-serif; font-size: 11px; font-weight: 500; color: rgba(255,255,255,.7); letter-spacing: .08em; }
+    .card-body { padding: 24px 28px 28px; display: flex; flex-direction: column; gap: 16px; }
+    .card-title { font-size: 17px; font-weight: 700; line-height: 1.5; margin: 0; }
     .card-link { font-family: 'Rubik', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .1em; color: var(--blue); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: gap .2s; }
     .card-link:hover { gap: 10px; }
 
@@ -315,7 +301,6 @@
         </div>
         <div class="card-body">
           <h3 class="card-title">アノマリーの魅力</h3>
-          <p class="card-text">自分で動いた分だけ強くなれる場所。事業責任者レベルの人材を目指せる環境と、頑張りが正直に返ってくる仕組みを整えています。</p>
           <a href="/overview/" class="card-link">READ MORE →</a>
         </div>
       </div>
@@ -326,7 +311,6 @@
         </div>
         <div class="card-body">
           <h3 class="card-title">事業内容</h3>
-          <p class="card-text">Web広告の運用にとどまらず、LP制作・CRM・接客フローの設計まで。クライアントの事業全体をデザインし直し、契約数という最終KPIに向き合います。</p>
           <a href="/business/" class="card-link">READ MORE →</a>
         </div>
       </div>
@@ -337,7 +321,6 @@
         </div>
         <div class="card-body">
           <h3 class="card-title">代表メッセージ</h3>
-          <p class="card-text">創業のきっかけ、業界への違和感、どんな人と一緒に働きたいか。代表・小田峻の言葉でお伝えします。</p>
           <a href="/message/" class="card-link">READ MORE →</a>
         </div>
       </div>
