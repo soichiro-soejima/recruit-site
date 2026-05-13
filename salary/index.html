@@ -1,0 +1,316 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>報酬制度 | アノマリーマーケティング採用</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    /* THOUGHT */
+    .thought-block {
+      background: var(--dark-section); border-radius: 20px; padding: 64px;
+      margin-bottom: 80px; position: relative; overflow: hidden;
+    }
+    .thought-block::before {
+      content: ''; position: absolute; top: -120px; right: -120px;
+      width: 360px; height: 360px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(113,188,227,.08), transparent 70%);
+    }
+    .thought-quote {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: clamp(20px, 2.5vw, 30px); font-weight: 700;
+      color: #fff; line-height: 1.7; margin-bottom: 32px;
+      padding-left: 24px; border-left: 3px solid var(--blue);
+      position: relative; z-index: 1;
+    }
+    .thought-body { font-size: 15px; line-height: 2; color: rgba(255,255,255,.55); max-width: 680px; position: relative; z-index: 1; }
+    .thought-no-eval { margin-top: 40px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,.08); position: relative; z-index: 1; }
+    .thought-no-eval-heading { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 20px; }
+    .no-eval-list { list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; }
+    .no-eval-list li {
+      font-size: 14px; color: rgba(255,255,255,.7);
+      padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.06);
+      display: flex; gap: 12px; align-items: center;
+    }
+    .no-eval-list li::before { content: '×'; font-family: 'Rubik', sans-serif; font-weight: 700; color: #e07070; flex-shrink: 0; }
+
+    /* MECHANISM */
+    .mechanism-card {
+      background: #fff; border-radius: 20px; padding: 64px;
+      margin-bottom: 24px; border: 1px solid rgba(0,0,0,.05);
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+    }
+    .mechanism-left { position: relative; padding-left: 20px; }
+    .mechanism-left::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--grad); border-radius: 4px; }
+    .mechanism-label { font-family: 'Rubik', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .15em; color: var(--blue); margin-bottom: 16px; }
+    .mechanism-big { font-size: clamp(28px, 3.5vw, 44px); font-weight: 700; line-height: 1.4; }
+    .mechanism-pct { font-family: 'Rubik', sans-serif; font-size: clamp(72px, 10vw, 108px); font-weight: 700; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; display: inline-block; }
+    .mechanism-body { font-size: 15px; line-height: 2.1; color: #555; }
+
+    /* SIMULATION */
+    .sim-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 16px; overflow: hidden; border: 1px solid rgba(0,0,0,.05); margin-bottom: 12px; }
+    .sim-table thead { background: var(--dark-section); }
+    .sim-table thead th { padding: 18px 28px; text-align: left; font-family: 'Rubik', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .15em; color: rgba(255,255,255,.5); }
+    .sim-table tbody tr { border-bottom: 1px solid #f0ede8; }
+    .sim-table tbody tr:last-child { border-bottom: none; }
+    .sim-table tbody td { padding: 22px 28px; font-size: 15px; }
+    .sim-table .monthly { font-family: 'Rubik', sans-serif; font-weight: 600; color: var(--blue); }
+    .sim-table .formula { font-size: 13px; color: #aaa; font-family: 'Rubik', sans-serif; }
+    .sim-table .annual { font-family: 'Rubik', sans-serif; font-size: 22px; font-weight: 700; color: var(--dark); }
+    .sim-note { font-size: 12px; color: #aaa; margin-bottom: 80px; }
+
+    /* GUARANTEE */
+    .guarantee-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 80px; }
+    .guarantee-card { background: #fff; border-radius: 16px; padding: 40px; border: 1px solid rgba(0,0,0,.05); }
+    .guarantee-num { font-family: 'Rubik', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .15em; color: var(--blue); margin-bottom: 20px; }
+    .guarantee-title { font-size: 18px; font-weight: 700; margin-bottom: 12px; line-height: 1.4; }
+    .guarantee-val { font-family: 'Rubik', sans-serif; font-size: 28px; font-weight: 700; color: var(--dark); margin: 16px 0 4px; }
+    .guarantee-sub { font-size: 12px; color: #aaa; margin-bottom: 12px; }
+    .guarantee-desc { font-size: 13px; line-height: 1.8; color: #777; }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .guarantee-grid { grid-template-columns: repeat(2, 1fr); }
+      .no-eval-list { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .thought-block { padding: 40px 24px; }
+      .mechanism-card { grid-template-columns: 1fr; gap: 32px; padding: 40px 24px; }
+      .guarantee-grid { grid-template-columns: 1fr; }
+      .sim-table thead th { padding: 14px 16px; font-size: 10px; }
+      .sim-table tbody td { padding: 16px 16px; font-size: 14px; }
+      .sim-table .annual { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <a href="/" class="logo">
+      <img src="/logo.png" alt="アノマリーマーケティング" style="height:36px;">
+    </a>
+    <nav>
+      <div class="nav-item">
+        <a href="/overview/" class="nav-link has-drop">会社紹介</a>
+        <div class="nav-drop">
+          <a href="/overview/">アノマリーの魅力</a>
+          <a href="/business/">事業内容</a>
+          <a href="/message/">代表メッセージ</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/consultant/" class="nav-link">募集内容</a>
+      </div>
+      <div class="nav-item">
+        <a href="/salary/" class="nav-link has-drop">制度・環境</a>
+        <div class="nav-drop">
+          <a href="/salary/">報酬制度</a>
+          <a href="/training/">人材育成</a>
+          <a href="/benefits/">制度・オフィス環境</a>
+          <a href="/welfare/">福利厚生</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/members/" class="nav-link">メンバー</a>
+      </div>
+      <div class="nav-item">
+        <a href="/flow/" class="nav-link has-drop">選考</a>
+        <div class="nav-drop">
+          <a href="/flow/">選考の流れ</a>
+          <a href="/faq/">よくある質問</a>
+        </div>
+      </div>
+    </nav>
+    <a href="/entry/" class="btn-entry">エントリーする →</a>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">ABOUT</p>
+      <div class="mobile-nav-sub">
+        <a href="/overview/">アノマリーの魅力</a>
+        <a href="/business/">事業内容</a>
+        <a href="/message/">代表メッセージ</a>
+      </div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">JOB</p>
+      <div class="mobile-nav-sub"><a href="/consultant/">募集内容</a></div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">SYSTEM</p>
+      <div class="mobile-nav-sub">
+        <a href="/salary/">報酬制度</a>
+        <a href="/training/">人材育成</a>
+        <a href="/benefits/">制度・オフィス環境</a>
+          <a href="/welfare/">福利厚生</a>
+      </div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">MEMBER</p>
+      <div class="mobile-nav-sub"><a href="/members/">メンバー一覧</a></div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">SELECTION</p>
+      <div class="mobile-nav-sub">
+        <a href="/flow/">選考の流れ</a>
+        <a href="/faq/">よくある質問</a>
+      </div>
+    </div>
+    <a href="/entry/" class="mobile-nav-entry">エントリーする →</a>
+  </div>
+
+  <div class="page-hero gradient">
+    <div class="hero-deco"></div>
+    <div class="hero-eyebrow">SYSTEM / SALARY</div>
+    <h1 class="page-hero-title">成果が、<br>そのまま<br>給与になる。</h1>
+    <p class="page-hero-sub">評価面談も、上司の印象も、関係ない。</p>
+  </div>
+
+  <section>
+    <div class="section-label reveal">01 <span>——</span> OUR THOUGHT</div>
+    <div class="thought-block reveal">
+      <p class="thought-quote">「頑張った分が正直に返ってくる仕組みは、<br>自分が会社員時代に欲しかったもの。」</p>
+      <p class="thought-body">当社代表の小田が前職の代理店にいた頃、違和感を持っていたことがあります。成果を出しても、給与が上がるかどうかは評価面談の印象次第。頑張りと報酬が直結していない。そのモヤモヤを解消するために、この仕組みを作りました。<br><br>担当案件の粗利30%がそのまま月収になる。計算式はシンプルで、誰が見ても同じ数字。解釈の余地がない。それがアノマリーマーケティングの報酬制度です。</p>
+      <div class="thought-no-eval">
+        <p class="thought-no-eval-heading">人事評価をなくした理由</p>
+        <ul class="no-eval-list">
+          <li>年次・役職による給与上限なし</li>
+          <li>評価面談での印象・交渉スキル不要</li>
+          <li>上司の主観的な評価による査定なし</li>
+          <li>給与計算式の「解釈の余地」なし</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-label reveal">02 <span>——</span> THE MECHANISM</div>
+    <div class="mechanism-card reveal">
+      <div class="mechanism-left">
+        <p class="mechanism-label">SALARY FORMULA</p>
+        <p class="mechanism-big">担当粗利の</p>
+        <div class="mechanism-pct">30<span style="font-size:.5em">%</span></div>
+        <p class="mechanism-big">が、給与。</p>
+      </div>
+      <div>
+        <p class="mechanism-body">当社の給与は「担当案件の月額粗利 × 30%」を12倍した金額が年収になります。<br><br>役職・年次・評価面談の結果は一切関係ありません。あなたが担当するクライアントの成果が、そのまま自分の年収に直結します。<br><br>成果を出した人が正当に報われる仕組みを、シンプルに実現しています。<br><br><small style="color:#aaa;">※ 粗利 = 当社売上 − 媒体費・外注費等の変動費</small></p>
+      </div>
+    </div>
+
+    <div class="section-label reveal">03 <span>——</span> SIMULATION</div>
+    <div class="section-header reveal">
+      <h2 class="section-heading">給与シミュレーション</h2>
+    </div>
+    <table class="sim-table reveal">
+      <thead>
+        <tr>
+          <th>月額担当粗利</th>
+          <th>計算式</th>
+          <th>月収（手取り前）</th>
+          <th>年収（概算）</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="monthly">100万円</td><td class="formula">100万 × 30%</td><td>30万円</td><td class="annual">360万円</td></tr>
+        <tr><td class="monthly">150万円</td><td class="formula">150万 × 30%</td><td>45万円</td><td class="annual">540万円</td></tr>
+        <tr><td class="monthly">200万円</td><td class="formula">200万 × 30%</td><td>60万円</td><td class="annual">720万円</td></tr>
+        <tr><td class="monthly">250万円</td><td class="formula">250万 × 30%</td><td>75万円</td><td class="annual">900万円</td></tr>
+      </tbody>
+    </table>
+    <p class="sim-note">※ 上記は月次の粗利が一定の場合の概算です。</p>
+
+    <div class="section-label reveal">04 <span>——</span> SAFETY NET</div>
+    <div class="section-header reveal">
+      <h2 class="section-heading">セーフティネット</h2>
+    </div>
+    <div class="guarantee-grid reveal">
+      <div class="guarantee-card">
+        <p class="guarantee-num">01</p>
+        <p class="guarantee-title">最低給与保証</p>
+        <p class="guarantee-val">29万円 / 月</p>
+        <p class="guarantee-sub">月収</p>
+        <p class="guarantee-desc">粗利30%の計算結果が29万円を下回った場合でも、月給29万円を保証します。</p>
+      </div>
+      <div class="guarantee-card">
+        <p class="guarantee-num">02</p>
+        <p class="guarantee-title">前職給与保障制度</p>
+        <p class="guarantee-val">1年間</p>
+        <p class="guarantee-sub">上限：年収540万円まで</p>
+        <p class="guarantee-desc">経験者採用の場合、前職給与を1年間保障します（上限540万円）。安心して移籍できます。</p>
+      </div>
+      <div class="guarantee-card">
+        <p class="guarantee-num">03</p>
+        <p class="guarantee-title">賞与制度</p>
+        <p class="guarantee-val">営業利益の3〜5%</p>
+        <p class="guarantee-sub">条件：月額粗利100万円以上</p>
+        <p class="guarantee-desc">月額粗利100万円以上を達成したメンバーに、営業利益の3〜5%を賞与として支給します。</p>
+      </div>
+    </div>
+  </section>
+
+    <footer>
+    <div class="footer-sitemap">
+      <div class="footer-col">
+        <p class="footer-col-head">会社紹介</p>
+        <a href="/overview/">アノマリーの魅力</a>
+        <a href="/business/">事業内容</a>
+        <a href="/message/">代表メッセージ</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">募集内容</p>
+        <a href="/consultant/">Web広告コンサルタント</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">制度・環境</p>
+        <a href="/salary/">報酬制度</a>
+        <a href="/training/">人材育成</a>
+        <a href="/benefits/">制度・オフィス環境</a>
+        <a href="/welfare/">福利厚生</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">メンバー</p>
+        <a href="/members/">メンバー紹介</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">選考について</p>
+        <a href="/flow/">選考の流れ</a>
+        <a href="/faq/">よくある質問</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">エントリー</p>
+        <a href="/entry/">エントリーする</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a href="/" class="footer-logo">
+        <img src="/logo.png" alt="アノマリーマーケティング" style="height:28px;filter:brightness(0) invert(1);opacity:.6;">
+      </a>
+      <div class="footer-bottom-right">
+        <a href="#" class="footer-policy">プライバシーポリシー</a>
+        <p class="footer-copy">© 2026 ANOMALY MARKETING INC.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40));
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileNav.classList.toggle('open');
+      document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+    });
+    mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileNav.classList.remove('open');
+      document.body.style.overflow = '';
+    }));
+    const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); obs.unobserve(x.target); } }), {threshold:.1});
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

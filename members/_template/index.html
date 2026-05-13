@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- EDIT: ページタイトルを変更 -->
+  <title>【名前】インタビュー | アノマリーマーケティング採用</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .interview-layout { display: grid; grid-template-columns: 320px 1fr; gap: 64px; align-items: start; margin-bottom: 80px; }
+    .interview-sidebar { position: sticky; top: 100px; }
+    /* EDIT: グラデーション方向・色を変えて各メンバーで差別化 */
+    /* 例: oda → 160deg, #9EC877→#71BCE3 / soejima → 160deg, #71BCE3→#9EC877 / ito → 160deg, #4a8aaa→#3a6e8f */
+    .interview-photo { aspect-ratio: 3/4; background: linear-gradient(160deg, #71BCE3, #9EC877); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-family: 'Rubik', sans-serif; font-size: 120px; font-weight: 700; color: rgba(255,255,255,.3); margin-bottom: 28px; overflow: hidden; }
+    .interview-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 20px; }
+    .interview-role { font-family: 'Rubik', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: .2em; color: var(--blue); margin-bottom: 12px; }
+    .interview-name { font-size: 28px; font-weight: 700; margin-bottom: 4px; }
+    .interview-en { font-family: 'Rubik', sans-serif; font-size: 12px; letter-spacing: .12em; color: #aaa; margin-bottom: 20px; }
+    .interview-tag { display: inline-block; font-size: 12px; color: #777; background: var(--bg); border-radius: 100px; padding: 6px 14px; margin: 4px 4px 0 0; border: 1px solid #eee; }
+
+    .interview-body { }
+    .qa-block { margin-bottom: 64px; padding-bottom: 64px; border-bottom: 1px solid #eee; }
+    .qa-block:last-child { border-bottom: none; margin-bottom: 0; }
+    .qa-q-text { font-size: 22px; font-weight: 700; line-height: 1.5; margin-bottom: 24px; padding-left: 20px; border-left: 4px solid; border-image: linear-gradient(to bottom, var(--blue), var(--green)) 1; }
+    .qa-a-text { font-size: 15px; line-height: 2.1; color: #555; }
+    .qa-a-text p + p { margin-top: 20px; }
+
+    .nav-members { display: flex; justify-content: space-between; align-items: center; padding: 32px 0; border-top: 1px solid #eee; margin-top: 80px; }
+    .nav-member-link { font-family: 'Rubik', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: .1em; color: var(--blue); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+
+    @media (max-width: 768px) { .interview-layout { grid-template-columns: 1fr; gap: 40px; } .interview-sidebar { position: static; } .interview-photo { max-width: 260px; } }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <a href="/" class="logo">
+      <img src="/logo.png" alt="アノマリーマーケティング" style="height:36px;">
+    </a>
+    <nav>
+      <div class="nav-item">
+        <a href="/overview/" class="nav-link has-drop">会社紹介</a>
+        <div class="nav-drop">
+          <a href="/overview/">アノマリーの魅力</a>
+          <a href="/business/">事業内容</a>
+          <a href="/message/">代表メッセージ</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/consultant/" class="nav-link">募集内容</a>
+      </div>
+      <div class="nav-item">
+        <a href="/salary/" class="nav-link has-drop">制度・環境</a>
+        <div class="nav-drop">
+          <a href="/salary/">報酬制度</a>
+          <a href="/training/">人材育成</a>
+          <a href="/benefits/">制度・オフィス環境</a>
+          <a href="/welfare/">福利厚生</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/members/" class="nav-link">メンバー</a>
+      </div>
+      <div class="nav-item">
+        <a href="/flow/" class="nav-link has-drop">選考</a>
+        <div class="nav-drop">
+          <a href="/flow/">選考の流れ</a>
+          <a href="/faq/">よくある質問</a>
+        </div>
+      </div>
+    </nav>
+    <a href="/entry/" class="btn-entry">エントリーする →</a>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">ABOUT</p>
+      <div class="mobile-nav-sub">
+        <a href="/overview/">アノマリーの魅力</a>
+        <a href="/business/">事業内容</a>
+        <a href="/message/">代表メッセージ</a>
+      </div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">JOB</p>
+      <div class="mobile-nav-sub"><a href="/consultant/">募集内容</a></div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">SYSTEM</p>
+      <div class="mobile-nav-sub">
+        <a href="/salary/">報酬制度</a>
+        <a href="/training/">人材育成</a>
+        <a href="/benefits/">制度・オフィス環境</a>
+          <a href="/welfare/">福利厚生</a>
+      </div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">MEMBER</p>
+      <div class="mobile-nav-sub"><a href="/members/">メンバー一覧</a></div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">SELECTION</p>
+      <div class="mobile-nav-sub">
+        <a href="/flow/">選考の流れ</a>
+        <a href="/faq/">よくある質問</a>
+      </div>
+    </div>
+    <a href="/entry/" class="mobile-nav-entry">エントリーする →</a>
+  </div>
+
+  <!-- EDIT: page-hero のクラスを light / dark / gradient から選択 -->
+  <div class="page-hero light">
+    <div class="hero-deco"></div>
+    <!-- EDIT: MEMBER / XX の番号を変更 -->
+    <div class="hero-eyebrow">MEMBER / 04</div>
+    <!-- EDIT: キャッチコピー（メンバーのひとこと）を入力 -->
+    <h1 class="page-hero-title">【キャッチコピー】</h1>
+    <!-- EDIT: 役職と名前を入力 -->
+    <p class="page-hero-sub">【役職】 【名前】</p>
+  </div>
+
+  <section>
+    <div class="interview-layout reveal">
+      <div class="interview-sidebar">
+        <!-- 写真がある場合: <img src="/members/【英語名】/photo.jpg" alt="【名前】"> を .interview-photo 内に入れる -->
+        <!-- 写真がない場合: イニシャル文字のみ残す -->
+        <div class="interview-photo">
+          <!-- EDIT: イニシャル1文字（写真追加時は削除） -->
+          X
+        </div>
+        <!-- EDIT: 役職の英語表記 -->
+        <p class="interview-role">CONSULTANT</p>
+        <!-- EDIT: 名前（日本語） -->
+        <p class="interview-name">【名前】</p>
+        <!-- EDIT: 名前（英語ローマ字） -->
+        <p class="interview-en">FIRSTNAME LASTNAME</p>
+        <div>
+          <!-- EDIT: タグを追加・変更 -->
+          <span class="interview-tag">【役職】</span>
+          <span class="interview-tag">広告運用</span>
+          <span class="interview-tag">LP改善</span>
+        </div>
+      </div>
+      <div class="interview-body">
+
+        <!-- Q&Aブロック（必要な数だけコピーして使用） -->
+        <div class="qa-block">
+          <p class="qa-q-text">【質問文】</p>
+          <div class="qa-a-text">
+            <p>【回答1段落目】</p>
+            <p>【回答2段落目（不要なら削除）】</p>
+          </div>
+        </div>
+
+        <div class="qa-block">
+          <p class="qa-q-text">【質問文】</p>
+          <div class="qa-a-text">
+            <p>【回答1段落目】</p>
+            <p>【回答2段落目】</p>
+          </div>
+        </div>
+
+        <div class="qa-block">
+          <p class="qa-q-text">【質問文】</p>
+          <div class="qa-a-text">
+            <p>【回答1段落目】</p>
+          </div>
+        </div>
+
+        <!-- ページナビゲーション: 前後のメンバーリンクを設定 -->
+        <div class="nav-members">
+          <!-- EDIT: 前のメンバーのURLと名前（最初のメンバーなら <span></span> にする） -->
+          <a href="/members/ito/" class="nav-member-link">← 伊藤 一輝</a>
+          <a href="/members/" style="font-size:13px;color:#aaa;text-decoration:none;">メンバー一覧に戻る</a>
+          <!-- EDIT: 次のメンバーのURLと名前（最後のメンバーなら <span></span> にする） -->
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <a href="/" class="footer-logo"><div class="footer-logo-mark"></div><div class="footer-logo-text"><span class="ja">アノマリーマーケティング</span><span class="en">ANOMALY MARKETING INC.</span></div></a>
+      <div class="footer-links"><a href="https://anomaly-marketing.co.jp/" target="_blank">コーポレートサイト</a><a href="#">プライバシーポリシー</a><a href="/">採用トップ</a></div>
+    </div>
+    <p class="footer-copy">© 2026 ANOMALY MARKETING INC.</p>
+  </footer>
+
+  <script>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40));
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileNav.classList.toggle('open');
+      document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+    });
+    mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileNav.classList.remove('open');
+      document.body.style.overflow = '';
+    }));
+    const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); obs.unobserve(x.target); } }), {threshold:.1});
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

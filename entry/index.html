@@ -1,0 +1,291 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>エントリー | アノマリーマーケティング採用</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .entry-layout { display: grid; grid-template-columns: 1fr 480px; gap: 80px; align-items: start; }
+    .entry-info { }
+    .entry-info-title { font-size: clamp(28px, 3vw, 44px); font-weight: 700; line-height: 1.3; margin-bottom: 24px; }
+    .entry-info-body { font-size: 15px; line-height: 2; color: #666; margin-bottom: 48px; }
+    .entry-checklist { display: flex; flex-direction: column; gap: 12px; }
+    .entry-check-item { display: flex; gap: 12px; align-items: flex-start; font-size: 14px; line-height: 1.7; color: #555; }
+    .entry-check-item::before { content: ''; display: block; width: 20px; height: 20px; border-radius: 50%; background: var(--grad); flex-shrink: 0; margin-top: 2px; }
+
+    .entry-form-wrap { background: #fff; border-radius: 20px; padding: 48px; border: 1px solid rgba(0,0,0,.05); position: sticky; top: 100px; }
+    .entry-form-title { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+    .entry-form-sub { font-size: 13px; color: #aaa; margin-bottom: 32px; }
+
+    .form-group { margin-bottom: 24px; }
+    .form-label { font-size: 13px; font-weight: 600; margin-bottom: 8px; display: flex; gap: 8px; align-items: center; }
+    .form-required { font-family: 'Rubik', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: .05em; color: #fff; background: var(--blue); border-radius: 4px; padding: 2px 6px; }
+    .form-optional { font-family: 'Rubik', sans-serif; font-size: 10px; color: #aaa; }
+    .form-input { width: 100%; padding: 14px 16px; border: 1.5px solid #e8e4df; border-radius: 10px; font-size: 14px; font-family: 'Noto Sans JP', sans-serif; color: var(--dark); background: var(--bg); outline: none; transition: border-color .2s, box-shadow .2s; }
+    .form-input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(113,188,227,.12); background: #fff; }
+    .form-textarea { resize: vertical; min-height: 120px; line-height: 1.7; }
+    .form-select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23aaa' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; cursor: pointer; }
+
+    .form-submit { width: 100%; padding: 18px; border: none; border-radius: 100px; background: var(--dark); color: #fff; font-family: 'Rubik', sans-serif; font-size: 15px; font-weight: 500; letter-spacing: .06em; cursor: pointer; transition: opacity .2s, transform .2s; margin-top: 8px; }
+    .form-submit:hover { opacity: .85; transform: translateY(-1px); }
+    .form-note { font-size: 12px; color: #aaa; text-align: center; margin-top: 16px; line-height: 1.7; }
+
+    .form-success { display: none; text-align: center; padding: 48px 0; }
+    .form-success-icon { width: 64px; height: 64px; border-radius: 50%; background: var(--grad); display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; }
+    .form-success-icon svg { width: 28px; height: 28px; stroke: #fff; fill: none; stroke-width: 2.5; }
+    .form-success-title { font-size: 22px; font-weight: 700; margin-bottom: 12px; }
+    .form-success-body { font-size: 14px; color: #777; line-height: 1.8; }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <a href="/" class="logo">
+      <img src="/logo.png" alt="アノマリーマーケティング" style="height:36px;">
+    </a>
+    <nav>
+      <div class="nav-item">
+        <a href="/overview/" class="nav-link has-drop">会社紹介</a>
+        <div class="nav-drop">
+          <a href="/overview/">アノマリーの魅力</a>
+          <a href="/business/">事業内容</a>
+          <a href="/message/">代表メッセージ</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/consultant/" class="nav-link">募集内容</a>
+      </div>
+      <div class="nav-item">
+        <a href="/salary/" class="nav-link has-drop">制度・環境</a>
+        <div class="nav-drop">
+          <a href="/salary/">報酬制度</a>
+          <a href="/training/">人材育成</a>
+          <a href="/benefits/">制度・オフィス環境</a>
+          <a href="/welfare/">福利厚生</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/members/" class="nav-link">メンバー</a>
+      </div>
+      <div class="nav-item">
+        <a href="/flow/" class="nav-link has-drop">選考</a>
+        <div class="nav-drop">
+          <a href="/flow/">選考の流れ</a>
+          <a href="/faq/">よくある質問</a>
+        </div>
+      </div>
+    </nav>
+    <a href="/entry/" class="btn-entry">エントリーする →</a>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">ABOUT</p>
+      <div class="mobile-nav-sub">
+        <a href="/overview/">アノマリーの魅力</a>
+        <a href="/business/">事業内容</a>
+        <a href="/message/">代表メッセージ</a>
+      </div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">JOB</p>
+      <div class="mobile-nav-sub"><a href="/consultant/">募集内容</a></div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">SYSTEM</p>
+      <div class="mobile-nav-sub">
+        <a href="/salary/">報酬制度</a>
+        <a href="/training/">人材育成</a>
+        <a href="/benefits/">制度・オフィス環境</a>
+          <a href="/welfare/">福利厚生</a>
+      </div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">MEMBER</p>
+      <div class="mobile-nav-sub"><a href="/members/">メンバー一覧</a></div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">SELECTION</p>
+      <div class="mobile-nav-sub">
+        <a href="/flow/">選考の流れ</a>
+        <a href="/faq/">よくある質問</a>
+      </div>
+    </div>
+    <a href="/entry/" class="mobile-nav-entry">エントリーする →</a>
+  </div>
+
+  <div class="page-hero gradient">
+    <div class="hero-deco"></div>
+    <div class="hero-eyebrow">ENTRY</div>
+    <h1 class="page-hero-title">エントリー</h1>
+    <p class="page-hero-sub">あなたの言葉を、聞かせてください。</p>
+  </div>
+
+  <section>
+    <div class="entry-layout reveal">
+      <div class="entry-info">
+        <h2 class="entry-info-title">カジュアルな気持ちで、<br>まず話しましょう。</h2>
+        <p class="entry-info-body">「まだ転職を決めていない」「話だけ聞いてみたい」という段階でも大歓迎です。フォームの備考欄に「カジュアル面談希望」と書いていただければ、選考ではなくカジュアルな対話の場を設けます。<br><br>書類審査の結果は3営業日以内にご連絡します。</p>
+        <div class="entry-checklist">
+          <div class="entry-check-item">広告運用経験（Google / Meta / Yahoo!広告いずれか）</div>
+          <div class="entry-check-item">GA4・Looker Studio・GTMの操作経験</div>
+          <div class="entry-check-item">顧客対応・制作ディレクション経験</div>
+          <div class="entry-check-item" style="opacity:.5">歓迎：新規商談・クロージング経験</div>
+          <div class="entry-check-item" style="opacity:.5">歓迎：AI活用能力・エンジニア領域の理解</div>
+        </div>
+        <p style="font-size:13px;color:#aaa;margin-top:24px;">上記は必須要件です。歓迎スキルは必須ではありません。</p>
+      </div>
+
+      <div class="entry-form-wrap">
+        <div id="form-area">
+          <p class="entry-form-title">エントリーフォーム</p>
+          <p class="entry-form-sub">すべて必須項目です（任意と書かれたものを除く）</p>
+
+          <form id="entry-form" action="https://formspree.io/f/xzzblpqn" method="POST">
+            <div class="form-group">
+              <label class="form-label">お名前 <span class="form-required">必須</span></label>
+              <input type="text" name="name" class="form-input" placeholder="例：山田 太郎" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">メールアドレス <span class="form-required">必須</span></label>
+              <input type="email" name="email" class="form-input" placeholder="例：taro@example.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">電話番号 <span class="form-required">必須</span></label>
+              <input type="tel" name="phone" class="form-input" placeholder="例：090-1234-5678" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">現在の職業 <span class="form-required">必須</span></label>
+              <select name="current_job" class="form-input form-select" required>
+                <option value="" disabled selected>選択してください</option>
+                <option>Web広告代理店（広告運用）</option>
+                <option>Web広告代理店（営業）</option>
+                <option>インハウスマーケター</option>
+                <option>フリーランス</option>
+                <option>その他</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">広告運用経験年数 <span class="form-required">必須</span></label>
+              <select name="experience" class="form-input form-select" required>
+                <option value="" disabled selected>選択してください</option>
+                <option>1年未満</option>
+                <option>1〜2年</option>
+                <option>3〜5年</option>
+                <option>6年以上</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">志望動機・自己PR <span class="form-required">必須</span></label>
+              <textarea name="message" class="form-input form-textarea" placeholder="当社を知ったきっかけ、志望理由、これまでの経験、アピールポイントなどを自由に記入してください。" required></textarea>
+            </div>
+            <div class="form-group">
+              <label class="form-label">備考 <span class="form-optional">任意</span></label>
+              <textarea name="note" class="form-input form-textarea" style="min-height:80px;" placeholder="カジュアル面談希望の方はここに記入してください。その他、ご質問・ご要望があればどうぞ。"></textarea>
+            </div>
+            <button type="submit" class="form-submit">エントリーする →</button>
+            <p class="form-note">送信後、3営業日以内にご連絡します。<br>プライバシーポリシーに同意の上、送信してください。</p>
+          </form>
+        </div>
+
+        <div class="form-success" id="form-success">
+          <div class="form-success-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <p class="form-success-title">エントリーを受け付けました</p>
+          <p class="form-success-body">ありがとうございます。<br>3営業日以内にメールにてご連絡します。<br><br>しばらくお待ちください。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <footer>
+    <div class="footer-sitemap">
+      <div class="footer-col">
+        <p class="footer-col-head">会社紹介</p>
+        <a href="/overview/">アノマリーの魅力</a>
+        <a href="/business/">事業内容</a>
+        <a href="/message/">代表メッセージ</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">募集内容</p>
+        <a href="/consultant/">Web広告コンサルタント</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">制度・環境</p>
+        <a href="/salary/">報酬制度</a>
+        <a href="/training/">人材育成</a>
+        <a href="/benefits/">制度・オフィス環境</a>
+        <a href="/welfare/">福利厚生</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">メンバー</p>
+        <a href="/members/">メンバー紹介</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">選考について</p>
+        <a href="/flow/">選考の流れ</a>
+        <a href="/faq/">よくある質問</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">エントリー</p>
+        <a href="/entry/">エントリーする</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a href="/" class="footer-logo">
+        <img src="/logo.png" alt="アノマリーマーケティング" style="height:28px;filter:brightness(0) invert(1);opacity:.6;">
+      </a>
+      <div class="footer-bottom-right">
+        <a href="#" class="footer-policy">プライバシーポリシー</a>
+        <p class="footer-copy">© 2026 ANOMALY MARKETING INC.</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40));
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileNav.classList.toggle('open');
+      document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+    });
+    mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileNav.classList.remove('open');
+      document.body.style.overflow = '';
+    }));
+    const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); obs.unobserve(x.target); } }), {threshold:.1});
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    const form = document.getElementById('entry-form');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('.form-submit');
+      btn.textContent = '送信中...';
+      btn.disabled = true;
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' }
+        });
+        if (res.ok) {
+          document.getElementById('form-area').style.display = 'none';
+          document.getElementById('form-success').style.display = 'block';
+        } else {
+          btn.textContent = '送信に失敗しました。再度お試しください。';
+          btn.disabled = false;
+        }
+      } catch {
+        btn.textContent = '送信に失敗しました。再度お試しください。';
+        btn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

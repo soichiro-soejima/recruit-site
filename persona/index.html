@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>こんな人と働きたい | アノマリーマーケティング採用</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .persona-list { display: flex; flex-direction: column; gap: 0; margin-bottom: 80px; }
+    .persona-item { display: grid; grid-template-columns: 64px 1fr; gap: 40px; padding: 48px 0; border-bottom: 1px solid #eee; align-items: start; }
+    .persona-item:last-child { border-bottom: none; }
+    .persona-check { width: 64px; height: 64px; border-radius: 50%; background: var(--grad); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 4px; }
+    .persona-check svg { width: 28px; height: 28px; stroke: #fff; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+    .persona-content { }
+    .persona-heading { font-size: 22px; font-weight: 700; margin-bottom: 12px; line-height: 1.4; }
+    .persona-body { font-size: 15px; line-height: 2; color: #555; }
+
+    .not-match { background: var(--dark-section); border-radius: 20px; padding: 64px; margin-bottom: 80px; }
+    .not-match-title { font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 32px; }
+    .not-match-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .not-match-item { background: rgba(255,255,255,.05); border-radius: 12px; padding: 20px 24px; font-size: 14px; color: rgba(255,255,255,.6); line-height: 1.7; display: flex; gap: 12px; align-items: flex-start; }
+    .not-match-item::before { content: '—'; color: rgba(255,255,255,.25); flex-shrink: 0; font-family: 'Rubik', sans-serif; }
+
+    .quote-highlight { background: #fff; border-radius: 20px; padding: 64px; border: 1px solid rgba(0,0,0,.05); }
+    .quote-highlight-mark { font-family: 'Rubik', sans-serif; font-size: 80px; font-weight: 700; color: var(--blue); opacity: .15; line-height: .8; margin-bottom: 16px; }
+    .quote-highlight-text { font-size: 24px; font-weight: 700; line-height: 1.7; margin-bottom: 20px; }
+    .quote-highlight-author { font-size: 13px; color: #aaa; }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <a href="/" class="logo">
+      <img src="/logo.png" alt="アノマリーマーケティング" style="height:36px;">
+    </a>
+    <nav>
+      <a href="/about/philosophy/">会社紹介</a><a href="/job/consultant/">募集内容</a>
+      <a href="/system/salary/">制度・環境</a><a href="/members/">メンバー</a><a href="/flow/">選考</a>
+    </nav>
+    <a href="/entry/" class="btn-entry">エントリーする →</a>
+  </header>
+
+  <div class="page-hero gradient">
+    <div class="hero-deco"></div>
+    <div class="hero-eyebrow">PERSONA</div>
+    <h1 class="page-hero-title">こんな人と、<br>働きたい。</h1>
+    <p class="page-hero-sub">スキルより先に、スタンスを見ています。</p>
+  </div>
+
+  <section>
+    <div class="section-label reveal">01 <span>——</span> LOOKING FOR</div>
+    <div class="section-header reveal">
+      <h2 class="section-heading">求める人物像</h2>
+      <p class="section-desc">経験よりも、仕事に向き合うスタンスを重視しています。</p>
+    </div>
+    <div class="persona-list">
+      <div class="persona-item reveal">
+        <div class="persona-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="persona-content">
+          <p class="persona-heading">自分で考えて、自分で動ける人</p>
+          <p class="persona-body">「次は何をすればいいですか？」ではなく、「こういう理由でこれをやろうと思います」と動ける人。指示を待つのではなく、自分で課題を見つけて行動を起こせる自走力が必要です。少人数組織では、一人ひとりの自主性が組織全体のスピードを決めます。</p>
+        </div>
+      </div>
+      <div class="persona-item reveal">
+        <div class="persona-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="persona-content">
+          <p class="persona-heading">素直に吸収できる人</p>
+          <p class="persona-body">本をすすめられたらその場で買い、読んで感想を伝えられるくらいの素直さ。フィードバックを受け取ったとき、まず「やってみよう」と動ける人。素直さを持っている人は成長が速く、信頼して仕事を任せられます。「自分のやり方」への固執がある人より、常に更新し続けられる人と一緒に仕事がしたい。</p>
+        </div>
+      </div>
+      <div class="persona-item reveal">
+        <div class="persona-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="persona-content">
+          <p class="persona-heading">成果に対して正直に向き合える人</p>
+          <p class="persona-body">「頑張った」「忙しかった」は評価の対象になりません。クライアントに成果をもたらしたか、数字が動いたかを正直に見つめられる人。言い訳より先に原因分析と改善案を出せる人が、この職場では評価されます。</p>
+        </div>
+      </div>
+      <div class="persona-item reveal">
+        <div class="persona-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="persona-content">
+          <p class="persona-heading">目的意識が明確な人</p>
+          <p class="persona-body">「将来独立したい」「マーケティングで成果を出してキャリアを築きたい」など、自分の目的を持って仕事をしている人。目的があると自分事化できて、成長スピードも上がります。目的のために当社を使い倒すくらいの気概がある人を歓迎します。</p>
+        </div>
+      </div>
+      <div class="persona-item reveal">
+        <div class="persona-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="persona-content">
+          <p class="persona-heading">個性・尖りがある人</p>
+          <p class="persona-body">レーダーチャートにするとめちゃくちゃ尖ったグラフになるような人が好きです。何かひとつ突き抜けているものがある人は、マーケティングの仕事と相性がいい。「普通」より「変」の方が、面白い仕事ができると思っています。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-label reveal">02 <span>——</span> NOT A FIT</div>
+    <div class="not-match reveal">
+      <p class="not-match-title">こういう方には、向いていないかもしれません</p>
+      <div class="not-match-list">
+        <div class="not-match-item">指示がないと動けない、指示待ちが多い</div>
+        <div class="not-match-item">安定・ぬるさを最優先にしたい</div>
+        <div class="not-match-item">評価面談や上司との関係で給与を上げたい</div>
+        <div class="not-match-item">変化や新しいやり方への抵抗感が強い</div>
+        <div class="not-match-item">成果より「頑張った感」を重視する</div>
+        <div class="not-match-item">大企業の安定したブランドが必要な方</div>
+      </div>
+    </div>
+
+    <div class="section-label reveal">03 <span>——</span> FOUNDER'S WORDS</div>
+    <div class="quote-highlight reveal">
+      <div class="quote-highlight-mark">"</div>
+      <p class="quote-highlight-text">当社で経験を積んで「独立したい」と考えているくらいの人がいい。目的があって自分事化できていると成長スピードも早い。苦楽を共にしながら同じ方向を向いていければ、その先にお互いの幸せがある。</p>
+      <p class="quote-highlight-author">小田 峻 / 代表取締役</p>
+    </div>
+  </section>
+  <footer>
+    <div class="footer-inner">
+      <a href="/" class="footer-logo"><div class="footer-logo-mark"></div><div class="footer-logo-text"><span class="ja">アノマリーマーケティング</span><span class="en">ANOMALY MARKETING INC.</span></div></a>
+      <div class="footer-links"><a href="https://anomaly-marketing.co.jp/" target="_blank">コーポレートサイト</a><a href="#">プライバシーポリシー</a><a href="/">採用トップ</a></div>
+    </div>
+    <p class="footer-copy">© 2026 ANOMALY MARKETING INC.</p>
+  </footer>
+  <script>
+    const h = document.getElementById('header');
+    window.addEventListener('scroll', () => h.classList.toggle('scrolled', window.scrollY > 40));
+    const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);} }), {threshold:.1});
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

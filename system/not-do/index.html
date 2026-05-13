@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>やらないこと | アノマリーマーケティング採用</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .notdo-list { display: flex; flex-direction: column; gap: 0; margin-bottom: 80px; }
+    .notdo-item { padding: 56px 0; border-bottom: 1px solid #eee; display: grid; grid-template-columns: 80px 1fr 1fr; gap: 40px; align-items: start; }
+    .notdo-item:last-child { border-bottom: none; }
+    .notdo-num { font-family: 'Rubik', sans-serif; font-size: 48px; font-weight: 700; color: #eee; line-height: 1; }
+    .notdo-heading { font-size: 22px; font-weight: 700; line-height: 1.4; margin-bottom: 8px; }
+    .notdo-sub { font-family: 'Rubik', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .15em; color: var(--blue); margin-bottom: 16px; }
+    .notdo-body { font-size: 14px; line-height: 2; color: #555; }
+
+    .do-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .do-card { background: #fff; border-radius: 16px; padding: 40px; border: 1px solid rgba(0,0,0,.05); }
+    .do-card-label { font-family: 'Rubik', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: .2em; color: var(--green); margin-bottom: 16px; }
+    .do-card-title { font-size: 18px; font-weight: 700; margin-bottom: 16px; line-height: 1.4; }
+    .do-card-body { font-size: 14px; line-height: 1.9; color: #666; }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <a href="/" class="logo">
+      <img src="/logo.png" alt="アノマリーマーケティング" style="height:36px;">
+    </a>
+    <nav>
+      <a href="/about/philosophy/">会社紹介</a><a href="/job/consultant/">募集内容</a>
+      <a href="/system/salary/">制度・環境</a><a href="/members/">メンバー</a><a href="/flow/">選考</a>
+    </nav>
+    <a href="/entry/" class="btn-entry">エントリーする →</a>
+  </header>
+
+  <div class="page-hero dark">
+    <div class="hero-deco"></div>
+    <div class="hero-eyebrow">SYSTEM / NOT-DO</div>
+    <h1 class="page-hero-title">やらないこと。</h1>
+    <p class="page-hero-sub">何をするかより、何をしないかで、組織の文化は決まる。</p>
+  </div>
+
+  <section>
+    <div class="section-label reveal">01 <span>——</span> NOT TO DO</div>
+    <div class="section-header reveal">
+      <h2 class="section-heading">当社がやらないこと</h2>
+      <p class="section-desc">組織として明示的に「やらない」と決めていることを、正直に書きます。</p>
+    </div>
+    <div class="notdo-list">
+      <div class="notdo-item reveal">
+        <span class="notdo-num">01</span>
+        <div>
+          <p class="notdo-sub">NO EXPANSION FOR ITS OWN SAKE</p>
+          <p class="notdo-heading">規模拡大を<br>目的にしない</p>
+        </div>
+        <p class="notdo-body">「社員100人を目指す」「売上○億円を目指す」という数字を目的にした拡大はしません。クライアントに成果を出し続けるために必要な規模で、少数精鋭を維持することを選びます。大きくなることより、密度の高い仕事を続けることを優先します。</p>
+      </div>
+      <div class="notdo-item reveal">
+        <span class="notdo-num">02</span>
+        <div>
+          <p class="notdo-sub">NO AMBIGUOUS EVALUATION</p>
+          <p class="notdo-heading">曖昧な評価基準で<br>給与を決めない</p>
+        </div>
+        <p class="notdo-body">「コミュニケーション能力」「チームへの貢献度」「上司からの印象」などの定性的な評価軸で給与を決めません。担当案件の粗利という、誰が見ても同じ数字で報酬を決めます。評価される側が「なぜ上がらないのか」を理解できない仕組みは作りません。</p>
+      </div>
+      <div class="notdo-item reveal">
+        <span class="notdo-num">03</span>
+        <div>
+          <p class="notdo-sub">NO RESULTS WITHOUT RESPONSIBILITY</p>
+          <p class="notdo-heading">成果への責任を<br>手放さない</p>
+        </div>
+        <p class="notdo-body">「リードを獲得した」で終わりにしません。広告代理店として、クライアントのリード獲得だけをゴールにする仕事のやり方を選びません。クライアントが実際に売上を上げるところまで、責任を持って支援します。それが難しくても、そこから逃げない。</p>
+      </div>
+      <div class="notdo-item reveal">
+        <span class="notdo-num">04</span>
+        <div>
+          <p class="notdo-sub">NO POLITICS</p>
+          <p class="notdo-heading">社内政治を<br>持ち込まない</p>
+        </div>
+        <p class="notdo-body">「あの人に気に入られると得をする」「声が大きい人が勝つ」という環境を作りません。評価も意思決定も、なるべく数字とファクトに基づきます。社内の人間関係や根回しで有利不利が生まれる組織にはしたくない。</p>
+      </div>
+      <div class="notdo-item reveal">
+        <span class="notdo-num">05</span>
+        <div>
+          <p class="notdo-sub">NO INERTIA</p>
+          <p class="notdo-heading">「昔からそうだから」を<br>理由にしない</p>
+        </div>
+        <p class="notdo-body">慣例・前例・「うちはずっとこうだから」を理由に非合理なやり方を続けません。ツール、プロセス、打ち手——すべて「今それが最善か」で常に見直します。変化を歓迎し、スピードを落とさないことを優先します。</p>
+      </div>
+    </div>
+
+    <div class="section-label reveal">02 <span>——</span> WHAT WE DO INSTEAD</div>
+    <div class="section-header reveal">
+      <h2 class="section-heading">その代わりにやること</h2>
+    </div>
+    <div class="do-grid reveal">
+      <div class="do-card">
+        <p class="do-card-label">INSTEAD</p>
+        <p class="do-card-title">成果を出した人が、正直に報われる</p>
+        <p class="do-card-body">担当案件の粗利30%という、誰にでも分かる計算式で給与を決めます。頑張りが数字に直結する仕組みを維持します。</p>
+      </div>
+      <div class="do-card">
+        <p class="do-card-label">INSTEAD</p>
+        <p class="do-card-title">クライアントの事業に、本気で向き合う</p>
+        <p class="do-card-body">展示会への同行、営業プロセスの観察、サービスの体験まで行い、クライアントの事業を深く理解した上で施策を設計します。</p>
+      </div>
+      <div class="do-card">
+        <p class="do-card-label">INSTEAD</p>
+        <p class="do-card-title">スピードと自主性を最優先にする</p>
+        <p class="do-card-body">「スピード is ゴッド」。判断を速く、動きを速く。そのために必要な権限と情報を、メンバーに渡します。</p>
+      </div>
+      <div class="do-card">
+        <p class="do-card-label">INSTEAD</p>
+        <p class="do-card-title">素直さと謙虚さを大切にする</p>
+        <p class="do-card-body">すすめられた本をすぐ読む、フィードバックをすぐ取り入れる。そういう素直さを持つ人と、一緒に成長し続けます。</p>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="footer-inner">
+      <a href="/" class="footer-logo"><div class="footer-logo-mark"></div><div class="footer-logo-text"><span class="ja">アノマリーマーケティング</span><span class="en">ANOMALY MARKETING INC.</span></div></a>
+      <div class="footer-links"><a href="https://anomaly-marketing.co.jp/" target="_blank">コーポレートサイト</a><a href="#">プライバシーポリシー</a><a href="/">採用トップ</a></div>
+    </div>
+    <p class="footer-copy">© 2026 ANOMALY MARKETING INC.</p>
+  </footer>
+  <script>
+    const h = document.getElementById('header');
+    window.addEventListener('scroll', () => h.classList.toggle('scrolled', window.scrollY > 40));
+    const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);} }), {threshold:.1});
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

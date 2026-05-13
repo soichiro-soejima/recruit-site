@@ -1,0 +1,356 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web広告コンサルタント | アノマリーマーケティング採用</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    /* JOB SUMMARY */
+    .job-summary { display: grid; grid-template-columns: 1fr 380px; gap: 56px; align-items: start; background: #fff; border-radius: 20px; padding: 56px; margin-bottom: 24px; border: 1px solid rgba(0,0,0,.05); }
+    .job-summary-lead { font-size: 15px; line-height: 2.1; color: #555; margin-bottom: 40px; }
+    .task-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .task-item { display: flex; gap: 12px; align-items: flex-start; padding: 16px; background: var(--bg); border-radius: 10px; }
+    .task-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); margin-top: 6px; flex-shrink: 0; }
+    .task-text { font-size: 14px; line-height: 1.6; }
+    .job-summary-img { border-radius: 16px; overflow: hidden; aspect-ratio: 3/4; }
+    .job-summary-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* SKILLS */
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 80px; }
+    .skills-card { background: #fff; border-radius: 16px; padding: 40px; border: 1px solid rgba(0,0,0,.05); }
+    .skills-label { font-family: 'Rubik', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: .2em; margin-bottom: 24px; }
+    .required-label { color: var(--blue); }
+    .welcome-label { color: var(--green); }
+    .skill-item { font-size: 14px; line-height: 1.7; padding: 10px 0; border-bottom: 1px solid #f0ede8; display: flex; gap: 10px; }
+    .skill-item:last-child { border-bottom: none; }
+    .skill-item::before { content: '—'; color: var(--blue); flex-shrink: 0; }
+
+    /* ROADMAP */
+    .roadmap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-bottom: 32px; position: relative; }
+    .roadmap::before { content: ''; position: absolute; top: 40px; left: 80px; right: 80px; height: 2px; background: linear-gradient(to right, var(--blue), var(--green)); z-index: 0; }
+    .roadmap-step { text-align: center; position: relative; z-index: 1; padding: 0 16px; }
+    .roadmap-circle { width: 80px; height: 80px; border-radius: 50%; background: var(--grad); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-family: 'Rubik', sans-serif; font-size: 12px; font-weight: 700; color: #fff; letter-spacing: .05em; box-shadow: 0 4px 20px rgba(113,188,227,.4); }
+    .roadmap-period { font-family: 'Rubik', sans-serif; font-size: 11px; font-weight: 600; color: var(--blue); letter-spacing: .1em; margin-bottom: 8px; }
+    .roadmap-desc { font-size: 13px; line-height: 1.7; color: #666; }
+    .career-future { background: var(--dark-section); border-radius: 16px; padding: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin-bottom: 80px; }
+    .career-future-heading { font-size: clamp(22px, 2.5vw, 32px); font-weight: 700; color: #fff; line-height: 1.5; margin-bottom: 16px; }
+    .career-future-body { font-size: 14px; line-height: 2; color: rgba(255,255,255,.55); }
+    .career-future-list { list-style: none; }
+    .career-future-list li { font-size: 14px; color: rgba(255,255,255,.8); padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.08); display: flex; gap: 12px; align-items: center; }
+    .career-future-list li:last-child { border-bottom: none; }
+    .career-future-list li::before { content: '→'; font-family: 'Rubik', sans-serif; color: var(--green); flex-shrink: 0; }
+
+    /* DIFFERENCE */
+    .diff-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 80px; }
+    .diff-card { background: #fff; border-radius: 16px; padding: 36px; border: 1px solid rgba(0,0,0,.05); }
+    .diff-num { font-family: 'Rubik', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .15em; color: var(--blue); margin-bottom: 16px; }
+    .diff-title { font-size: 17px; font-weight: 700; margin-bottom: 12px; line-height: 1.4; }
+    .diff-body { font-size: 13px; line-height: 1.9; color: #666; }
+
+    /* SPEC TABLE */
+    .spec-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 16px; overflow: hidden; border: 1px solid rgba(0,0,0,.05); }
+    .spec-table tr { border-bottom: 1px solid #f0ede8; }
+    .spec-table tr:last-child { border-bottom: none; }
+    .spec-table th { background: var(--bg); padding: 20px 28px; text-align: left; font-size: 13px; font-weight: 600; width: 180px; color: #555; vertical-align: top; }
+    .spec-table td { padding: 20px 28px; font-size: 14px; line-height: 1.8; }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .diff-grid { grid-template-columns: repeat(2, 1fr); }
+      .roadmap { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+      .roadmap::before { display: none; }
+      .job-summary { grid-template-columns: 1fr; }
+      .job-summary-img { aspect-ratio: 16/9; }
+    }
+    @media (max-width: 768px) {
+      .job-summary { padding: 32px 24px; }
+      .task-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .roadmap { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .career-future { grid-template-columns: 1fr; gap: 24px; padding: 32px 24px; }
+      .diff-grid { grid-template-columns: 1fr; }
+      .spec-table th { width: 120px; padding: 16px 16px; }
+      .spec-table td { padding: 16px 16px; }
+    }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <a href="/" class="logo">
+      <img src="/logo.png" alt="アノマリーマーケティング" style="height:36px;">
+    </a>
+    <nav>
+      <div class="nav-item">
+        <a href="/overview/" class="nav-link has-drop">会社紹介</a>
+        <div class="nav-drop">
+          <a href="/overview/">アノマリーの魅力</a>
+          <a href="/business/">事業内容</a>
+          <a href="/message/">代表メッセージ</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/consultant/" class="nav-link">募集内容</a>
+      </div>
+      <div class="nav-item">
+        <a href="/salary/" class="nav-link has-drop">制度・環境</a>
+        <div class="nav-drop">
+          <a href="/salary/">報酬制度</a>
+          <a href="/training/">人材育成</a>
+          <a href="/benefits/">制度・オフィス環境</a>
+          <a href="/welfare/">福利厚生</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/members/" class="nav-link">メンバー</a>
+      </div>
+      <div class="nav-item">
+        <a href="/flow/" class="nav-link has-drop">選考</a>
+        <div class="nav-drop">
+          <a href="/flow/">選考の流れ</a>
+          <a href="/faq/">よくある質問</a>
+        </div>
+      </div>
+    </nav>
+    <a href="/entry/" class="btn-entry">エントリーする →</a>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">ABOUT</p>
+      <div class="mobile-nav-sub">
+        <a href="/overview/">アノマリーの魅力</a>
+        <a href="/business/">事業内容</a>
+        <a href="/message/">代表メッセージ</a>
+      </div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">JOB</p>
+      <div class="mobile-nav-sub">
+        <a href="/consultant/">募集内容</a>
+      </div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">SYSTEM</p>
+      <div class="mobile-nav-sub">
+        <a href="/salary/">報酬制度</a>
+        <a href="/training/">人材育成</a>
+        <a href="/benefits/">制度・オフィス環境</a>
+          <a href="/welfare/">福利厚生</a>
+      </div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">MEMBER</p>
+      <div class="mobile-nav-sub">
+        <a href="/members/">メンバー一覧</a>
+      </div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">SELECTION</p>
+      <div class="mobile-nav-sub">
+        <a href="/flow/">選考の流れ</a>
+        <a href="/faq/">よくある質問</a>
+      </div>
+    </div>
+    <a href="/entry/" class="mobile-nav-entry">エントリーする →</a>
+  </div>
+
+  <div class="page-hero dark">
+    <div class="hero-deco"></div>
+    <div class="hero-eyebrow">JOB / CONSULTANT</div>
+    <h1 class="page-hero-title">Web広告<br>コンサルタント</h1>
+    <p class="page-hero-sub">広告運用から営業まで。クライアントの事業成長を一気通貫で担う。</p>
+  </div>
+
+  <section>
+    <div class="section-label reveal">01 <span>——</span> JOB DESCRIPTION</div>
+    <div class="job-summary reveal">
+      <div>
+        <p class="job-summary-lead">Web広告及びWebマーケティングの企画・提案・実行を一気通貫で担当。初期ヒアリングから提案資料作成、受注後の施策立案・運用・振り返りまでをワンストップで担当する。マーケター視点とビジネス視点の両輪で考える力が養われる。</p>
+        <div class="task-grid">
+          <div class="task-item"><div class="task-dot"></div><p class="task-text">Google・Meta・Yahoo!広告の設計・運用・改善</p></div>
+          <div class="task-item"><div class="task-dot"></div><p class="task-text">LP・クリエイティブの制作ディレクション</p></div>
+          <div class="task-item"><div class="task-dot"></div><p class="task-text">既存クライアントへの改善提案・レポーティング</p></div>
+          <div class="task-item"><div class="task-dot"></div><p class="task-text">新規商談・クロージング</p></div>
+          <div class="task-item"><div class="task-dot"></div><p class="task-text">CRM・営業プロセス改善提案</p></div>
+          <div class="task-item"><div class="task-dot"></div><p class="task-text">月次KPI管理・施策の優先順位付け</p></div>
+        </div>
+      </div>
+      <div class="job-summary-img">
+        <img src="/consultant/photo.jpg" alt="Web広告コンサルタント">
+      </div>
+    </div>
+
+    <div class="section-label reveal">02 <span>——</span> REQUIREMENTS</div>
+    <div class="skills-grid reveal">
+      <div class="skills-card">
+        <p class="skills-label required-label">REQUIRED — 必須スキル</p>
+        <div class="skill-item">Google広告・Yahoo!広告・Meta広告のいずれかの運用経験</div>
+        <div class="skill-item">GA4・Looker Studio・GTMの操作経験</div>
+        <div class="skill-item">顧客対応・制作ディレクション経験</div>
+      </div>
+      <div class="skills-card">
+        <p class="skills-label welcome-label">WELCOME — 歓迎スキル</p>
+        <div class="skill-item">新規商談・クロージング経験</div>
+        <div class="skill-item">エンジニア領域の理解</div>
+        <div class="skill-item">広告周辺以外のWebマーケティングスキル</div>
+        <div class="skill-item">AI活用能力</div>
+      </div>
+    </div>
+
+    <div class="section-label reveal">03 <span>——</span> CAREER PATH</div>
+    <div class="section-header reveal">
+      <h2 class="section-heading">入社後の成長ステップ</h2>
+    </div>
+    <div class="roadmap reveal">
+      <div class="roadmap-step">
+        <div class="roadmap-circle">1M</div>
+        <p class="roadmap-period">1ヶ月目</p>
+        <p class="roadmap-desc">既存案件の引き継ぎ・社内ツール習得・クライアント同行</p>
+      </div>
+      <div class="roadmap-step">
+        <div class="roadmap-circle">3M</div>
+        <p class="roadmap-period">3ヶ月目</p>
+        <p class="roadmap-desc">担当案件を持ち始める・独立したPDCA実行</p>
+      </div>
+      <div class="roadmap-step">
+        <div class="roadmap-circle">6M</div>
+        <p class="roadmap-period">6ヶ月目</p>
+        <p class="roadmap-desc">粗利目標設定・達成に向けた戦略立案</p>
+      </div>
+      <div class="roadmap-step">
+        <div class="roadmap-circle">1Y+</div>
+        <p class="roadmap-period">1年目〜</p>
+        <p class="roadmap-desc">新規商談参加・担当案件の拡大・後輩育成</p>
+      </div>
+    </div>
+    <div class="career-future reveal">
+      <div>
+        <h3 class="career-future-heading">その先に目指せる姿</h3>
+        <p class="career-future-body">アノマリーマーケティングでは、広告運用の専門家にとどまらず、クライアントの事業全体に責任を持つ人材を育てたいと考えています。</p>
+      </div>
+      <ul class="career-future-list">
+        <li>クライアントの売上・契約数まで責任を持てる</li>
+        <li>営業・マーケ・改善を一人で回せる</li>
+        <li>数字を起点に自分で意思決定できる</li>
+        <li>事業責任者レベルのビジネス視点を持てる</li>
+      </ul>
+    </div>
+
+    <div class="section-label reveal">04 <span>——</span> WHY ANOMALY</div>
+    <div class="section-header reveal">
+      <h2 class="section-heading">アノマリーで働く理由</h2>
+    </div>
+    <div class="diff-grid reveal">
+      <div class="diff-card">
+        <p class="diff-num">01</p>
+        <p class="diff-title">成果がそのまま給与になる</p>
+        <p class="diff-body">担当案件の粗利30%が月収になる仕組み。評価面談も上司への根回しも不要。頑張った分が正直に返ってくる。</p>
+      </div>
+      <div class="diff-card">
+        <p class="diff-num">02</p>
+        <p class="diff-title">一気通貫で幅広いスキルが身につく</p>
+        <p class="diff-body">営業・提案・運用・LP改善・CRM支援まで同一担当者が担う。細分化された分業体制では得られない、事業全体を動かす経験ができる。</p>
+      </div>
+      <div class="diff-card">
+        <p class="diff-num">03</p>
+        <p class="diff-title">契約まで責任を持つ文化</p>
+        <p class="diff-body">「リード獲得で終わり」にしない。クライアントが本当に求める売上・契約数まで向き合うから、自分のビジネス視点が鍛えられる。</p>
+      </div>
+      <div class="diff-card">
+        <p class="diff-num">04</p>
+        <p class="diff-title">少数精鋭で裁量が大きい</p>
+        <p class="diff-body">10名規模の精鋭組織。一人ひとりの影響力が大きく、意思決定のスピードが速い。自分のアイデアが組織に直接反映される。</p>
+      </div>
+      <div class="diff-card">
+        <p class="diff-num">05</p>
+        <p class="diff-title">スピードを最優先にする文化</p>
+        <p class="diff-body">「スピード is ゴッド」。判断を速く、動きを速く。そのために必要な権限と情報を、メンバーに渡す組織を作っている。</p>
+      </div>
+      <div class="diff-card">
+        <p class="diff-num">06</p>
+        <p class="diff-title">業界未経験でも歓迎</p>
+        <p class="diff-body">スキルより、スタンスを見る。自分で考えて動けるか、素直に吸収できるか、成果に向き合えるか。それがあれば、経験は問わない。</p>
+      </div>
+    </div>
+
+    <div class="section-label reveal">05 <span>——</span> SPEC</div>
+    <table class="spec-table reveal">
+      <tr><th>給与</th><td>年収348〜900万円（担当案件の粗利30%）<br><small style="color:#999">最低保証：月給29万円 / 経験者は前職給与保障制度あり（上限540万円・1年間）</small></td></tr>
+      <tr><th>雇用形態</th><td>正社員</td></tr>
+      <tr><th>勤務地</th><td>愛知県名古屋市中区栄2丁目2-17（地下鉄伏見駅 徒歩5分）</td></tr>
+      <tr><th>勤務時間</th><td>平日 9:30〜18:30（所定労働時間8時間）</td></tr>
+      <tr><th>休日・休暇</th><td>完全週休二日制（土日祝）・年末年始・夏季・GW・有給休暇（半日休暇あり）</td></tr>
+      <tr><th>試用期間</th><td>6ヶ月（期間中の給与・待遇に変更なし）</td></tr>
+      <tr><th>社会保険</th><td>健康保険・厚生年金保険・雇用保険・労災保険</td></tr>
+    </table>
+  </section>
+
+    <footer>
+    <div class="footer-sitemap">
+      <div class="footer-col">
+        <p class="footer-col-head">会社紹介</p>
+        <a href="/overview/">アノマリーの魅力</a>
+        <a href="/business/">事業内容</a>
+        <a href="/message/">代表メッセージ</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">募集内容</p>
+        <a href="/consultant/">Web広告コンサルタント</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">制度・環境</p>
+        <a href="/salary/">報酬制度</a>
+        <a href="/training/">人材育成</a>
+        <a href="/benefits/">制度・オフィス環境</a>
+        <a href="/welfare/">福利厚生</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">メンバー</p>
+        <a href="/members/">メンバー紹介</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">選考について</p>
+        <a href="/flow/">選考の流れ</a>
+        <a href="/faq/">よくある質問</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">エントリー</p>
+        <a href="/entry/">エントリーする</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a href="/" class="footer-logo">
+        <img src="/logo.png" alt="アノマリーマーケティング" style="height:28px;filter:brightness(0) invert(1);opacity:.6;">
+      </a>
+      <div class="footer-bottom-right">
+        <a href="#" class="footer-policy">プライバシーポリシー</a>
+        <p class="footer-copy">© 2026 ANOMALY MARKETING INC.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40));
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileNav.classList.toggle('open');
+      document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+    });
+    mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileNav.classList.remove('open');
+      document.body.style.overflow = '';
+    }));
+    const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); obs.unobserve(x.target); } }), {threshold:.1});
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

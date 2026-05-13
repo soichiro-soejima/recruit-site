@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>メンバーインタビュー | アノマリーマーケティング採用</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .members-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    @media (max-width: 1024px) { .members-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .members-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <a href="/" class="logo">
+      <img src="/logo.png" alt="アノマリーマーケティング" style="height:36px;">
+    </a>
+    <nav>
+      <div class="nav-item">
+        <a href="/overview/" class="nav-link has-drop">会社紹介</a>
+        <div class="nav-drop">
+          <a href="/overview/">アノマリーの魅力</a>
+          <a href="/business/">事業内容</a>
+          <a href="/message/">代表メッセージ</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/consultant/" class="nav-link">募集内容</a>
+      </div>
+      <div class="nav-item">
+        <a href="/salary/" class="nav-link has-drop">制度・環境</a>
+        <div class="nav-drop">
+          <a href="/salary/">報酬制度</a>
+          <a href="/training/">人材育成</a>
+          <a href="/benefits/">制度・オフィス環境</a>
+          <a href="/welfare/">福利厚生</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/members/" class="nav-link">メンバー</a>
+      </div>
+      <div class="nav-item">
+        <a href="/flow/" class="nav-link has-drop">選考</a>
+        <div class="nav-drop">
+          <a href="/flow/">選考の流れ</a>
+          <a href="/faq/">よくある質問</a>
+        </div>
+      </div>
+    </nav>
+    <a href="/entry/" class="btn-entry">エントリーする →</a>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">ABOUT</p>
+      <div class="mobile-nav-sub">
+        <a href="/overview/">アノマリーの魅力</a>
+        <a href="/business/">事業内容</a>
+        <a href="/message/">代表メッセージ</a>
+      </div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">JOB</p>
+      <div class="mobile-nav-sub"><a href="/consultant/">募集内容</a></div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">SYSTEM</p>
+      <div class="mobile-nav-sub">
+        <a href="/salary/">報酬制度</a>
+        <a href="/training/">人材育成</a>
+        <a href="/benefits/">制度・オフィス環境</a>
+          <a href="/welfare/">福利厚生</a>
+      </div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">MEMBER</p>
+      <div class="mobile-nav-sub"><a href="/members/">メンバー一覧</a></div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">SELECTION</p>
+      <div class="mobile-nav-sub">
+        <a href="/flow/">選考の流れ</a>
+        <a href="/faq/">よくある質問</a>
+      </div>
+    </div>
+    <a href="/entry/" class="mobile-nav-entry">エントリーする →</a>
+  </div>
+
+  <div class="page-hero light">
+    <div class="hero-eyebrow">MEMBER INTERVIEW</div>
+    <h1 class="page-hero-title">メンバーの声。</h1>
+    <p class="page-hero-sub">数字や制度では伝わらないこと。実際にここで働く3人の言葉を、そのまま掲載しています。</p>
+  </div>
+
+  <section>
+    <div class="section-label reveal">MEMBERS</div>
+    <!-- メンバー追加時: .member-card ブロックをコピーして追加。m-green / m-blue / m-dark からクラスを選択。インタビューページは members/_template/ を使用 -->
+    <div class="members-grid">
+      <div class="member-card reveal">
+        <div class="member-card-top m-green">
+          <span class="member-badge">REPRESENTATIVE DIRECTOR</span>
+          <img src="/members/oda/photo.jpg" alt="小田峻">
+        </div>
+        <div class="member-card-body">
+          <p class="member-name">小田 峻</p>
+          <p class="member-role">代表取締役</p>
+          <p class="member-en">SHUN ODA</p>
+          <p class="member-quote">広告を売るんじゃない。事業を伸ばす責任を売る。</p>
+          <a href="/members/oda/" class="member-link">READ INTERVIEW →</a>
+        </div>
+      </div>
+      <div class="member-card reveal reveal-delay-1">
+        <div class="member-card-top m-blue">
+          <span class="member-badge">EXECUTIVE OFFICER</span>
+          <img src="/members/soejima/photo.png" alt="副島聡一郎">
+        </div>
+        <div class="member-card-body">
+          <p class="member-name">副島 聡一郎</p>
+          <p class="member-role">執行役員</p>
+          <p class="member-en">SOICHIRO SOEJIMA</p>
+          <p class="member-quote">クライアントのためであれば、なんでもやっていい。</p>
+          <a href="/members/soejima/" class="member-link">READ INTERVIEW →</a>
+        </div>
+      </div>
+      <div class="member-card reveal reveal-delay-2">
+        <div class="member-card-top m-dark">
+          <span class="member-badge">CONSULTANT</span>
+          <img src="/members/ito/photo.jpg" alt="伊藤一輝">
+        </div>
+        <div class="member-card-body">
+          <p class="member-name">伊藤 一輝</p>
+          <p class="member-role">Webコンサルタント</p>
+          <p class="member-en">KAZUKI ITO</p>
+          <p class="member-quote">成果が、そのまま自分の給与に返ってくる。</p>
+          <a href="/members/ito/" class="member-link">READ INTERVIEW →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+    <footer>
+    <div class="footer-sitemap">
+      <div class="footer-col">
+        <p class="footer-col-head">会社紹介</p>
+        <a href="/overview/">アノマリーの魅力</a>
+        <a href="/business/">事業内容</a>
+        <a href="/message/">代表メッセージ</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">募集内容</p>
+        <a href="/consultant/">Web広告コンサルタント</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">制度・環境</p>
+        <a href="/salary/">報酬制度</a>
+        <a href="/training/">人材育成</a>
+        <a href="/benefits/">制度・オフィス環境</a>
+        <a href="/welfare/">福利厚生</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">メンバー</p>
+        <a href="/members/">メンバー紹介</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">選考について</p>
+        <a href="/flow/">選考の流れ</a>
+        <a href="/faq/">よくある質問</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">エントリー</p>
+        <a href="/entry/">エントリーする</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a href="/" class="footer-logo">
+        <img src="/logo.png" alt="アノマリーマーケティング" style="height:28px;filter:brightness(0) invert(1);opacity:.6;">
+      </a>
+      <div class="footer-bottom-right">
+        <a href="#" class="footer-policy">プライバシーポリシー</a>
+        <p class="footer-copy">© 2026 ANOMALY MARKETING INC.</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40));
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileNav.classList.toggle('open');
+      document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+    });
+    mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileNav.classList.remove('open');
+      document.body.style.overflow = '';
+    }));
+    const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); obs.unobserve(x.target); } }), {threshold:.1});
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>成果が、そのまま給与になる | アノマリーマーケティング採用</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .salary-hero-card { background: #fff; border-radius: 20px; padding: 64px; margin-bottom: 24px; border: 1px solid rgba(0,0,0,.05); display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .salary-accent { width: 6px; height: 80px; background: var(--grad); border-radius: 4px; display: inline-block; margin-right: 24px; vertical-align: middle; }
+    .salary-big { font-size: clamp(40px, 6vw, 72px); font-weight: 700; line-height: 1.1; letter-spacing: -.03em; }
+    .salary-big span { font-family: 'Rubik', sans-serif; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .salary-body { font-size: 15px; line-height: 2; color: #555; }
+
+    .sim-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 16px; overflow: hidden; border: 1px solid rgba(0,0,0,.05); margin-bottom: 24px; }
+    .sim-table thead { background: var(--dark-section); }
+    .sim-table thead th { padding: 20px 28px; text-align: left; font-family: 'Rubik', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .15em; color: rgba(255,255,255,.5); }
+    .sim-table tbody tr { border-bottom: 1px solid #f0ede8; }
+    .sim-table tbody tr:last-child { border-bottom: none; }
+    .sim-table tbody td { padding: 24px 28px; font-size: 15px; }
+    .sim-table .monthly { font-family: 'Rubik', sans-serif; font-weight: 600; color: var(--blue); }
+    .sim-table .arrow { color: #bbb; font-family: 'Rubik', sans-serif; }
+    .sim-table .annual { font-family: 'Rubik', sans-serif; font-size: 22px; font-weight: 700; }
+    .sim-table .formula { font-size: 12px; color: #aaa; }
+
+    .guarantee-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 80px; }
+    .guarantee-card { background: #fff; border-radius: 16px; padding: 40px; border: 1px solid rgba(0,0,0,.05); }
+    .guarantee-card-num { font-family: 'Rubik', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .15em; color: var(--blue); margin-bottom: 20px; }
+    .guarantee-card-title { font-size: 18px; font-weight: 700; margin-bottom: 12px; line-height: 1.4; }
+    .guarantee-card-desc { font-size: 14px; line-height: 1.8; color: #777; }
+    .guarantee-card-val { font-family: 'Rubik', sans-serif; font-size: 28px; font-weight: 700; color: var(--dark); margin: 16px 0 8px; }
+    .guarantee-card-sub { font-size: 12px; color: #aaa; }
+
+    .no-eval { background: var(--dark-section); border-radius: 20px; padding: 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .no-eval-heading { font-size: clamp(28px, 3vw, 44px); font-weight: 700; color: #fff; line-height: 1.4; margin-bottom: 24px; }
+    .no-eval-body { font-size: 15px; line-height: 2; color: rgba(255,255,255,.55); }
+    .no-eval-list { list-style: none; }
+    .no-eval-list li { font-size: 15px; color: rgba(255,255,255,.8); padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,.08); display: flex; gap: 16px; align-items: center; }
+    .no-eval-list li::before { content: '×'; font-family: 'Rubik', sans-serif; font-weight: 700; color: #e07070; flex-shrink: 0; font-size: 18px; }
+    .no-eval-list li:last-child { border-bottom: none; }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <a href="/" class="logo">
+      <img src="/logo.png" alt="アノマリーマーケティング" style="height:36px;">
+    </a>
+    <nav>
+      <a href="/about/philosophy/">会社紹介</a><a href="/job/consultant/">募集内容</a>
+      <a href="/system/salary/">制度・環境</a><a href="/members/">メンバー</a><a href="/flow/">選考</a>
+    </nav>
+    <a href="/entry/" class="btn-entry">エントリーする →</a>
+  </header>
+
+  <div class="page-hero gradient">
+    <div class="hero-deco"></div>
+    <div class="hero-eyebrow">SYSTEM / SALARY</div>
+    <h1 class="page-hero-title">成果が、<br>そのまま<br>給与になる。</h1>
+    <p class="page-hero-sub">評価面談も、上司の印象も、関係ない。</p>
+  </div>
+
+  <section>
+    <div class="section-label reveal">01 <span>——</span> THE MECHANISM</div>
+    <div class="salary-hero-card reveal">
+      <div>
+        <p style="font-size:13px;color:#aaa;margin-bottom:8px;font-family:'Rubik',sans-serif;letter-spacing:.1em;">SALARY FORMULA</p>
+        <p class="salary-big">担当粗利の<br><span>30%</span><br>が、給与。</p>
+      </div>
+      <div>
+        <p class="salary-body">当社の給与は「担当案件の月額粗利 × 30%」を12倍した金額が年収になります。<br><br>役職・年次・評価面談の結果は一切関係ありません。あなたが担当するクライアントの成果が、そのまま自分の年収に直結します。<br><br>成果を出した人が正当に報われる仕組みを、シンプルに実現しています。</p>
+      </div>
+    </div>
+
+    <div class="section-label reveal">02 <span>——</span> SIMULATION</div>
+    <div class="section-header reveal">
+      <h2 class="section-heading">給与シミュレーション</h2>
+      <p class="section-desc">月の担当粗利が変わると、年収がどう変わるかを示したシミュレーションです。</p>
+    </div>
+    <table class="sim-table reveal">
+      <thead>
+        <tr>
+          <th>月額担当粗利</th>
+          <th>計算式</th>
+          <th>月収（手取り前）</th>
+          <th>年収（概算）</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="monthly">100万円</td>
+          <td class="formula">100万 × 30%</td>
+          <td>30万円</td>
+          <td class="annual">360万円</td>
+        </tr>
+        <tr>
+          <td class="monthly">150万円</td>
+          <td class="formula">150万 × 30%</td>
+          <td>45万円</td>
+          <td class="annual">540万円</td>
+        </tr>
+        <tr>
+          <td class="monthly">200万円</td>
+          <td class="formula">200万 × 30%</td>
+          <td>60万円</td>
+          <td class="annual">720万円</td>
+        </tr>
+        <tr>
+          <td class="monthly">250万円</td>
+          <td class="formula">250万 × 30%</td>
+          <td>75万円</td>
+          <td class="annual">900万円</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:13px;color:#aaa;margin-bottom:80px;">※ 粗利 = 当社売上 − 媒体費・外注費等の変動費。上記は月次の粗利が一定の場合の概算です。</p>
+
+    <div class="section-label reveal">03 <span>——</span> GUARANTEE</div>
+    <div class="section-header reveal">
+      <h2 class="section-heading">セーフティネット</h2>
+      <p class="section-desc">挑戦できる環境のために、3つの保証を用意しています。</p>
+    </div>
+    <div class="guarantee-grid reveal">
+      <div class="guarantee-card">
+        <p class="guarantee-card-num">01</p>
+        <p class="guarantee-card-title">最低給与保証</p>
+        <p class="guarantee-card-val">29万円 / 月</p>
+        <p class="guarantee-card-sub">月収</p>
+        <p class="guarantee-card-desc" style="margin-top:16px;">粗利30%の計算結果が29万円を下回った場合でも、月給29万円を保証します。</p>
+      </div>
+      <div class="guarantee-card">
+        <p class="guarantee-card-num">02</p>
+        <p class="guarantee-card-title">前職給与保障制度</p>
+        <p class="guarantee-card-val">1年間</p>
+        <p class="guarantee-card-sub">上限：年収540万円まで</p>
+        <p class="guarantee-card-desc" style="margin-top:16px;">経験者採用の場合、前職給与を1年間保障します（上限540万円）。安心して移籍できます。</p>
+      </div>
+      <div class="guarantee-card">
+        <p class="guarantee-card-num">03</p>
+        <p class="guarantee-card-title">賞与制度</p>
+        <p class="guarantee-card-val">営業利益の3〜5%</p>
+        <p class="guarantee-card-sub">条件：月額粗利100万円以上</p>
+        <p class="guarantee-card-desc" style="margin-top:16px;">月額粗利100万円以上を達成したメンバーに、営業利益の3〜5%を賞与として支給します。</p>
+      </div>
+    </div>
+
+    <div class="section-label reveal">04 <span>——</span> NO EVALUATION</div>
+    <div class="no-eval reveal">
+      <div>
+        <h3 class="no-eval-heading">人事評価を<br>なくした理由。</h3>
+        <p class="no-eval-body">「頑張っている」のに給与が上がらない、「評価面談の印象次第」で決まる給与——そういった曖昧さをなくすために、数字1本に絞りました。</p>
+      </div>
+      <div>
+        <ul class="no-eval-list">
+          <li>年次・役職による給与上限なし</li>
+          <li>評価面談での印象・交渉スキル不要</li>
+          <li>上司の主観的な評価による査定なし</li>
+          <li>給与計算式の「解釈の余地」なし</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="footer-inner">
+      <a href="/" class="footer-logo"><div class="footer-logo-mark"></div><div class="footer-logo-text"><span class="ja">アノマリーマーケティング</span><span class="en">ANOMALY MARKETING INC.</span></div></a>
+      <div class="footer-links"><a href="https://anomaly-marketing.co.jp/" target="_blank">コーポレートサイト</a><a href="#">プライバシーポリシー</a><a href="/">採用トップ</a></div>
+    </div>
+    <p class="footer-copy">© 2026 ANOMALY MARKETING INC.</p>
+  </footer>
+  <script>
+    const h = document.getElementById('header');
+    window.addEventListener('scroll', () => h.classList.toggle('scrolled', window.scrollY > 40));
+    const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);} }), {threshold:.1});
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

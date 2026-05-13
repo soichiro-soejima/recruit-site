@@ -1,0 +1,331 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>人材育成 | アノマリーマーケティング採用</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .concept-block { background: var(--dark-section); border-radius: 20px; padding: 80px 64px; margin-bottom: 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .concept-label { font-family: 'Rubik', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: .2em; color: rgba(113,188,227,.8); margin-bottom: 16px; }
+    .concept-heading { font-size: clamp(24px, 3vw, 40px); font-weight: 700; color: #fff; line-height: 1.4; margin-bottom: 24px; }
+    .concept-body { font-size: 15px; line-height: 2; color: rgba(255,255,255,.55); }
+    .concept-stat { display: flex; flex-direction: column; gap: 24px; }
+    .concept-stat-item { background: rgba(255,255,255,.06); border-radius: 14px; padding: 28px 32px; border: 1px solid rgba(255,255,255,.08); }
+    .concept-stat-num { font-family: 'Rubik', sans-serif; font-size: 36px; font-weight: 700; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 6px; }
+    .concept-stat-label { font-size: 13px; color: rgba(255,255,255,.5); line-height: 1.6; }
+
+    .policy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 80px; }
+    .policy-card { background: #fff; border-radius: 16px; padding: 36px; border: 1px solid rgba(0,0,0,.05); }
+    .policy-num { font-family: 'Rubik', sans-serif; font-size: 32px; font-weight: 700; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 16px; }
+    .policy-title { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+    .policy-desc { font-size: 13px; line-height: 1.8; color: #777; }
+
+    .skill-table { background: #fff; border-radius: 20px; overflow: hidden; border: 1px solid rgba(0,0,0,.05); margin-bottom: 80px; }
+    .skill-table-header { display: grid; grid-template-columns: 200px 1fr 1fr 1fr; background: var(--dark); padding: 20px 32px; gap: 16px; }
+    .skill-table-header span { font-family: 'Rubik', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .1em; color: rgba(255,255,255,.5); }
+    .skill-table-header span:first-child { color: rgba(255,255,255,.3); }
+    .skill-row { display: grid; grid-template-columns: 200px 1fr 1fr 1fr; padding: 24px 32px; gap: 16px; border-bottom: 1px solid #f0ede8; align-items: center; }
+    .skill-row:last-child { border-bottom: none; }
+    .skill-name { font-size: 14px; font-weight: 600; }
+    .skill-bar-wrap { }
+    .skill-bar { height: 6px; background: #f0ede8; border-radius: 100px; overflow: hidden; margin-bottom: 6px; }
+    .skill-bar-fill { height: 100%; border-radius: 100px; background: var(--grad); }
+    .skill-bar-label { font-size: 11px; color: #aaa; }
+
+    .tools-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 80px; }
+    .tool-item { background: #fff; border-radius: 12px; padding: 20px; border: 1px solid rgba(0,0,0,.05); text-align: center; }
+    .tool-name { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+    .tool-category { font-size: 11px; color: #aaa; }
+
+    @media (max-width: 1024px) {
+      .policy-grid { grid-template-columns: repeat(2, 1fr); }
+      .tools-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .concept-block { grid-template-columns: 1fr; gap: 40px; padding: 48px 24px; }
+      .policy-grid { grid-template-columns: 1fr; }
+      .skill-table-header { display: none; }
+      .skill-row { grid-template-columns: 1fr 1fr; gap: 12px; padding: 20px 24px; }
+      .skill-name { grid-column: 1 / -1; }
+      .tools-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <a href="/" class="logo">
+      <img src="/logo.png" alt="アノマリーマーケティング" style="height:36px;">
+    </a>
+    <nav>
+      <div class="nav-item">
+        <a href="/overview/" class="nav-link has-drop">会社紹介</a>
+        <div class="nav-drop">
+          <a href="/overview/">アノマリーの魅力</a>
+          <a href="/business/">事業内容</a>
+          <a href="/message/">代表メッセージ</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/consultant/" class="nav-link">募集内容</a>
+      </div>
+      <div class="nav-item">
+        <a href="/salary/" class="nav-link has-drop">制度・環境</a>
+        <div class="nav-drop">
+          <a href="/salary/">報酬制度</a>
+          <a href="/training/">人材育成</a>
+          <a href="/benefits/">制度・オフィス環境</a>
+          <a href="/welfare/">福利厚生</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/members/" class="nav-link">メンバー</a>
+      </div>
+      <div class="nav-item">
+        <a href="/flow/" class="nav-link has-drop">選考</a>
+        <div class="nav-drop">
+          <a href="/flow/">選考の流れ</a>
+          <a href="/faq/">よくある質問</a>
+        </div>
+      </div>
+    </nav>
+    <a href="/entry/" class="btn-entry">エントリーする →</a>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">ABOUT</p>
+      <div class="mobile-nav-sub">
+        <a href="/overview/">アノマリーの魅力</a>
+        <a href="/business/">事業内容</a>
+        <a href="/message/">代表メッセージ</a>
+      </div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">JOB</p>
+      <div class="mobile-nav-sub"><a href="/consultant/">募集内容</a></div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">SYSTEM</p>
+      <div class="mobile-nav-sub">
+        <a href="/salary/">報酬制度</a>
+        <a href="/training/">人材育成</a>
+        <a href="/benefits/">制度・オフィス環境</a>
+          <a href="/welfare/">福利厚生</a>
+      </div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">MEMBER</p>
+      <div class="mobile-nav-sub"><a href="/members/">メンバー一覧</a></div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">SELECTION</p>
+      <div class="mobile-nav-sub">
+        <a href="/flow/">選考の流れ</a>
+        <a href="/faq/">よくある質問</a>
+      </div>
+    </div>
+    <a href="/entry/" class="mobile-nav-entry">エントリーする →</a>
+  </div>
+
+  <div class="page-hero light">
+    <div class="hero-eyebrow">SYSTEM / TRAINING</div>
+    <h1 class="page-hero-title">人材育成。</h1>
+    <p class="page-hero-sub">事業責任者レベルの人材を、ここから育てる。</p>
+  </div>
+
+  <section>
+    <div class="section-label reveal">01 <span>——</span> CONCEPT</div>
+    <div class="concept-block reveal">
+      <div>
+        <p class="concept-label">TRAINING CONCEPT</p>
+        <h3 class="concept-heading">クライアントの事業成長に<br>コミットできる人材へ。</h3>
+        <p class="concept-body">広告を運用できるだけでは足りない。クライアントの事業全体を把握し、課題を見つけ、自分で打ち手を考えて動ける——そういう「事業責任者レベルの思考」を持つ人材を育てることが、当社の育成の定義です。<br><br>クライアントの成長に本気でコミットし続ける中で、人は事業の本質を学んでいく。それが当社の育成思想です。</p>
+      </div>
+      <div class="concept-stat">
+        <div class="concept-stat-item">
+          <p class="concept-stat-num">一気通貫</p>
+          <p class="concept-stat-label">広告設計からLP改善・営業支援まで<br>一人のコンサルタントが担当する</p>
+        </div>
+        <div class="concept-stat-item">
+          <p class="concept-stat-num">自走型</p>
+          <p class="concept-stat-label">指示を待つのではなく、自分でPDCAを回す<br>セルフマネジメント文化</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-label reveal">02 <span>——</span> POLICY</div>
+    <div class="section-header reveal">
+      <h2 class="section-heading">育成の考え方</h2>
+      <p class="section-desc">マニュアル通りではなく、実戦から学ぶ。それが当社の基本スタンスです。</p>
+    </div>
+    <div class="policy-grid reveal">
+      <div class="policy-card">
+        <p class="policy-num">01</p>
+        <p class="policy-title">OJT中心</p>
+        <p class="policy-desc">座学より実務。入社後はすぐに実案件に関わりながら、先輩のフィードバックを受けて成長していきます。失敗も含めて経験が資産になる環境です。</p>
+      </div>
+      <div class="policy-card">
+        <p class="policy-num">02</p>
+        <p class="policy-title">自分で考えて動く</p>
+        <p class="policy-desc">「次は何をすればいいですか？」と聞く前に、自分で仮説を立てて動くことを求めます。壁にぶつかったときに初めて、一緒に考える時間を持ちます。</p>
+      </div>
+      <div class="policy-card">
+        <p class="policy-num">03</p>
+        <p class="policy-title">素直に吸収する</p>
+        <p class="policy-desc">フィードバックを素直に受け取り、すぐ試す。それだけで成長スピードは大きく変わります。「言われたことをやる」ではなく「なぜそうするか」まで理解する姿勢を大切にしています。</p>
+      </div>
+    </div>
+
+    <div class="section-label reveal">03 <span>——</span> SKILL MAP</div>
+    <div class="section-header reveal">
+      <h2 class="section-heading">習得できるスキル</h2>
+      <p class="section-desc">一気通貫モデルで担当するため、広告運用にとどまらない広範なスキルを積むことができます。</p>
+    </div>
+    <div class="skill-table reveal">
+      <div class="skill-table-header">
+        <span>スキル</span>
+        <span>入社〜3ヶ月</span>
+        <span>3〜12ヶ月</span>
+        <span>1年以上</span>
+      </div>
+      <div class="skill-row">
+        <p class="skill-name">広告運用（Google・Meta）</p>
+        <div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-bar-fill" style="width:60%"></div></div><p class="skill-bar-label">基本操作・入稿</p></div>
+        <div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div><p class="skill-bar-label">改善・最適化</p></div>
+        <div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-bar-fill" style="width:100%"></div></div><p class="skill-bar-label">戦略設計</p></div>
+      </div>
+      <div class="skill-row">
+        <p class="skill-name">LP改善・CVR分析</p>
+        <div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-bar-fill" style="width:40%"></div></div><p class="skill-bar-label">課題発見</p></div>
+        <div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-bar-fill" style="width:70%"></div></div><p class="skill-bar-label">改善提案・実行</p></div>
+        <div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-bar-fill" style="width:95%"></div></div><p class="skill-bar-label">A/Bテスト設計</p></div>
+      </div>
+      <div class="skill-row">
+        <p class="skill-name">データ分析（GA4・Looker）</p>
+        <div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-bar-fill" style="width:50%"></div></div><p class="skill-bar-label">基本指標の読み取り</p></div>
+        <div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div><p class="skill-bar-label">レポート作成</p></div>
+        <div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-bar-fill" style="width:100%"></div></div><p class="skill-bar-label">ダッシュボード設計</p></div>
+      </div>
+      <div class="skill-row">
+        <p class="skill-name">クライアント折衝・営業支援</p>
+        <div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-bar-fill" style="width:30%"></div></div><p class="skill-bar-label">報告・連絡</p></div>
+        <div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-bar-fill" style="width:65%"></div></div><p class="skill-bar-label">提案・折衝</p></div>
+        <div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-bar-fill" style="width:90%"></div></div><p class="skill-bar-label">商談同席・営業設計</p></div>
+      </div>
+      <div class="skill-row">
+        <p class="skill-name">事業思考・KPI設計</p>
+        <div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-bar-fill" style="width:20%"></div></div><p class="skill-bar-label">概念理解</p></div>
+        <div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-bar-fill" style="width:55%"></div></div><p class="skill-bar-label">KPI把握・提案</p></div>
+        <div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div><p class="skill-bar-label">戦略立案・実行</p></div>
+      </div>
+    </div>
+
+    <div class="section-label reveal">04 <span>——</span> TOOLS</div>
+    <div class="section-header reveal">
+      <h2 class="section-heading">使用ツール</h2>
+    </div>
+    <div class="tools-grid reveal">
+      <div class="tool-item">
+        <p class="tool-name">Google 広告</p>
+        <p class="tool-category">広告運用</p>
+      </div>
+      <div class="tool-item">
+        <p class="tool-name">Meta 広告</p>
+        <p class="tool-category">広告運用</p>
+      </div>
+      <div class="tool-item">
+        <p class="tool-name">Yahoo! 広告</p>
+        <p class="tool-category">広告運用</p>
+      </div>
+      <div class="tool-item">
+        <p class="tool-name">GA4</p>
+        <p class="tool-category">アクセス解析</p>
+      </div>
+      <div class="tool-item">
+        <p class="tool-name">Looker Studio</p>
+        <p class="tool-category">レポーティング</p>
+      </div>
+      <div class="tool-item">
+        <p class="tool-name">Google Tag Manager</p>
+        <p class="tool-category">タグ管理</p>
+      </div>
+      <div class="tool-item">
+        <p class="tool-name">Notion</p>
+        <p class="tool-category">ナレッジ管理</p>
+      </div>
+      <div class="tool-item">
+        <p class="tool-name">Slack</p>
+        <p class="tool-category">コミュニケーション</p>
+      </div>
+    </div>
+  </section>
+
+    <footer>
+    <div class="footer-sitemap">
+      <div class="footer-col">
+        <p class="footer-col-head">会社紹介</p>
+        <a href="/overview/">アノマリーの魅力</a>
+        <a href="/business/">事業内容</a>
+        <a href="/message/">代表メッセージ</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">募集内容</p>
+        <a href="/consultant/">Web広告コンサルタント</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">制度・環境</p>
+        <a href="/salary/">報酬制度</a>
+        <a href="/training/">人材育成</a>
+        <a href="/benefits/">制度・オフィス環境</a>
+        <a href="/welfare/">福利厚生</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">メンバー</p>
+        <a href="/members/">メンバー紹介</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">選考について</p>
+        <a href="/flow/">選考の流れ</a>
+        <a href="/faq/">よくある質問</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">エントリー</p>
+        <a href="/entry/">エントリーする</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a href="/" class="footer-logo">
+        <img src="/logo.png" alt="アノマリーマーケティング" style="height:28px;filter:brightness(0) invert(1);opacity:.6;">
+      </a>
+      <div class="footer-bottom-right">
+        <a href="#" class="footer-policy">プライバシーポリシー</a>
+        <p class="footer-copy">© 2026 ANOMALY MARKETING INC.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40));
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileNav.classList.toggle('open');
+      document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+    });
+    mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileNav.classList.remove('open');
+      document.body.style.overflow = '';
+    }));
+    const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); obs.unobserve(x.target); } }), {threshold:.1});
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

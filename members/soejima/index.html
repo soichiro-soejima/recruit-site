@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>副島聡一郎インタビュー | アノマリーマーケティング採用</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .interview-layout { display: grid; grid-template-columns: 320px 1fr; gap: 64px; align-items: start; margin-bottom: 80px; }
+    .interview-sidebar { position: sticky; top: 100px; }
+    .interview-photo { aspect-ratio: 3/4; background: linear-gradient(160deg, #71BCE3, #9EC877); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-family: 'Rubik', sans-serif; font-size: 120px; font-weight: 700; color: rgba(255,255,255,.3); margin-bottom: 28px; }
+    .interview-role { font-family: 'Rubik', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: .2em; color: var(--blue); margin-bottom: 12px; }
+    .interview-name { font-size: 28px; font-weight: 700; margin-bottom: 4px; }
+    .interview-en { font-family: 'Rubik', sans-serif; font-size: 12px; letter-spacing: .12em; color: #aaa; margin-bottom: 20px; }
+    .interview-tag { display: inline-block; font-size: 12px; color: #777; background: var(--bg); border-radius: 100px; padding: 6px 14px; margin: 4px 4px 0 0; border: 1px solid #eee; }
+
+    .qa-block { margin-bottom: 64px; padding-bottom: 64px; border-bottom: 1px solid #eee; }
+    .qa-block:last-child { border-bottom: none; margin-bottom: 0; }
+    .qa-q-text { font-size: 22px; font-weight: 700; line-height: 1.5; margin-bottom: 24px; padding-left: 20px; border-left: 4px solid; border-image: linear-gradient(to bottom, var(--blue), var(--green)) 1; }
+    .qa-a-text { font-size: 15px; line-height: 2.1; color: #555; }
+    .qa-a-text p + p { margin-top: 20px; }
+
+    .nav-members { display: flex; justify-content: space-between; align-items: center; padding: 32px 0; border-top: 1px solid #eee; margin-top: 80px; }
+    .nav-member-link { font-family: 'Rubik', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: .1em; color: var(--blue); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+    @media (max-width: 768px) { .interview-layout { grid-template-columns: 1fr; gap: 40px; } .interview-sidebar { position: static; } .interview-photo { max-width: 260px; } }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <a href="/" class="logo">
+      <img src="/logo.png" alt="アノマリーマーケティング" style="height:36px;">
+    </a>
+    <nav>
+      <div class="nav-item">
+        <a href="/overview/" class="nav-link has-drop">会社紹介</a>
+        <div class="nav-drop">
+          <a href="/overview/">アノマリーの魅力</a>
+          <a href="/business/">事業内容</a>
+          <a href="/message/">代表メッセージ</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/consultant/" class="nav-link">募集内容</a>
+      </div>
+      <div class="nav-item">
+        <a href="/salary/" class="nav-link has-drop">制度・環境</a>
+        <div class="nav-drop">
+          <a href="/salary/">報酬制度</a>
+          <a href="/training/">人材育成</a>
+          <a href="/benefits/">制度・オフィス環境</a>
+          <a href="/welfare/">福利厚生</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/members/" class="nav-link">メンバー</a>
+      </div>
+      <div class="nav-item">
+        <a href="/flow/" class="nav-link has-drop">選考</a>
+        <div class="nav-drop">
+          <a href="/flow/">選考の流れ</a>
+          <a href="/faq/">よくある質問</a>
+        </div>
+      </div>
+    </nav>
+    <a href="/entry/" class="btn-entry">エントリーする →</a>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">ABOUT</p>
+      <div class="mobile-nav-sub">
+        <a href="/overview/">アノマリーの魅力</a>
+        <a href="/business/">事業内容</a>
+        <a href="/message/">代表メッセージ</a>
+      </div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">JOB</p>
+      <div class="mobile-nav-sub"><a href="/consultant/">募集内容</a></div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">SYSTEM</p>
+      <div class="mobile-nav-sub">
+        <a href="/salary/">報酬制度</a>
+        <a href="/training/">人材育成</a>
+        <a href="/benefits/">制度・オフィス環境</a>
+          <a href="/welfare/">福利厚生</a>
+      </div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">MEMBER</p>
+      <div class="mobile-nav-sub"><a href="/members/">メンバー一覧</a></div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">SELECTION</p>
+      <div class="mobile-nav-sub">
+        <a href="/flow/">選考の流れ</a>
+        <a href="/faq/">よくある質問</a>
+      </div>
+    </div>
+    <a href="/entry/" class="mobile-nav-entry">エントリーする →</a>
+  </div>
+
+  <div class="page-hero dark">
+    <div class="hero-deco"></div>
+    <div class="hero-eyebrow">MEMBER / 02</div>
+    <h1 class="page-hero-title">クライアントのためで<br>あれば、なんでも<br>やっていい。</h1>
+    <p class="page-hero-sub">執行役員 副島 聡一郎</p>
+  </div>
+
+  <section>
+    <div class="interview-layout reveal">
+      <div class="interview-sidebar">
+        <div class="interview-photo"><img src="/members/soejima/photo.png" alt="副島聡一郎"></div>
+        <p class="interview-role">EXECUTIVE OFFICER</p>
+        <p class="interview-name">副島 聡一郎</p>
+        <p class="interview-en">SOICHIRO SOEJIMA</p>
+        <div>
+          <span class="interview-tag">執行役員</span>
+          <span class="interview-tag">広告運用</span>
+          <span class="interview-tag">営業</span>
+          <span class="interview-tag">コンサルティング</span>
+        </div>
+      </div>
+      <div class="interview-body">
+        <div class="qa-block">
+          <p class="qa-q-text">入社前、どんな仕事をしていましたか？</p>
+          <div class="qa-a-text">
+            <p>前職でもWebマーケティングに携わっていました。ただ、どうしても「広告を出して終わり」という仕事の仕方に限界を感じていた。クライアントから感謝されることはあっても、本当に売上につながったかどうかを追えていない。そのもどかしさがずっとありました。</p>
+            <p>アノマリーマーケティングに出会ったのは、小田との縁がきっかけです。「クライアントの契約まで責任を持つ」という話を聞いたとき、自分がやりたかった仕事はこれだと思いました。</p>
+          </div>
+        </div>
+        <div class="qa-block">
+          <p class="qa-q-text">実際に入ってみてどうでしたか？</p>
+          <div class="qa-a-text">
+            <p>思った以上に「自分で考えて動く」ことが求められます。指示待ちでいると仕事は来ない。でも逆に言えば、「クライアントのためになるなら」という判断軸があれば、何をやってもいい。展示会に同行する、営業に同席する、サービスを自分で体験してみる——そういう動き方を自分で決めて実行できる環境があります。</p>
+            <p>最初は「どこまでやっていいんだろう」と思うこともありましたが、「クライアントのためであればなんでもやっていい」という言葉が一番腹落ちしています。この軸さえあれば、迷いが少ない。</p>
+          </div>
+        </div>
+        <div class="qa-block">
+          <p class="qa-q-text">給与の仕組みについて正直に教えてください。</p>
+          <div class="qa-a-text">
+            <p>粗利30%という仕組みは、シンプルで分かりやすい。評価面談での印象や上司との関係性で給与が変わることがないので、そのぶん仕事に集中できます。担当案件の成果が直接自分の年収に返ってくるので、モチベーションが維持しやすい。</p>
+            <p>正直、成果が出るまでは不安もありました。でも「最低29万円の保証がある」という安心感があったのと、前職給与保障があったことで、心理的なプレッシャーなく仕事に入れました。</p>
+          </div>
+        </div>
+        <div class="qa-block">
+          <p class="qa-q-text">どんな人に来てほしいですか？</p>
+          <div class="qa-a-text">
+            <p>「言われたことをちゃんとやる」だけでは少し物足りないかもしれません。自分でクライアントの課題を見つけて、自分で打ち手を考えて、自分で動ける人。そういう自走できる人と一緒に仕事がしたい。</p>
+            <p>広告の経験があるに越したことはないですが、それより「クライアントのために動けるか」「素直に吸収できるか」のほうが大事だと思います。うちは少人数なので、一人の影響力が大きい。それをポジティブに受け取れる人には、すごく向いている環境です。</p>
+          </div>
+        </div>
+
+        <div class="nav-members">
+          <a href="/members/oda/" class="nav-member-link">← 小田 峻</a>
+          <a href="/members/" style="font-size:13px;color:#aaa;text-decoration:none;">メンバー一覧に戻る</a>
+          <a href="/members/ito/" class="nav-member-link">伊藤 一輝 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+    <footer>
+    <div class="footer-sitemap">
+      <div class="footer-col">
+        <p class="footer-col-head">会社紹介</p>
+        <a href="/overview/">アノマリーの魅力</a>
+        <a href="/business/">事業内容</a>
+        <a href="/message/">代表メッセージ</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">募集内容</p>
+        <a href="/consultant/">Web広告コンサルタント</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">制度・環境</p>
+        <a href="/salary/">報酬制度</a>
+        <a href="/training/">人材育成</a>
+        <a href="/benefits/">制度・オフィス環境</a>
+        <a href="/welfare/">福利厚生</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">メンバー</p>
+        <a href="/members/">メンバー紹介</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">選考について</p>
+        <a href="/flow/">選考の流れ</a>
+        <a href="/faq/">よくある質問</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">エントリー</p>
+        <a href="/entry/">エントリーする</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a href="/" class="footer-logo">
+        <img src="/logo.png" alt="アノマリーマーケティング" style="height:28px;filter:brightness(0) invert(1);opacity:.6;">
+      </a>
+      <div class="footer-bottom-right">
+        <a href="#" class="footer-policy">プライバシーポリシー</a>
+        <p class="footer-copy">© 2026 ANOMALY MARKETING INC.</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40));
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileNav.classList.toggle('open');
+      document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+    });
+    mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileNav.classList.remove('open');
+      document.body.style.overflow = '';
+    }));
+    const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); obs.unobserve(x.target); } }), {threshold:.1});
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

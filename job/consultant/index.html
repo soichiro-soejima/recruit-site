@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web広告コンサルタント | アノマリーマーケティング採用</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .job-summary { background: #fff; border-radius: 20px; padding: 64px; margin-bottom: 24px; border: 1px solid rgba(0,0,0,.05); }
+    .job-summary-title { font-size: 28px; font-weight: 700; margin-bottom: 16px; }
+    .job-summary-lead { font-size: 15px; line-height: 2; color: #555; margin-bottom: 40px; }
+    .task-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .task-item { display: flex; gap: 12px; align-items: flex-start; padding: 16px; background: var(--bg); border-radius: 10px; }
+    .task-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--grad); margin-top: 6px; flex-shrink: 0; background: var(--blue); }
+    .task-text { font-size: 14px; line-height: 1.6; }
+
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 80px; }
+    .skills-card { background: #fff; border-radius: 16px; padding: 40px; border: 1px solid rgba(0,0,0,.05); }
+    .skills-card-label { font-family: 'Rubik', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: .2em; margin-bottom: 24px; }
+    .required-label { color: var(--blue); }
+    .welcome-label { color: var(--green); }
+    .skill-item { font-size: 14px; line-height: 1.7; padding: 10px 0; border-bottom: 1px solid #f0ede8; display: flex; gap: 10px; }
+    .skill-item:last-child { border-bottom: none; }
+    .skill-item::before { content: '—'; color: var(--blue); flex-shrink: 0; }
+
+    .roadmap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-bottom: 80px; position: relative; }
+    .roadmap::before { content: ''; position: absolute; top: 40px; left: 80px; right: 80px; height: 2px; background: linear-gradient(to right, var(--blue), var(--green)); z-index: 0; }
+    .roadmap-step { text-align: center; position: relative; z-index: 1; padding: 0 16px; }
+    .roadmap-circle { width: 80px; height: 80px; border-radius: 50%; background: var(--grad); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-family: 'Rubik', sans-serif; font-size: 12px; font-weight: 700; color: #fff; letter-spacing: .05em; box-shadow: 0 4px 20px rgba(113,188,227,.4); }
+    .roadmap-period { font-family: 'Rubik', sans-serif; font-size: 11px; font-weight: 600; color: var(--blue); letter-spacing: .1em; margin-bottom: 8px; }
+    .roadmap-desc { font-size: 13px; line-height: 1.6; color: #666; }
+
+    .spec-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 16px; overflow: hidden; border: 1px solid rgba(0,0,0,.05); }
+    .spec-table tr { border-bottom: 1px solid #f0ede8; }
+    .spec-table tr:last-child { border-bottom: none; }
+    .spec-table th { background: var(--bg); padding: 20px 28px; text-align: left; font-size: 13px; font-weight: 600; width: 200px; color: #555; }
+    .spec-table td { padding: 20px 28px; font-size: 14px; line-height: 1.7; }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <a href="/" class="logo">
+      <img src="/logo.png" alt="アノマリーマーケティング" style="height:36px;">
+    </a>
+    <nav>
+      <a href="/about/philosophy/">会社紹介</a><a href="/job/consultant/">募集内容</a>
+      <a href="/system/salary/">制度・環境</a><a href="/members/">メンバー</a><a href="/flow/">選考</a>
+    </nav>
+    <a href="/entry/" class="btn-entry">エントリーする →</a>
+  </header>
+
+  <div class="page-hero dark">
+    <div class="hero-deco"></div>
+    <div class="hero-eyebrow">JOB / CONSULTANT</div>
+    <h1 class="page-hero-title">Web広告コンサルタント</h1>
+    <p class="page-hero-sub">広告運用から営業まで。クライアントの事業成長を一気通貫で担う。</p>
+  </div>
+
+  <section>
+    <div class="section-label reveal">01 <span>——</span> JOB DESCRIPTION</div>
+    <div class="job-summary reveal">
+      <h3 class="job-summary-title">仕事内容</h3>
+      <p class="job-summary-lead">Web広告及びWebマーケティングの企画・提案・実行を一気通貫で担当。初期ヒアリングから提案資料作成、受注後の施策立案・運用・振り返りまでをワンストップで担当する。マーケター視点とビジネス視点の両輪で考える力が養われる。</p>
+      <div class="task-list">
+        <div class="task-item"><div class="task-dot"></div><p class="task-text">Google・Meta・Yahoo!広告の設計・運用・改善</p></div>
+        <div class="task-item"><div class="task-dot"></div><p class="task-text">LP・クリエイティブの制作ディレクション</p></div>
+        <div class="task-item"><div class="task-dot"></div><p class="task-text">既存クライアントへの改善提案・レポーティング</p></div>
+        <div class="task-item"><div class="task-dot"></div><p class="task-text">新規商談・クロージング</p></div>
+        <div class="task-item"><div class="task-dot"></div><p class="task-text">CRM・営業プロセス改善提案</p></div>
+        <div class="task-item"><div class="task-dot"></div><p class="task-text">月次KPI管理・施策の優先順位付け</p></div>
+      </div>
+    </div>
+
+    <div class="section-label reveal">02 <span>——</span> REQUIREMENTS</div>
+    <div class="skills-grid reveal">
+      <div class="skills-card">
+        <p class="skills-card-label required-label">REQUIRED — 必須スキル</p>
+        <div class="skill-item">Google広告・Yahoo!広告・Meta広告の運用経験</div>
+        <div class="skill-item">GA4・Looker Studio・GTMの操作経験</div>
+        <div class="skill-item">顧客対応・制作ディレクション経験</div>
+      </div>
+      <div class="skills-card">
+        <p class="skills-card-label welcome-label">WELCOME — 歓迎スキル</p>
+        <div class="skill-item">新規商談・クロージング経験</div>
+        <div class="skill-item">エンジニア領域の理解</div>
+        <div class="skill-item">広告周辺以外のWebマーケティングスキル</div>
+        <div class="skill-item">AI活用能力</div>
+      </div>
+    </div>
+
+    <div class="section-label reveal">03 <span>——</span> ROADMAP</div>
+    <div class="section-header reveal">
+      <h2 class="section-heading">入社後ロードマップ</h2>
+      <p class="section-desc">段階的に担当範囲を広げながら、自分のペースで成長できる環境を用意している。</p>
+    </div>
+    <div class="roadmap reveal">
+      <div class="roadmap-step">
+        <div class="roadmap-circle">1M</div>
+        <p class="roadmap-period">1ヶ月目</p>
+        <p class="roadmap-desc">既存案件の引き継ぎ・社内ツール習得・クライアント同行</p>
+      </div>
+      <div class="roadmap-step">
+        <div class="roadmap-circle">3M</div>
+        <p class="roadmap-period">3ヶ月目</p>
+        <p class="roadmap-desc">担当案件を持ち始める・独立したPDCA実行</p>
+      </div>
+      <div class="roadmap-step">
+        <div class="roadmap-circle">6M</div>
+        <p class="roadmap-period">6ヶ月目</p>
+        <p class="roadmap-desc">粗利目標設定・達成に向けた戦略立案</p>
+      </div>
+      <div class="roadmap-step">
+        <div class="roadmap-circle">1Y+</div>
+        <p class="roadmap-period">1年目〜</p>
+        <p class="roadmap-desc">新規商談参加・担当案件の拡大</p>
+      </div>
+    </div>
+
+    <div class="section-label reveal">04 <span>——</span> SPEC</div>
+    <table class="spec-table reveal">
+      <tr><th>給与</th><td>年収348〜900万円（担当案件の粗利30%）<br><small style="color:#999">最低保証：月給29万円 / 経験者は前職給与保障制度あり</small></td></tr>
+      <tr><th>勤務地</th><td>愛知県名古屋市中区栄2丁目2-17（地下鉄伏見駅徒歩5分）</td></tr>
+      <tr><th>雇用形態</th><td>正社員</td></tr>
+      <tr><th>勤務時間</th><td>平日 9:30〜18:30</td></tr>
+      <tr><th>試用期間</th><td>6ヶ月（期間中の給与・待遇に変更なし）</td></tr>
+      <tr><th>休日・休暇</th><td>完全週休二日制（土日祝）・年末年始・夏季・GW・有給休暇（半日休暇あり）</td></tr>
+      <tr><th>保険</th><td>健康保険・厚生年金保険・雇用保険・労災保険</td></tr>
+    </table>
+  </section>
+  <footer>
+    <div class="footer-inner">
+      <a href="/" class="footer-logo"><div class="footer-logo-mark"></div><div class="footer-logo-text"><span class="ja">アノマリーマーケティング</span><span class="en">ANOMALY MARKETING INC.</span></div></a>
+      <div class="footer-links"><a href="https://anomaly-marketing.co.jp/" target="_blank">コーポレートサイト</a><a href="#">プライバシーポリシー</a><a href="/">採用トップ</a></div>
+    </div>
+    <p class="footer-copy">© 2026 ANOMALY MARKETING INC.</p>
+  </footer>
+  <script>
+    const h = document.getElementById('header');
+    window.addEventListener('scroll', () => h.classList.toggle('scrolled', window.scrollY > 40));
+    const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);} }), {threshold:.1});
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

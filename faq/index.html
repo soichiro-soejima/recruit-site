@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>よくある質問 | アノマリーマーケティング採用</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .faq-category { margin-bottom: 64px; }
+    .faq-category-label { font-family: 'Rubik', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: .25em; color: var(--blue); margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid #eee; }
+    .faq-item { border-bottom: 1px solid #f0ede8; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; cursor: pointer; gap: 24px; }
+    .faq-q-text { font-size: 16px; font-weight: 600; line-height: 1.5; }
+    .faq-icon { width: 32px; height: 32px; border-radius: 50%; background: var(--bg); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background .2s; }
+    .faq-icon svg { width: 16px; height: 16px; stroke: var(--blue); fill: none; stroke-width: 2; transition: transform .3s; }
+    .faq-item.open .faq-icon { background: var(--blue); }
+    .faq-item.open .faq-icon svg { stroke: #fff; transform: rotate(45deg); }
+    .faq-a { font-size: 14px; line-height: 2; color: #555; padding-bottom: 24px; display: none; }
+    .faq-item.open .faq-a { display: block; }
+
+    @media (max-width: 768px) {
+      .faq-q-text { font-size: 15px; }
+    }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <a href="/" class="logo">
+      <img src="/logo.png" alt="アノマリーマーケティング" style="height:36px;">
+    </a>
+    <nav>
+      <div class="nav-item">
+        <a href="/overview/" class="nav-link has-drop">会社紹介</a>
+        <div class="nav-drop">
+          <a href="/overview/">アノマリーの魅力</a>
+          <a href="/business/">事業内容</a>
+          <a href="/message/">代表メッセージ</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/consultant/" class="nav-link">募集内容</a>
+      </div>
+      <div class="nav-item">
+        <a href="/salary/" class="nav-link has-drop">制度・環境</a>
+        <div class="nav-drop">
+          <a href="/salary/">報酬制度</a>
+          <a href="/training/">人材育成</a>
+          <a href="/benefits/">制度・オフィス環境</a>
+          <a href="/welfare/">福利厚生</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/members/" class="nav-link">メンバー</a>
+      </div>
+      <div class="nav-item">
+        <a href="/flow/" class="nav-link has-drop">選考</a>
+        <div class="nav-drop">
+          <a href="/flow/">選考の流れ</a>
+          <a href="/faq/">よくある質問</a>
+        </div>
+      </div>
+    </nav>
+    <a href="/entry/" class="btn-entry">エントリーする →</a>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">ABOUT</p>
+      <div class="mobile-nav-sub">
+        <a href="/overview/">アノマリーの魅力</a>
+        <a href="/business/">事業内容</a>
+        <a href="/message/">代表メッセージ</a>
+      </div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">JOB</p>
+      <div class="mobile-nav-sub"><a href="/consultant/">募集内容</a></div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">SYSTEM</p>
+      <div class="mobile-nav-sub">
+        <a href="/salary/">報酬制度</a>
+        <a href="/training/">人材育成</a>
+        <a href="/benefits/">制度・オフィス環境</a>
+          <a href="/welfare/">福利厚生</a>
+      </div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">MEMBER</p>
+      <div class="mobile-nav-sub"><a href="/members/">メンバー一覧</a></div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">SELECTION</p>
+      <div class="mobile-nav-sub">
+        <a href="/flow/">選考の流れ</a>
+        <a href="/faq/">よくある質問</a>
+      </div>
+    </div>
+    <a href="/entry/" class="mobile-nav-entry">エントリーする →</a>
+  </div>
+
+  <div class="page-hero light">
+    <div class="hero-eyebrow">SELECTION / FAQ</div>
+    <h1 class="page-hero-title">よくある質問。</h1>
+    <p class="page-hero-sub">応募前に気になることを、まとめました。</p>
+  </div>
+
+  <section>
+    <div class="faq-category reveal">
+      <p class="faq-category-label">ABOUT THE JOB — 仕事内容について</p>
+      <div class="faq-item">
+        <div class="faq-q"><p class="faq-q-text">広告運用の経験がなくても応募できますか？</p><div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <p class="faq-a">現在募集しているWeb広告コンサルタントポジションは、Google・Meta・Yahoo!広告いずれかの運用経験を必須としています。ただし、経験年数や担当規模は問いません。スタンスや伸びしろを重視しています。</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><p class="faq-q-text">一気通貫とはどういう意味ですか？</p><div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <p class="faq-a">初期ヒアリングから提案・受注・広告運用・LP改善・営業支援・レポーティングまで、同一のコンサルタントが担当します。分業ではなく、クライアントとの関係を一人で管理するモデルです。担当できる領域が広い分、クライアントへの影響力が大きく、成長機会も多くなります。</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><p class="faq-q-text">入社直後から営業もやらないといけないですか？</p><div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <p class="faq-a">入社後1〜3ヶ月は既存案件の引き継ぎと社内ツール習得、クライアント同行から始まります。新規商談への参加は入社から1年目以降を目安としており、いきなり飛び込み営業をすることはありません。</p>
+      </div>
+    </div>
+
+    <div class="faq-category reveal">
+      <p class="faq-category-label">ABOUT SALARY — 給与・待遇について</p>
+      <div class="faq-item">
+        <div class="faq-q"><p class="faq-q-text">粗利30%の計算式を具体的に教えてください。</p><div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <p class="faq-a">粗利 = 当社売上 − 媒体費・外注費などの変動費。その月の担当案件の粗利合計 × 30% が月収になります。例：月額粗利150万円 × 30% = 月収45万円 → 年収540万円。</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><p class="faq-q-text">最低保証の29万円はいつまで適用されますか？</p><div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <p class="faq-a">粗利30%の計算結果が29万円を下回った月については、月給29万円を保証します。期間の上限は設けていませんが、3ヶ月を超えて下回る場合は個別に状況を確認し、サポートの方針を話し合います。</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><p class="faq-q-text">前職給与保障制度について教えてください。</p><div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <p class="faq-a">経験者採用の場合、入社から1年間、前職の月給を保障します（上限：月額45万円 / 年収540万円相当）。粗利30%の計算結果が前職月給を下回った場合に補填する形で適用されます。</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><p class="faq-q-text">賞与はありますか？</p><div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <p class="faq-a">あります。月額粗利100万円以上を達成しているメンバーを対象に、営業利益の3〜5%を賞与として支給します。支給時期・金額は業績に応じて決定します。</p>
+      </div>
+    </div>
+
+    <div class="faq-category reveal">
+      <p class="faq-category-label">ABOUT ENVIRONMENT — 環境・働き方について</p>
+      <div class="faq-item">
+        <div class="faq-q"><p class="faq-q-text">リモートワークはできますか？</p><div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <p class="faq-a">現在はフル出社を基本としています。少人数組織として、チームでの密な連携や情報共有を重視しているためです。特別な事情がある場合は個別にご相談ください。</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><p class="faq-q-text">残業はどのくらいありますか？</p><div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <p class="faq-a">所定労働時間は9:30〜18:30です。月によって繁閑があり、多い月は月20〜30時間程度になることもあります。ただし「忙しさ自慢」を良しとする文化はなく、効率よく成果を出すことを重視しています。</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><p class="faq-q-text">名古屋以外に在住していても応募できますか？</p><div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <p class="faq-a">フル出社のため、名古屋への転居が前提となります。転居に伴う費用については個別にご相談ください。</p>
+      </div>
+    </div>
+
+    <div class="faq-category reveal">
+      <p class="faq-category-label">ABOUT SELECTION — 選考について</p>
+      <div class="faq-item">
+        <div class="faq-q"><p class="faq-q-text">選考にはどのくらいの期間がかかりますか？</p><div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <p class="faq-a">エントリー → 書類選考・適性テスト → 面接（1〜2回）→ 採用決定という流れで、最短2〜3週間を目安としています。スケジュールの都合に合わせて柔軟に対応します。</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><p class="faq-q-text">在職中でも応募できますか？</p><div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <p class="faq-a">もちろんです。在職中の方が多く応募されています。面接日程の調整も柔軟に対応しますので、まずはエントリーしてください。</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><p class="faq-q-text">カジュアル面談と選考面接は何が違いますか？</p><div class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></div>
+        <p class="faq-a">カジュアル面談は選考とは別の場で、会社の雰囲気・仕事内容・制度などを気軽に聞いていただける機会です。評価・合否判定は行いません。「まだ転職を決めていない」方でも大歓迎です。エントリーフォームの備考欄に「カジュアル面談希望」とご記入ください。</p>
+      </div>
+    </div>
+  </section>
+
+    <footer>
+    <div class="footer-sitemap">
+      <div class="footer-col">
+        <p class="footer-col-head">会社紹介</p>
+        <a href="/overview/">アノマリーの魅力</a>
+        <a href="/business/">事業内容</a>
+        <a href="/message/">代表メッセージ</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">募集内容</p>
+        <a href="/consultant/">Web広告コンサルタント</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">制度・環境</p>
+        <a href="/salary/">報酬制度</a>
+        <a href="/training/">人材育成</a>
+        <a href="/benefits/">制度・オフィス環境</a>
+        <a href="/welfare/">福利厚生</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">メンバー</p>
+        <a href="/members/">メンバー紹介</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">選考について</p>
+        <a href="/flow/">選考の流れ</a>
+        <a href="/faq/">よくある質問</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">エントリー</p>
+        <a href="/entry/">エントリーする</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a href="/" class="footer-logo">
+        <img src="/logo.png" alt="アノマリーマーケティング" style="height:28px;filter:brightness(0) invert(1);opacity:.6;">
+      </a>
+      <div class="footer-bottom-right">
+        <a href="#" class="footer-policy">プライバシーポリシー</a>
+        <p class="footer-copy">© 2026 ANOMALY MARKETING INC.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40));
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileNav.classList.toggle('open');
+      document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+    });
+    mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileNav.classList.remove('open');
+      document.body.style.overflow = '';
+    }));
+    const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); obs.unobserve(x.target); } }), {threshold:.1});
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    document.querySelectorAll('.faq-q').forEach(q => {
+      q.addEventListener('click', () => q.closest('.faq-item').classList.toggle('open'));
+    });
+  </script>
+</body>
+</html>

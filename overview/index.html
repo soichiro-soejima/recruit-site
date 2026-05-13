@@ -1,0 +1,324 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>アノマリーの魅力 | アノマリーマーケティング採用</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    /* INTRO */
+    .intro-block {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+      align-items: center; margin-bottom: 80px;
+      background: #fff; border-radius: 20px; padding: 64px;
+      border: 1px solid rgba(0,0,0,.05);
+    }
+    .intro-heading { font-size: clamp(24px, 3vw, 38px); font-weight: 700; line-height: 1.5; margin-bottom: 24px; letter-spacing: -.02em; }
+    .intro-body { font-size: 15px; line-height: 2.1; color: #555; }
+
+    /* FEATURES */
+    .features-list { display: flex; flex-direction: column; gap: 0; margin-bottom: 80px; }
+    .feature-item {
+      display: grid; grid-template-columns: 80px 1fr 1fr;
+      gap: 40px; align-items: start;
+      padding: 56px 0; border-bottom: 1px solid #eee;
+    }
+    .feature-item:last-child { border-bottom: none; }
+    .feature-num { font-family: 'Rubik', sans-serif; font-size: 48px; font-weight: 700; color: #eee; line-height: 1; }
+    .feature-heading { font-size: 22px; font-weight: 700; line-height: 1.4; margin-bottom: 8px; }
+    .feature-sub { font-family: 'Rubik', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .15em; color: var(--blue); margin-bottom: 16px; }
+    .feature-body { font-size: 14px; line-height: 2; color: #555; }
+
+    /* FIT */
+    .fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 80px; }
+    .fit-card { border-radius: 20px; padding: 48px; }
+    .fit-card.fit-yes { background: #fff; border: 1px solid rgba(0,0,0,.05); }
+    .fit-card.fit-no { background: var(--dark-section); }
+    .fit-label { font-family: 'Rubik', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .2em; margin-bottom: 24px; }
+    .fit-yes .fit-label { color: var(--green); }
+    .fit-no .fit-label { color: rgba(255,255,255,.3); }
+    .fit-heading { font-size: 20px; font-weight: 700; margin-bottom: 24px; line-height: 1.4; }
+    .fit-yes .fit-heading { color: var(--dark); }
+    .fit-no .fit-heading { color: #fff; }
+    .fit-list { list-style: none; }
+    .fit-list li { font-size: 14px; padding: 12px 0; border-bottom: 1px solid; display: flex; gap: 12px; align-items: center; line-height: 1.6; }
+    .fit-yes .fit-list li { color: #444; border-color: #f0ede8; }
+    .fit-no .fit-list li { color: rgba(255,255,255,.65); border-color: rgba(255,255,255,.07); }
+    .fit-yes .fit-list li:last-child { border-bottom: none; }
+    .fit-no .fit-list li:last-child { border-bottom: none; }
+    .fit-yes .fit-list li::before { content: '○'; color: var(--green); font-weight: 700; flex-shrink: 0; }
+    .fit-no .fit-list li::before { content: '×'; color: #e07070; font-weight: 700; flex-shrink: 0; font-family: 'Rubik', sans-serif; }
+
+    /* LINKS */
+    .more-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .more-card {
+      background: #fff; border-radius: 16px; padding: 36px;
+      border: 1px solid rgba(0,0,0,.05); text-decoration: none;
+      display: block; transition: transform .3s, box-shadow .3s;
+    }
+    .more-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,.08); }
+    .more-card-label { font-family: 'Rubik', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: .2em; color: var(--blue); margin-bottom: 12px; }
+    .more-card-title { font-size: 16px; font-weight: 700; color: var(--dark); margin-bottom: 8px; line-height: 1.4; }
+    .more-card-arrow { font-family: 'Rubik', sans-serif; font-size: 12px; font-weight: 600; color: var(--blue); letter-spacing: .08em; }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .feature-item { grid-template-columns: 60px 1fr; }
+      .feature-body { grid-column: 2; }
+      .more-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .intro-block { grid-template-columns: 1fr; gap: 32px; padding: 40px 24px; }
+      .feature-item { grid-template-columns: 1fr; gap: 8px; padding: 40px 0; }
+      .feature-num { font-size: 32px; }
+      .fit-grid { grid-template-columns: 1fr; }
+      .fit-card { padding: 36px 24px; }
+      .more-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <a href="/" class="logo">
+      <img src="/logo.png" alt="アノマリーマーケティング" style="height:36px;">
+    </a>
+    <nav>
+      <div class="nav-item">
+        <a href="/overview/" class="nav-link has-drop">会社紹介</a>
+        <div class="nav-drop">
+          <a href="/overview/">アノマリーの魅力</a>
+          <a href="/business/">事業内容</a>
+          <a href="/message/">代表メッセージ</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/consultant/" class="nav-link">募集内容</a>
+      </div>
+      <div class="nav-item">
+        <a href="/salary/" class="nav-link has-drop">制度・環境</a>
+        <div class="nav-drop">
+          <a href="/salary/">報酬制度</a>
+          <a href="/training/">人材育成</a>
+          <a href="/benefits/">制度・オフィス環境</a>
+          <a href="/welfare/">福利厚生</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/members/" class="nav-link">メンバー</a>
+      </div>
+      <div class="nav-item">
+        <a href="/flow/" class="nav-link has-drop">選考</a>
+        <div class="nav-drop">
+          <a href="/flow/">選考の流れ</a>
+          <a href="/faq/">よくある質問</a>
+        </div>
+      </div>
+    </nav>
+    <a href="/entry/" class="btn-entry">エントリーする →</a>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">ABOUT</p>
+      <div class="mobile-nav-sub">
+        <a href="/overview/">アノマリーの魅力</a>
+        <a href="/business/">事業内容</a>
+        <a href="/message/">代表メッセージ</a>
+      </div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">JOB</p>
+      <div class="mobile-nav-sub"><a href="/consultant/">募集内容</a></div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">SYSTEM</p>
+      <div class="mobile-nav-sub">
+        <a href="/salary/">報酬制度</a>
+        <a href="/training/">人材育成</a>
+        <a href="/benefits/">制度・オフィス環境</a>
+          <a href="/welfare/">福利厚生</a>
+      </div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">MEMBER</p>
+      <div class="mobile-nav-sub"><a href="/members/">メンバー一覧</a></div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">SELECTION</p>
+      <div class="mobile-nav-sub">
+        <a href="/flow/">選考の流れ</a>
+        <a href="/faq/">よくある質問</a>
+      </div>
+    </div>
+    <a href="/entry/" class="mobile-nav-entry">エントリーする →</a>
+  </div>
+
+  <div class="page-hero gradient">
+    <div class="hero-deco"></div>
+    <div class="hero-eyebrow">ABOUT / OVERVIEW</div>
+    <h1 class="page-hero-title">自分で動いた分だけ、<br>強くなれる場所。</h1>
+    <p class="page-hero-sub">1ページで分かる、アノマリーマーケティングの魅力。</p>
+  </div>
+
+  <section>
+    <div class="section-label reveal">01 <span>——</span> WHAT WE DO</div>
+    <div class="intro-block reveal">
+      <div>
+        <h2 class="intro-heading">Web広告運用を軸とした、マーケティング支援会社。</h2>
+        <p class="intro-body">アノマリーマーケティングは、リスティング広告・SNS広告の運用代行を中心に、LP制作・CRM支援・コンテンツ制作まで、Webマーケティング全般を手がける会社です。<br><br>私たちが他の代理店と違うのは、「リード獲得で終わらない」こと。クライアントの契約数・売上という最終KPIまで責任を持って支援します。</p>
+      </div>
+      <img src="/overview/photo.jpg" alt="アノマリーマーケティング" style="width:100%;height:280px;object-fit:cover;border-radius:12px;">
+    </div>
+
+    <div class="section-label reveal">02 <span>——</span> 3 FEATURES</div>
+    <div class="section-header reveal">
+      <h2 class="section-heading">3つの特徴</h2>
+    </div>
+    <div class="features-list">
+      <div class="feature-item reveal">
+        <span class="feature-num">01</span>
+        <div>
+          <p class="feature-sub">ALL IN ONE</p>
+          <p class="feature-heading">一気通貫で、事業全体に関わる</p>
+        </div>
+        <p class="feature-body">営業・提案・広告運用・LP改善・CRM支援まで、同一のコンサルタントが担当します。分業体制ではないので、クライアントの事業全体が見える。広告の数字だけでなく、売上・契約数という最終ゴールに向き合う経験が積めます。これがビジネスリテラシーを最速で上げる環境です。</p>
+      </div>
+      <div class="feature-item reveal">
+        <span class="feature-num">02</span>
+        <div>
+          <p class="feature-sub">DIRECT REWARD</p>
+          <p class="feature-heading">頑張りが、正直に給与に返ってくる</p>
+        </div>
+        <p class="feature-body">担当案件の粗利30%がそのまま月収になります。評価面談も、上司への根回しも、年次も関係ない。成果を出した人が正当に報われる仕組みをシンプルに実現しています。自分の頑張りと報酬が直結しているから、モチベーションの源泉が明確です。</p>
+      </div>
+      <div class="feature-item reveal">
+        <span class="feature-num">03</span>
+        <div>
+          <p class="feature-sub">SMALL & FAST</p>
+          <p class="feature-heading">少数精鋭で、裁量が大きい</p>
+        </div>
+        <p class="feature-body">10名規模を目指す精鋭組織。一人ひとりの影響力が大きく、意思決定のスピードが速い。自分のアイデアや行動が組織に直接影響するフェーズで働けます。大企業のように「稟議を通す」「上の判断を待つ」といったことが少なく、スピード感を持って動ける環境です。</p>
+      </div>
+    </div>
+
+    <div class="section-label reveal">03 <span>——</span> CULTURE FIT</div>
+    <div class="section-header reveal">
+      <h2 class="section-heading">こんな人と、働きたい。</h2>
+    </div>
+    <div class="fit-grid reveal">
+      <div class="fit-card fit-yes">
+        <p class="fit-label">GOOD FIT — 合っている人</p>
+        <p class="fit-heading">自分でゴリゴリ進めたい人</p>
+        <ul class="fit-list">
+          <li>指示を待つより、自分で考えて動きたい</li>
+          <li>成果と報酬が直結している環境で働きたい</li>
+          <li>広告だけでなく、事業全体に関わりたい</li>
+          <li>ビジネスリテラシーを本気で上げたい</li>
+          <li>素直にフィードバックを吸収できる</li>
+          <li>業界経験がなくても、やる気で勝負したい</li>
+        </ul>
+      </div>
+      <div class="fit-card fit-no">
+        <p class="fit-label">NOT A FIT — 合わない人</p>
+        <p class="fit-heading">手取り足取り教えてほしい人</p>
+        <ul class="fit-list">
+          <li>細かく指示してもらわないと動けない</li>
+          <li>安定した給与体系を最優先にしたい</li>
+          <li>決められた業務だけをこなしたい</li>
+          <li>リモートワーク・フレックスが必須</li>
+          <li>大人数の組織でキャリアを積みたい</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-label reveal">04 <span>——</span> MORE</div>
+    <div class="section-header reveal">
+      <h2 class="section-heading">もっと知りたい人へ</h2>
+    </div>
+    <div class="more-grid reveal">
+      <a href="/business/" class="more-card">
+        <p class="more-card-label">BUSINESS</p>
+        <p class="more-card-title">事業内容・MVV</p>
+        <p class="more-card-arrow">READ MORE →</p>
+      </a>
+      <a href="/salary/" class="more-card">
+        <p class="more-card-label">SALARY</p>
+        <p class="more-card-title">報酬制度の詳細</p>
+        <p class="more-card-arrow">READ MORE →</p>
+      </a>
+      <a href="/consultant/" class="more-card">
+        <p class="more-card-label">JOB</p>
+        <p class="more-card-title">募集内容・キャリアパス</p>
+        <p class="more-card-arrow">READ MORE →</p>
+      </a>
+    </div>
+  </section>
+
+    <footer>
+    <div class="footer-sitemap">
+      <div class="footer-col">
+        <p class="footer-col-head">会社紹介</p>
+        <a href="/overview/">アノマリーの魅力</a>
+        <a href="/business/">事業内容</a>
+        <a href="/message/">代表メッセージ</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">募集内容</p>
+        <a href="/consultant/">Web広告コンサルタント</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">制度・環境</p>
+        <a href="/salary/">報酬制度</a>
+        <a href="/training/">人材育成</a>
+        <a href="/benefits/">制度・オフィス環境</a>
+        <a href="/welfare/">福利厚生</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">メンバー</p>
+        <a href="/members/">メンバー紹介</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">選考について</p>
+        <a href="/flow/">選考の流れ</a>
+        <a href="/faq/">よくある質問</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">エントリー</p>
+        <a href="/entry/">エントリーする</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a href="/" class="footer-logo">
+        <img src="/logo.png" alt="アノマリーマーケティング" style="height:28px;filter:brightness(0) invert(1);opacity:.6;">
+      </a>
+      <div class="footer-bottom-right">
+        <a href="#" class="footer-policy">プライバシーポリシー</a>
+        <p class="footer-copy">© 2026 ANOMALY MARKETING INC.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40));
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileNav.classList.toggle('open');
+      document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+    });
+    mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileNav.classList.remove('open');
+      document.body.style.overflow = '';
+    }));
+    const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); obs.unobserve(x.target); } }), {threshold:.1});
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

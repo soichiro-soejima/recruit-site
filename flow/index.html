@@ -1,0 +1,271 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>選考の流れ | アノマリーマーケティング採用</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .flow-list { display: flex; flex-direction: column; gap: 0; margin-bottom: 80px; position: relative; }
+    .flow-list::before { content: ''; position: absolute; left: 39px; top: 40px; bottom: 40px; width: 2px; background: linear-gradient(to bottom, var(--blue), var(--green)); z-index: 0; }
+    .flow-step-item { display: grid; grid-template-columns: 80px 1fr; gap: 32px; padding: 40px 0; position: relative; z-index: 1; }
+    .flow-step-circle { width: 80px; height: 80px; border-radius: 50%; background: var(--grad); display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 0 0 6px var(--bg); }
+    .flow-step-circle-text { font-family: 'Rubik', sans-serif; font-size: 11px; font-weight: 700; color: #fff; letter-spacing: .08em; text-align: center; line-height: 1.3; }
+    .flow-step-content { padding-top: 16px; }
+    .flow-step-label { font-family: 'Rubik', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: .2em; color: var(--blue); margin-bottom: 8px; }
+    .flow-step-name { font-size: 22px; font-weight: 700; margin-bottom: 12px; }
+    .flow-step-desc { font-size: 14px; line-height: 1.9; color: #666; }
+    .flow-step-note { display: inline-block; margin-top: 12px; background: var(--bg); border-radius: 8px; padding: 10px 16px; font-size: 13px; color: #888; }
+
+    .policy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 80px; }
+    .policy-card { background: #fff; border-radius: 16px; padding: 36px; border: 1px solid rgba(0,0,0,.05); }
+    .policy-num { font-family: 'Rubik', sans-serif; font-size: 32px; font-weight: 700; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 16px; }
+    .policy-title { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+    .policy-desc { font-size: 13px; line-height: 1.8; color: #777; }
+
+    .casual-block { background: var(--dark-section); border-radius: 20px; padding: 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .casual-heading { font-size: clamp(22px, 3vw, 34px); font-weight: 700; color: #fff; line-height: 1.4; margin-bottom: 16px; }
+    .casual-body { font-size: 15px; line-height: 2; color: rgba(255,255,255,.55); }
+    .casual-btn { display: inline-block; margin-top: 32px; background: #fff; color: var(--dark); font-family: 'Rubik', sans-serif; font-size: 14px; font-weight: 500; padding: 14px 36px; border-radius: 100px; text-decoration: none; transition: transform .2s, box-shadow .2s; }
+    .casual-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,255,255,.15); }
+
+    @media (max-width: 1024px) {
+      .policy-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .flow-step-item { grid-template-columns: 60px 1fr; gap: 20px; }
+      .flow-step-circle { width: 60px; height: 60px; }
+      .flow-list::before { left: 29px; }
+      .policy-grid { grid-template-columns: 1fr; }
+      .casual-block { grid-template-columns: 1fr; gap: 32px; padding: 40px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <a href="/" class="logo">
+      <img src="/logo.png" alt="アノマリーマーケティング" style="height:36px;">
+    </a>
+    <nav>
+      <div class="nav-item">
+        <a href="/overview/" class="nav-link has-drop">会社紹介</a>
+        <div class="nav-drop">
+          <a href="/overview/">アノマリーの魅力</a>
+          <a href="/business/">事業内容</a>
+          <a href="/message/">代表メッセージ</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/consultant/" class="nav-link">募集内容</a>
+      </div>
+      <div class="nav-item">
+        <a href="/salary/" class="nav-link has-drop">制度・環境</a>
+        <div class="nav-drop">
+          <a href="/salary/">報酬制度</a>
+          <a href="/training/">人材育成</a>
+          <a href="/benefits/">制度・オフィス環境</a>
+          <a href="/welfare/">福利厚生</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/members/" class="nav-link">メンバー</a>
+      </div>
+      <div class="nav-item">
+        <a href="/flow/" class="nav-link has-drop">選考</a>
+        <div class="nav-drop">
+          <a href="/flow/">選考の流れ</a>
+          <a href="/faq/">よくある質問</a>
+        </div>
+      </div>
+    </nav>
+    <a href="/entry/" class="btn-entry">エントリーする →</a>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">ABOUT</p>
+      <div class="mobile-nav-sub">
+        <a href="/overview/">アノマリーの魅力</a>
+        <a href="/business/">事業内容</a>
+        <a href="/message/">代表メッセージ</a>
+      </div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">JOB</p>
+      <div class="mobile-nav-sub"><a href="/consultant/">募集内容</a></div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">SYSTEM</p>
+      <div class="mobile-nav-sub">
+        <a href="/salary/">報酬制度</a>
+        <a href="/training/">人材育成</a>
+        <a href="/benefits/">制度・オフィス環境</a>
+          <a href="/welfare/">福利厚生</a>
+      </div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">MEMBER</p>
+      <div class="mobile-nav-sub"><a href="/members/">メンバー一覧</a></div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">SELECTION</p>
+      <div class="mobile-nav-sub">
+        <a href="/flow/">選考の流れ</a>
+        <a href="/faq/">よくある質問</a>
+      </div>
+    </div>
+    <a href="/entry/" class="mobile-nav-entry">エントリーする →</a>
+  </div>
+
+  <div class="page-hero light">
+    <div class="hero-eyebrow">SELECTION / FLOW</div>
+    <h1 class="page-hero-title">選考。</h1>
+    <p class="page-hero-sub">「会社が人を選ぶ」だけでなく、「人が会社を選ぶ」場でありたい。</p>
+  </div>
+
+  <section>
+    <div class="section-label reveal">01 <span>——</span> SELECTION FLOW</div>
+    <div class="section-header reveal">
+      <h2 class="section-heading">選考の流れ</h2>
+    </div>
+    <div class="flow-list">
+      <div class="flow-step-item reveal">
+        <div class="flow-step-circle"><div class="flow-step-circle-text">ENTRY</div></div>
+        <div class="flow-step-content">
+          <p class="flow-step-label">STEP 01</p>
+          <p class="flow-step-name">エントリー</p>
+          <p class="flow-step-desc">エントリーフォームからご応募ください。志望動機や経歴の記入欄があります。書き方に決まったルールはありません。あなたの言葉で書いてください。</p>
+        </div>
+      </div>
+      <div class="flow-step-item reveal">
+        <div class="flow-step-circle"><div class="flow-step-circle-text">DOC<br>TEST</div></div>
+        <div class="flow-step-content">
+          <p class="flow-step-label">STEP 02</p>
+          <p class="flow-step-name">書類選考・適性テスト</p>
+          <p class="flow-step-desc">ご応募いただいた内容をもとに書類選考を行います。通過された方には、オンラインで受けられる適性テストをご案内します。</p>
+          <span class="flow-step-note">結果は3営業日以内にご連絡します</span>
+        </div>
+      </div>
+      <div class="flow-step-item reveal">
+        <div class="flow-step-circle"><div class="flow-step-circle-text">INT.</div></div>
+        <div class="flow-step-content">
+          <p class="flow-step-label">STEP 03</p>
+          <p class="flow-step-name">面接（1〜2回）</p>
+          <p class="flow-step-desc">これまでの経験・志望動機・仕事観などをお聞きします。こちらからも会社や仕事の内容を詳しくお伝えします。最終面接は名古屋本社にて代表と対面で行います。疑問点は何でも聞いてください。</p>
+          <span class="flow-step-note">一次：オンライン / 最終：対面（名古屋本社）</span>
+        </div>
+      </div>
+      <div class="flow-step-item reveal">
+        <div class="flow-step-circle"><div class="flow-step-circle-text">OFFER</div></div>
+        <div class="flow-step-content">
+          <p class="flow-step-label">STEP 04</p>
+          <p class="flow-step-name">採用決定</p>
+          <p class="flow-step-desc">面接後、通常1週間以内に結果をご連絡します。採用の場合は給与条件等の詳細をお伝えします。入社時期についても柔軟に対応します。</p>
+          <span class="flow-step-note">内定後の入社時期は応相談</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-label reveal">02 <span>——</span> OUR POLICY</div>
+    <div class="section-header reveal">
+      <h2 class="section-heading">選考方針</h2>
+    </div>
+    <div class="policy-grid reveal">
+      <div class="policy-card">
+        <p class="policy-num">01</p>
+        <p class="policy-title">スキルより、スタンスを見る</p>
+        <p class="policy-desc">広告運用の経験がなくても構いません。自分で考えて動けるか、素直に吸収できるか、成果に向き合えるかを重視します。</p>
+      </div>
+      <div class="policy-card">
+        <p class="policy-num">02</p>
+        <p class="policy-title">お互いを知る場にする</p>
+        <p class="policy-desc">面接は「審査」ではなく「対話」だと思っています。会社があなたを知るだけでなく、あなたが会社を知る場として活用してください。</p>
+      </div>
+      <div class="policy-card">
+        <p class="policy-num">03</p>
+        <p class="policy-title">正直に、フラットに話す</p>
+        <p class="policy-desc">良い面だけでなく、大変な点や向いていない可能性があることも正直にお伝えします。入社後のギャップをなくすことを優先します。</p>
+      </div>
+    </div>
+
+    <div class="section-label reveal">03 <span>——</span> CASUAL INTERVIEW</div>
+    <div class="casual-block reveal">
+      <div>
+        <h3 class="casual-heading">まずは、カジュアルに<br>話しませんか。</h3>
+        <p class="casual-body">「まだ転職を決めていない」「話だけ聞いてみたい」という方でも大歓迎です。選考とは別に、カジュアルな面談の機会を設けています。</p>
+        <a href="/entry/" class="casual-btn">カジュアル面談を申し込む →</a>
+      </div>
+      <div>
+        <p style="font-size:14px;color:rgba(255,255,255,.4);line-height:2.2;">カジュアル面談では<br>・会社の雰囲気や文化について<br>・仕事の具体的な内容<br>・給与の仕組みや制度<br>・キャリアパスについて<br>など、何でもお聞きいただけます。<br><br>選考への参加を強制することはありません。</p>
+      </div>
+    </div>
+  </section>
+
+    <footer>
+    <div class="footer-sitemap">
+      <div class="footer-col">
+        <p class="footer-col-head">会社紹介</p>
+        <a href="/overview/">アノマリーの魅力</a>
+        <a href="/business/">事業内容</a>
+        <a href="/message/">代表メッセージ</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">募集内容</p>
+        <a href="/consultant/">Web広告コンサルタント</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">制度・環境</p>
+        <a href="/salary/">報酬制度</a>
+        <a href="/training/">人材育成</a>
+        <a href="/benefits/">制度・オフィス環境</a>
+        <a href="/welfare/">福利厚生</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">メンバー</p>
+        <a href="/members/">メンバー紹介</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">選考について</p>
+        <a href="/flow/">選考の流れ</a>
+        <a href="/faq/">よくある質問</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">エントリー</p>
+        <a href="/entry/">エントリーする</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a href="/" class="footer-logo">
+        <img src="/logo.png" alt="アノマリーマーケティング" style="height:28px;filter:brightness(0) invert(1);opacity:.6;">
+      </a>
+      <div class="footer-bottom-right">
+        <a href="#" class="footer-policy">プライバシーポリシー</a>
+        <p class="footer-copy">© 2026 ANOMALY MARKETING INC.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40));
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileNav.classList.toggle('open');
+      document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+    });
+    mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileNav.classList.remove('open');
+      document.body.style.overflow = '';
+    }));
+    const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); obs.unobserve(x.target); } }), {threshold:.1});
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>

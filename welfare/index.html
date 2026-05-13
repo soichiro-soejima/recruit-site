@@ -1,0 +1,485 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>福利厚生 | アノマリーマーケティング採用</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    /* PHILOSOPHY BLOCK */
+    .philosophy-block {
+      background: #fff; border-radius: 20px; padding: 64px;
+      border: 1px solid rgba(0,0,0,.05); margin-bottom: 80px;
+    }
+    .philosophy-lead {
+      font-size: clamp(20px, 2.5vw, 30px); font-weight: 700;
+      line-height: 1.6; margin-bottom: 32px; letter-spacing: -.02em;
+    }
+    .philosophy-body { font-size: 15px; line-height: 2.2; color: #555; max-width: 760px; }
+    .philosophy-body p + p { margin-top: 20px; }
+    .philosophy-highlight {
+      margin-top: 40px; padding: 32px 40px;
+      background: var(--bg); border-radius: 12px;
+      border-left: 4px solid; border-image: linear-gradient(to bottom, var(--blue), var(--green)) 1;
+    }
+    .philosophy-highlight p {
+      font-size: 16px; font-weight: 600; color: var(--dark); line-height: 1.8;
+    }
+
+    /* THEME INDEX */
+    .theme-index {
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 80px;
+    }
+    .theme-pill {
+      background: #fff; border-radius: 12px; padding: 20px 16px;
+      border: 1px solid rgba(0,0,0,.05); text-align: center;
+      text-decoration: none; transition: transform .2s, box-shadow .2s;
+      display: block;
+    }
+    .theme-pill:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.08); }
+    .theme-pill-en { font-family: 'Rubik', sans-serif; font-size: 9px; font-weight: 600; letter-spacing: .18em; color: var(--blue); margin-bottom: 8px; }
+    .theme-pill-ja { font-size: 13px; font-weight: 700; color: var(--dark); line-height: 1.4; }
+
+    /* BENEFIT ITEM */
+    .benefit-item {
+      margin-bottom: 32px;
+    }
+    .benefit-theme-header {
+      display: flex; align-items: center; gap: 16px; margin-bottom: 24px;
+    }
+    .benefit-theme-tag {
+      font-family: 'Rubik', sans-serif; font-size: 10px; font-weight: 600;
+      letter-spacing: .18em; color: #fff; background: var(--grad);
+      padding: 6px 16px; border-radius: 100px;
+    }
+    .benefit-theme-name { font-size: 13px; color: #aaa; }
+
+    .benefit-card {
+      background: #fff; border-radius: 20px; padding: 56px;
+      border: 1px solid rgba(0,0,0,.05);
+    }
+    .benefit-card.dark-card {
+      background: var(--dark-section);
+    }
+    .benefit-card-title {
+      font-size: clamp(22px, 3vw, 36px); font-weight: 700; margin-bottom: 28px;
+      line-height: 1.3; letter-spacing: -.02em;
+    }
+    .benefit-card.dark-card .benefit-card-title { color: #fff; }
+    .benefit-card-body { font-size: 15px; line-height: 2.2; color: #555; }
+    .benefit-card.dark-card .benefit-card-body { color: rgba(255,255,255,.6); }
+    .benefit-card-body p + p { margin-top: 20px; }
+
+    .benefit-spec {
+      margin-top: 36px; padding: 28px 32px;
+      background: rgba(113,188,227,.08); border-radius: 12px;
+      display: flex; flex-wrap: wrap; gap: 24px;
+    }
+    .benefit-card.dark-card .benefit-spec { background: rgba(255,255,255,.06); }
+    .benefit-spec-item { display: flex; flex-direction: column; gap: 4px; }
+    .benefit-spec-label { font-family: 'Rubik', sans-serif; font-size: 9px; font-weight: 600; letter-spacing: .18em; color: var(--blue); }
+    .benefit-spec-val { font-size: 14px; font-weight: 600; color: var(--dark); }
+    .benefit-card.dark-card .benefit-spec-val { color: #fff; }
+
+    .benefit-link {
+      display: inline-flex; align-items: center; gap: 8px; margin-top: 28px;
+      font-family: 'Rubik', sans-serif; font-size: 12px; font-weight: 600;
+      letter-spacing: .08em; color: var(--blue); text-decoration: none;
+      transition: gap .2s;
+    }
+    .benefit-link:hover { gap: 12px; }
+
+    /* CLOSING */
+    .closing-block {
+      background: #fff; border-radius: 20px; padding: 64px;
+      border: 1px solid rgba(0,0,0,.05);
+    }
+    .closing-lead { font-size: clamp(20px, 2.5vw, 30px); font-weight: 700; line-height: 1.5; margin-bottom: 24px; }
+    .closing-body { font-size: 15px; line-height: 2.2; color: #555; max-width: 760px; }
+    .closing-body p + p { margin-top: 20px; }
+
+    @media (max-width: 1024px) {
+      .theme-index { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .philosophy-block { padding: 40px 24px; }
+      .benefit-card { padding: 40px 24px; }
+      .closing-block { padding: 40px 24px; }
+      .theme-index { grid-template-columns: repeat(2, 1fr); }
+      .benefit-spec { flex-direction: column; gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <a href="/" class="logo">
+      <img src="/logo.png" alt="アノマリーマーケティング" style="height:36px;">
+    </a>
+    <nav>
+      <div class="nav-item">
+        <a href="/overview/" class="nav-link has-drop">会社紹介</a>
+        <div class="nav-drop">
+          <a href="/overview/">アノマリーの魅力</a>
+          <a href="/business/">事業内容</a>
+          <a href="/message/">代表メッセージ</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/consultant/" class="nav-link">募集内容</a>
+      </div>
+      <div class="nav-item">
+        <a href="/salary/" class="nav-link has-drop">制度・環境</a>
+        <div class="nav-drop">
+          <a href="/salary/">報酬制度</a>
+          <a href="/training/">人材育成</a>
+          <a href="/benefits/">制度・オフィス環境</a>
+          <a href="/welfare/">福利厚生</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/members/" class="nav-link">メンバー</a>
+      </div>
+      <div class="nav-item">
+        <a href="/flow/" class="nav-link has-drop">選考</a>
+        <div class="nav-drop">
+          <a href="/flow/">選考の流れ</a>
+          <a href="/faq/">よくある質問</a>
+        </div>
+      </div>
+    </nav>
+    <a href="/entry/" class="btn-entry">エントリーする →</a>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">ABOUT</p>
+      <div class="mobile-nav-sub">
+        <a href="/overview/">アノマリーの魅力</a>
+        <a href="/business/">事業内容</a>
+        <a href="/message/">代表メッセージ</a>
+      </div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">JOB</p>
+      <div class="mobile-nav-sub"><a href="/consultant/">募集内容</a></div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">SYSTEM</p>
+      <div class="mobile-nav-sub">
+        <a href="/salary/">報酬制度</a>
+        <a href="/training/">人材育成</a>
+        <a href="/benefits/">制度・オフィス環境</a>
+        <a href="/welfare/">福利厚生</a>
+      </div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">MEMBER</p>
+      <div class="mobile-nav-sub"><a href="/members/">メンバー一覧</a></div>
+    </div>
+    <div class="mobile-nav-section">
+      <p class="mobile-nav-label">SELECTION</p>
+      <div class="mobile-nav-sub">
+        <a href="/flow/">選考の流れ</a>
+        <a href="/faq/">よくある質問</a>
+      </div>
+    </div>
+    <a href="/entry/" class="mobile-nav-entry">エントリーする →</a>
+  </div>
+
+  <div class="page-hero light">
+    <div class="hero-eyebrow">SYSTEM / WELFARE</div>
+    <h1 class="page-hero-title">積極的に活用して<br>ほしい制度。</h1>
+    <p class="page-hero-sub">社員に成長してほしい。成果を上げられる環境を用意したい。この想いがすべての制度の出発点です。</p>
+  </div>
+
+  <section>
+    <!-- はじめに -->
+    <div class="section-label reveal">00 <span>——</span> PHILOSOPHY</div>
+    <div class="philosophy-block reveal">
+      <p class="philosophy-lead">「福利厚生」ではなく「積極的に活用してほしい制度」</p>
+      <div class="philosophy-body">
+        <p>福利厚生には大きく2種類あります。法律で義務づけられている「法定福利厚生」（社会保険や雇用保険など）と、会社が独自に設ける「法定外福利厚生」です。</p>
+        <p>法定外の福利厚生は、社員への慰労やワークライフバランスの支援を目的に設けている会社が多いと思います。社員に長く働いてもらうために、働きやすさや居心地の良さを提供する。それも一つの考え方です。</p>
+        <p>当社の福利厚生は、そことは少し目的が違います。</p>
+      </div>
+      <div class="philosophy-highlight">
+        <p>社員に成長してほしい。そして、成果を上げられる環境を用意したい。<br>この想いがすべての制度の出発点です。</p>
+      </div>
+      <div class="philosophy-body" style="margin-top:28px;">
+        <p>そのため当社では、「福利厚生」ではなく「積極的に活用してほしい制度」と呼んでいます。よくある慰安目的の福利厚生とは意図が異なることを、名前からも明確にするためです。</p>
+        <p>では、成果を出すために何が必要か。当社では5つのテーマで考えています。</p>
+      </div>
+    </div>
+
+    <!-- 5テーマ一覧 -->
+    <div class="theme-index reveal">
+      <a href="#health" class="theme-pill">
+        <p class="theme-pill-en">HEALTH</p>
+        <p class="theme-pill-ja">健康</p>
+      </a>
+      <a href="#growth" class="theme-pill">
+        <p class="theme-pill-en">GROWTH</p>
+        <p class="theme-pill-ja">成長</p>
+      </a>
+      <a href="#productivity" class="theme-pill">
+        <p class="theme-pill-en">PRODUCTIVITY</p>
+        <p class="theme-pill-ja">生産性</p>
+      </a>
+      <a href="#connection" class="theme-pill">
+        <p class="theme-pill-en">CONNECTION</p>
+        <p class="theme-pill-ja">人との繋がり</p>
+      </a>
+      <a href="#team" class="theme-pill">
+        <p class="theme-pill-en">TEAM</p>
+        <p class="theme-pill-ja">チーム</p>
+      </a>
+    </div>
+
+    <!-- 01 健康 -->
+    <div class="section-label reveal">01 <span>——</span> HEALTH</div>
+    <div class="benefit-item reveal" id="health">
+      <div class="benefit-theme-header">
+        <span class="benefit-theme-tag">HEALTH</span>
+        <span class="benefit-theme-name">健康</span>
+      </div>
+      <div class="benefit-card">
+        <h2 class="benefit-card-title">アレルギー検査できるよ制度</h2>
+        <div class="benefit-card-body">
+          <p>人生において、健康が一番大事ですよね。</p>
+          <p>ただ、「自分の体のことをちゃんと知っていますか？」と聞かれると、意外と答えられない方が多いのではないでしょうか。特にアレルギーは、日常生活だけでなく仕事のパフォーマンスにも地味に影響します。なんとなく体調が悪い、集中できない、その原因が実はアレルギーだった、というケースも珍しくありません。</p>
+          <p>そこで当社では、「Viewアレルギー39検査」を会社負担で受けられる制度を導入しています。花粉、ダニ、食物など39項目のアレルゲンを一度の採血で検査できるもので、入社半年後以降の健康診断のタイミングで受けられます。</p>
+          <p>まずは自分の体を正しく知ること。そのうえで対策を取り、パフォーマンスを安定して出せる状態を整える。この制度は、その第一歩を会社としてサポートするためのものです。</p>
+        </div>
+        <div class="benefit-spec">
+          <div class="benefit-spec-item">
+            <span class="benefit-spec-label">WHAT</span>
+            <span class="benefit-spec-val">Viewアレルギー39検査（39項目）</span>
+          </div>
+          <div class="benefit-spec-item">
+            <span class="benefit-spec-label">TIMING</span>
+            <span class="benefit-spec-val">入社半年後以降の健康診断時</span>
+          </div>
+          <div class="benefit-spec-item">
+            <span class="benefit-spec-label">COST</span>
+            <span class="benefit-spec-val">全額会社負担</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 成長 -->
+    <div class="section-label reveal">02 <span>——</span> GROWTH</div>
+    <div class="benefit-item reveal" id="growth">
+      <div class="benefit-theme-header">
+        <span class="benefit-theme-tag">GROWTH</span>
+        <span class="benefit-theme-name">成長</span>
+      </div>
+      <div class="benefit-card dark-card">
+        <h2 class="benefit-card-title">ホテル内省制度</h2>
+        <div class="benefit-card-body">
+          <p>ビジネスにおいて、成長スピードが速い人と遅い人の違いはどこにあるか。いろいろな要素がありますが、「振り返りの習慣があるかどうか」はかなり大きいと考えています。</p>
+          <p>「なぜこの結果になったのか」「もっと上手くやれる方法はなかったのか」——こうした問いを自分に向けられる人は伸びていきます。反対に、振り返りの習慣がないと、同じ失敗を繰り返してしまいがちです。</p>
+          <p>とはいえ、日々の業務に追われていると、落ち着いて自分を振り返る時間を取るのは難しい。だったら、環境ごと用意してしまおうと。それが「ホテル内省制度」です。</p>
+          <p>年に1回、上限1.5万円でホテルに宿泊し、業務から離れて内省を行います。</p>
+        </div>
+        <div class="benefit-spec">
+          <div class="benefit-spec-item">
+            <span class="benefit-spec-label">FREQUENCY</span>
+            <span class="benefit-spec-val">年1回</span>
+          </div>
+          <div class="benefit-spec-item">
+            <span class="benefit-spec-label">COST</span>
+            <span class="benefit-spec-val">上限1.5万円 / 会社負担</span>
+          </div>
+          <div class="benefit-spec-item">
+            <span class="benefit-spec-label">HOTEL</span>
+            <span class="benefit-spec-val">自由（国内どこでも）</span>
+          </div>
+        </div>
+        <a href="https://anomaly-marketing.co.jp/column/introspection-system/" target="_blank" class="benefit-link" style="color:rgba(113,188,227,.9);">詳しくはこちらの記事で →</a>
+      </div>
+    </div>
+
+    <!-- 03 生産性 -->
+    <div class="section-label reveal">03 <span>——</span> PRODUCTIVITY</div>
+    <div class="benefit-item reveal" id="productivity">
+      <div class="benefit-theme-header">
+        <span class="benefit-theme-tag">PRODUCTIVITY</span>
+        <span class="benefit-theme-name">生産性</span>
+      </div>
+      <div class="benefit-card">
+        <h2 class="benefit-card-title">お昼寝・お散歩推奨制度</h2>
+        <div class="benefit-card-body">
+          <p>当社では、ただ長く働くことよりも、生産性を大事にしています。</p>
+          <p>短時間の昼寝（パワーナップ）や軽い散歩が集中力や判断力の回復に効果的であることは、多くの研究で示されています。10〜15分の仮眠で脳の疲れがリセットされ、午後のパフォーマンスが上がる。散歩で血流が促進され、気分がリフレッシュし、アイデアが浮かびやすくなる。</p>
+          <p>効果があるなら、むしろ積極的に取り入れたほうがいい。そういう考え方です。</p>
+          <p>1日最大15分、業務の合間に昼寝や散歩に使える時間を設けています。申請は不要で、自分のペースで活用してもらえればOKです。オフィス近くの白川公園を散歩するメンバーも多いです。</p>
+          <p>「サボり」ではなく「成果を出すための手段」として、当社では推奨しています。</p>
+        </div>
+        <div class="benefit-spec">
+          <div class="benefit-spec-item">
+            <span class="benefit-spec-label">TIME</span>
+            <span class="benefit-spec-val">1日最大15分</span>
+          </div>
+          <div class="benefit-spec-item">
+            <span class="benefit-spec-label">APPLICATION</span>
+            <span class="benefit-spec-val">申請不要</span>
+          </div>
+          <div class="benefit-spec-item">
+            <span class="benefit-spec-label">SPOT</span>
+            <span class="benefit-spec-val">白川公園（徒歩圏内）など</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 人との繋がり -->
+    <div class="section-label reveal">04 <span>——</span> CONNECTION</div>
+    <div class="benefit-item reveal" id="connection">
+      <div class="benefit-theme-header">
+        <span class="benefit-theme-tag">CONNECTION</span>
+        <span class="benefit-theme-name">人との繋がり</span>
+      </div>
+      <div class="benefit-card">
+        <h2 class="benefit-card-title">社外の人とランチに行こう制度</h2>
+        <div class="benefit-card-body">
+          <p>当社には「結局は人」という考え方があります。</p>
+          <p>異なる会社、異なる業界の人と話すことで得られる視点やアイデアは、自社の中だけではなかなか手に入りません。人との繋がりが広がれば、仕事の幅も自然と広がっていく。そういったシンプルな考えから生まれた制度です。</p>
+          <p>月に1回まで社外の方と2人でランチに行く際、2人分合計で最大3,000円まで会社が負担します。さらに、通常1時間の休憩が1時間半に延長されるので、時間を気にせずゆっくり話すことができます。</p>
+          <p>対象は仕事を通じて知り合った方であれば業種・職種は問いません。ただし、プライベートの友人は対象外です。あくまで「仕事につながる人間関係を広げること」が目的です。</p>
+        </div>
+        <div class="benefit-spec">
+          <div class="benefit-spec-item">
+            <span class="benefit-spec-label">FREQUENCY</span>
+            <span class="benefit-spec-val">月1回まで</span>
+          </div>
+          <div class="benefit-spec-item">
+            <span class="benefit-spec-label">COST</span>
+            <span class="benefit-spec-val">2人分合計 最大3,000円</span>
+          </div>
+          <div class="benefit-spec-item">
+            <span class="benefit-spec-label">LUNCH BREAK</span>
+            <span class="benefit-spec-val">通常1時間 → 1時間半に延長</span>
+          </div>
+          <div class="benefit-spec-item">
+            <span class="benefit-spec-label">ELIGIBLE</span>
+            <span class="benefit-spec-val">仕事を通じて知り合った方（業種不問）</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 05 チーム -->
+    <div class="section-label reveal">05 <span>——</span> TEAM</div>
+    <div class="benefit-item reveal" id="team">
+      <div class="benefit-theme-header">
+        <span class="benefit-theme-tag">TEAM</span>
+        <span class="benefit-theme-name">チーム</span>
+      </div>
+      <div class="benefit-card">
+        <h2 class="benefit-card-title">リファラル採用制度<br><span style="font-size:.65em;letter-spacing:0;">社員紹介お祝い金</span></h2>
+        <div class="benefit-card-body">
+          <p>強いチームには、より大きな案件が集まります。より大きな案件が集まれば、よりやりがいのある仕事ができる。だからこそ、採用は会社の成長においてとても大切なテーマだと考えています。</p>
+          <p>そして、強いチームを作るために当社が重視しているのが「カルチャー」です。少人数の組織だからこそ、一人の影響はとても大きい。スキルが高くても、カルチャーが合わなければチームとしての力は発揮できません。</p>
+          <p>だからこそ、採用においては「カルチャーに合うかどうか」をとても大事にしています。そしてカルチャーへのフィットを見極めるうえで、一番信頼できるのは、実際にそのカルチャーの中で働いているメンバーの目です。</p>
+          <p>当社では「類は友を呼ぶ」という考えのもと、社員紹介によるリファラル採用制度を設けています。社員の紹介で入社した方が1年以上勤務した場合、紹介者・入社者の双方に15万円ずつ、合計30万円のお祝い金を支給します。</p>
+          <p>もちろん、紹介だからといって選考が優遇されることはありません。通常の採用基準で公平に判断します。この制度には、「紹介したいと思える会社を自分たちで作っていく」という意識を社員にも持ってほしい、という想いも込めています。</p>
+        </div>
+        <div class="benefit-spec">
+          <div class="benefit-spec-item">
+            <span class="benefit-spec-label">REWARD</span>
+            <span class="benefit-spec-val">紹介者・入社者 各15万円（合計30万円）</span>
+          </div>
+          <div class="benefit-spec-item">
+            <span class="benefit-spec-label">CONDITION</span>
+            <span class="benefit-spec-val">紹介入社後1年以上勤務した場合</span>
+          </div>
+          <div class="benefit-spec-item">
+            <span class="benefit-spec-label">SELECTION</span>
+            <span class="benefit-spec-val">通常選考と同じ（優遇なし）</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- さいごに -->
+    <div class="section-label reveal">06 <span>——</span> CLOSING</div>
+    <div class="closing-block reveal">
+      <p class="closing-lead">制度はあくまで環境。活かすのは、あなた自身。</p>
+      <div class="closing-body">
+        <p>当社の制度は、すべて「成長と成果」のために設計しています。</p>
+        <p>成果を出すことはもちろん大事ですが、その手前にある「成長」も同じくらい大切にしています。成長なくして、持続的な成果は出せない。だからこそ、健康管理や内省の機会、社外との繋がりなど、成長を支える環境を制度として用意しています。</p>
+        <p>ただし、制度はあくまで環境です。活用して成長や成果につなげるかどうかは、一人ひとりの行動次第です。</p>
+        <p>この考え方に共感できる方、成果を出すことに本気で向き合いたい方と、一緒に働きたいと思っています。</p>
+      </div>
+    </div>
+  </section>
+
+    <footer>
+    <div class="footer-sitemap">
+      <div class="footer-col">
+        <p class="footer-col-head">会社紹介</p>
+        <a href="/overview/">アノマリーの魅力</a>
+        <a href="/business/">事業内容</a>
+        <a href="/message/">代表メッセージ</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">募集内容</p>
+        <a href="/consultant/">Web広告コンサルタント</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">制度・環境</p>
+        <a href="/salary/">報酬制度</a>
+        <a href="/training/">人材育成</a>
+        <a href="/benefits/">制度・オフィス環境</a>
+        <a href="/welfare/">福利厚生</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">メンバー</p>
+        <a href="/members/">メンバー紹介</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">選考について</p>
+        <a href="/flow/">選考の流れ</a>
+        <a href="/faq/">よくある質問</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-head">エントリー</p>
+        <a href="/entry/">エントリーする</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a href="/" class="footer-logo">
+        <img src="/logo.png" alt="アノマリーマーケティング" style="height:28px;filter:brightness(0) invert(1);opacity:.6;">
+      </a>
+      <div class="footer-bottom-right">
+        <a href="#" class="footer-policy">プライバシーポリシー</a>
+        <p class="footer-copy">© 2026 ANOMALY MARKETING INC.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40));
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileNav.classList.toggle('open');
+      document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+    });
+    mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileNav.classList.remove('open');
+      document.body.style.overflow = '';
+    }));
+    const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){ x.target.classList.add('visible'); obs.unobserve(x.target); } }), {threshold:.1});
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+</body>
+</html>
