@@ -15,8 +15,12 @@
       background: #fff; border-radius: 20px; padding: 64px;
       border: 1px solid rgba(0,0,0,.05);
     }
-    .intro-heading { font-size: clamp(20px, 2.2vw, 30px); font-weight: 700; line-height: 1.5; margin-bottom: 24px; letter-spacing: -.02em; }
-    .intro-body { font-size: 15px; line-height: 2.1; color: #555; }
+    .intro-eyebrow { font-family: 'Noto Sans JP', sans-serif; font-size: 12px; font-weight: 600; color: var(--blue); margin-bottom: 16px; letter-spacing: .05em; }
+    .intro-heading { font-size: clamp(20px, 2.2vw, 30px); font-weight: 700; line-height: 1.5; margin-bottom: 28px; letter-spacing: -.02em; }
+    .intro-body { font-size: 15px; line-height: 2.1; color: #555; margin-bottom: 12px; }
+    .intro-body:last-of-type { margin-bottom: 36px; }
+    .btn-intro { display: inline-block; font-family: 'Noto Sans JP', sans-serif; font-size: 14px; font-weight: 600; color: #fff; background: var(--dark); padding: 14px 32px; border-radius: 100px; text-decoration: none; transition: transform .2s, box-shadow .2s; }
+    .btn-intro:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(62,58,57,.25); }
 
     /* FEATURES */
     .features-list { display: flex; flex-direction: column; gap: 0; margin-bottom: 80px; }
@@ -158,15 +162,16 @@
   </div>
 
   <section>
-    <div class="section-label reveal">01 <span>——</span> WHAT WE DO</div>
-    <div class="section-header reveal">
-      <h2 class="section-heading">Web広告運用を軸とした、マーケティング支援会社</h2>
-    </div>
     <div class="intro-block reveal">
       <div>
-        <p class="intro-body">アノマリーマーケティングは、リスティング広告・SNS広告の運用代行を中心に、LP制作・CRM支援・コンテンツ制作まで、Webマーケティング全般を手がける会社です。<br><br>多くの代理店はリード獲得をゴールにします。私たちはクライアントの契約数・売上という最終KPIまで責任を持って支援する点が、一番の違いです。</p>
+        <p class="intro-eyebrow">事業概要</p>
+        <h2 class="intro-heading">Web広告運用を軸とした、<br>マーケティング支援会社</h2>
+        <p class="intro-body">アノマリーマーケティングは、リスティング広告・SNS広告の運用代行を中心に、LP制作・CRM支援・コンテンツ制作まで、Webマーケティング全般を手がける会社です。</p>
+        <p class="intro-body">一般的な広告代理店は、リード（問い合わせ・資料請求）の獲得までをゴールとします。しかし実際にクライアントが必要としているのは、リードではなく契約であり、売上です。</p>
+        <p class="intro-body">私たちはその最終ゴールまで責任を持ちます。広告の設計から、LP改善、営業支援まで一気通貫で関わることで、クライアントの事業成果に直結した支援を行っています。</p>
+        <a href="/business/" class="btn-intro">事業内容を見る →</a>
       </div>
-      <div class="photo-placeholder" style="width:100%;height:280px;border-radius:12px;"></div>
+      <div class="photo-placeholder" style="width:100%;height:100%;min-height:320px;border-radius:12px;"></div>
     </div>
 
     <div class="section-label reveal">02 <span>——</span> 3 FEATURES</div>
