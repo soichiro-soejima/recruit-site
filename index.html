@@ -82,6 +82,18 @@
 
     /* ── ABOUT ── */
     #about { background: var(--bg); }
+    .about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .about-photo { aspect-ratio: 4/3; background: #e8e4df; border-radius: 16px; overflow: hidden; }
+    .about-photo .photo-placeholder { width: 100%; height: 100%; }
+    .about-desc { font-size: 15px; line-height: 2.1; color: #555; margin-bottom: 40px; }
+    .about-links { display: flex; flex-direction: column; }
+    .about-link { font-size: 15px; font-weight: 600; color: var(--dark); text-decoration: none; padding: 18px 0; border-bottom: 1px solid #e8e4df; display: flex; align-items: center; gap: 14px; transition: color .2s, gap .2s; }
+    .about-link:first-child { border-top: 1px solid #e8e4df; }
+    .about-link-arrow { font-family: 'Rubik', sans-serif; font-size: 14px; color: var(--blue); flex-shrink: 0; transition: transform .2s; }
+    .about-link:hover { color: var(--blue); }
+    .about-link:hover .about-link-arrow { transform: translateX(4px); }
+
+    /* ── CARDS (制度セクションで使用) ── */
     .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
     .card { background: #fff; border-radius: 16px; overflow: hidden; transition: transform .3s, box-shadow .3s; cursor: pointer; }
     .card:hover { transform: translateY(-6px); box-shadow: 0 20px 48px rgba(0,0,0,.1); }
@@ -166,6 +178,7 @@
       .job-card { grid-template-columns: 280px 1fr; }
       .members-grid { grid-template-columns: repeat(2, 1fr); }
       .cards-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-layout { gap: 48px; }
     }
     @media (max-width: 768px) {
       .hero-inner { grid-template-columns: 1fr; padding: 100px 20px 48px; }
@@ -181,6 +194,7 @@
       .cards-grid { grid-template-columns: 1fr; }
       .member-card-top { height: 260px; }
       .member-initial { font-size: 120px; }
+      .about-layout { grid-template-columns: 1fr; gap: 32px; }
     }
   </style>
 </head>
@@ -295,38 +309,16 @@
     <div class="section-header reveal">
       <h2 class="section-heading">会社紹介</h2>
     </div>
-    <div class="cards-grid">
-      <div class="card reveal reveal-delay-1" data-href="/overview/">
-        <div class="card-image">
-          <span class="card-num">01 / 03</span>
-          <div class="photo-placeholder"></div>
-        </div>
-        <div class="card-body">
-          <h3 class="card-title">アノマリーの魅力</h3>
-          <p class="card-text">アノマリーマーケティングがどんな会社かを知るための情報を1ページにまとめています。応募の前にまず読んでほしいページです。</p>
-          <a href="/overview/" class="card-link">READ MORE →</a>
-        </div>
+    <div class="about-layout reveal">
+      <div class="about-photo">
+        <div class="photo-placeholder"></div>
       </div>
-      <div class="card reveal reveal-delay-2" data-href="/business/">
-        <div class="card-image">
-          <span class="card-num">02 / 03</span>
-          <div class="photo-placeholder"></div>
-        </div>
-        <div class="card-body">
-          <h3 class="card-title">事業内容</h3>
-          <p class="card-text">ミッション・ビジョン・バリューと、私たちが手がける6つのサービス。リードを獲得して終わりではなく、クライアントの売上まで責任を持つという考え方を事業全体を通じて説明しています。</p>
-          <a href="/business/" class="card-link">READ MORE →</a>
-        </div>
-      </div>
-      <div class="card reveal reveal-delay-3" data-href="/message/">
-        <div class="card-image">
-          <span class="card-num">03 / 03</span>
-          <div class="photo-placeholder"></div>
-        </div>
-        <div class="card-body">
-          <h3 class="card-title">代表メッセージ</h3>
-          <p class="card-text">代表・小田峻のキャリアと、会社を立ち上げた理由。どんな人と働きたいか、この会社の何が面白いのかを、代表自身の言葉で語っています。</p>
-          <a href="/message/" class="card-link">READ MORE →</a>
+      <div class="about-content">
+        <p class="about-desc">アノマリーマーケティングがどんな会社で、何を大切にして働いているのか。まずはここから、私たちのことを知ってください。</p>
+        <div class="about-links">
+          <a href="/overview/" class="about-link"><span class="about-link-arrow">→</span>アノマリーの魅力</a>
+          <a href="/business/" class="about-link"><span class="about-link-arrow">→</span>事業内容</a>
+          <a href="/message/" class="about-link"><span class="about-link-arrow">→</span>代表メッセージ</a>
         </div>
       </div>
     </div>
