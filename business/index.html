@@ -9,70 +9,30 @@
   <link rel="stylesheet" href="/styles.css">
   <style>
     /* SPACING OVERRIDE */
-    .section-header { margin-bottom: 16px; }
-    .section-intro { margin-top: 0; margin-bottom: 40px; }
+    .section-header { margin-bottom: 40px; }
 
     /* ALTERNATING SECTION BACKGROUNDS */
     .sec-white { background: #fff; }
 
-    /* MVV */
-    .mvv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .mvv-card { background: #fff; border-radius: 16px; padding: 36px; border: 1px solid rgba(0,0,0,.05); display: flex; flex-direction: column; justify-content: center; }
-    .mvv-en { font-family: 'Rubik', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: .2em; color: var(--blue); margin-bottom: 12px; }
-    .mvv-title { font-size: 16px; font-weight: 700; margin-bottom: 10px; line-height: 1.5; }
-    .mvv-desc { font-size: 13px; line-height: 1.8; color: #777; }
-    .mvv-value-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
-    .mvv-value-list li { font-family: 'Noto Sans JP', sans-serif; font-size: 13px; font-weight: 700; line-height: 1.5; color: var(--dark); padding-left: 14px; position: relative; }
-    .mvv-value-list li::before { content: ''; position: absolute; left: 0; top: 10px; width: 4px; height: 4px; border-radius: 50%; background: var(--green); }
+    /* SPLIT LAYOUT (text + image) */
+    .split-block { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .split-img { border-radius: 16px; background: #e0e0e0; aspect-ratio: 4/3; width: 100%; display: block; }
+    .split-speakerdeck { border-radius: 16px; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,.08); }
 
-    /* SERVICES */
-    .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-    .service-item { background: var(--bg); border-radius: 16px; padding: 28px; border: 1px solid rgba(0,0,0,.05); }
-    .service-icon { width: 44px; height: 44px; border-radius: 10px; background: var(--grad); margin-bottom: 16px; display: flex; align-items: center; justify-content: center; }
-    .service-icon svg { width: 22px; height: 22px; fill: none; stroke: white; stroke-width: 2; }
-    .service-name { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
-    .service-desc { font-size: 13px; line-height: 1.7; color: #888; }
+    /* CALLOUT BOX */
+    .callout { background: rgba(113,188,227,.07); border-left: 4px solid var(--blue); border-radius: 0 12px 12px 0; padding: 20px 28px; margin-bottom: 32px; }
+    .callout p { font-size: 16px; font-weight: 700; line-height: 1.7; color: var(--dark); margin: 0; }
 
-    /* PLATFORMS */
-    .platform-block { background: var(--bg); border-radius: 20px; padding: 56px 64px; border: 1px solid rgba(0,0,0,.05); }
-    .platform-group { margin-bottom: 40px; }
-    .platform-group:last-child { margin-bottom: 0; }
-    .platform-group-label { font-family: 'Rubik', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: .2em; color: var(--blue); margin-bottom: 16px; }
-    .platform-tags { display: flex; flex-wrap: wrap; gap: 10px; }
-    .platform-tag { padding: 10px 22px; border-radius: 100px; background: #fff; font-size: 14px; font-weight: 600; color: var(--dark); border: 1px solid rgba(0,0,0,.06); }
+    /* BODY TEXT */
+    .qa-body { font-size: 15px; line-height: 2.1; color: #555; margin-bottom: 20px; }
+    .qa-body:last-of-type { margin-bottom: 0; }
 
-    /* HOW WE WORK */
-    .flow-phases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: #e8e4df; border-radius: 20px; overflow: hidden; }
-    .flow-phase { background: #fff; padding: 44px 40px; }
-    .flow-phase-en { font-family: 'Rubik', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: .2em; color: var(--blue); margin-bottom: 8px; }
-    .flow-phase-title { font-size: 17px; font-weight: 700; margin-bottom: 24px; line-height: 1.4; }
-    .flow-phase-steps { list-style: none; }
-    .flow-phase-steps li { font-size: 13px; padding: 11px 0; border-bottom: 1px solid #f0ede8; color: #555; display: flex; align-items: center; gap: 10px; line-height: 1.5; }
-    .flow-phase-steps li:last-child { border-bottom: none; }
-    .flow-phase-steps li::before { content: ''; display: block; width: 5px; height: 5px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
+    /* SERVICE TAGS */
+    .service-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+    .service-tag { padding: 8px 18px; border-radius: 100px; background: #fff; font-size: 13px; font-weight: 600; color: var(--dark); border: 1px solid rgba(0,0,0,.07); }
 
-    /* CLIENT FUSION */
-    .fusion-block { background: #fff; border-radius: 20px; padding: 64px; border: 1px solid rgba(0,0,0,.05); }
-    .fusion-label { font-family: 'Rubik', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: .2em; color: var(--blue); margin-bottom: 16px; }
-    .fusion-title { font-size: clamp(24px, 3vw, 36px); font-weight: 700; margin-bottom: 24px; line-height: 1.3; }
-    .fusion-def { background: linear-gradient(225deg, rgba(113,188,227,.08), rgba(158,200,119,.08)); border-radius: 12px; padding: 24px 28px; margin-bottom: 28px; border-left: 4px solid var(--blue); }
-    .fusion-def-text { font-size: 15px; font-weight: 700; line-height: 1.7; color: var(--dark); }
-    .fusion-body { font-size: 15px; line-height: 2.1; color: #555; margin-bottom: 48px; }
-    .fusion-slide-note { font-size: 14px; color: #777; margin-top: 48px; margin-bottom: 20px; }
-    .speakerdeck-wrap { border-radius: 16px; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,.08); }
-    .fusion-understanding { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .fu-card { background: var(--bg); border-radius: 16px; padding: 32px; }
-    .fu-num { font-family: 'Rubik', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: .2em; color: var(--blue); margin-bottom: 12px; }
-    .fu-title { font-size: 15px; font-weight: 700; margin-bottom: 16px; line-height: 1.4; }
-    .fu-points { list-style: none; }
-    .fu-points li { font-size: 13px; line-height: 1.7; padding: 9px 0; border-bottom: 1px solid #e8e4df; color: #555; display: flex; gap: 10px; align-items: flex-start; }
-    .fu-points li:last-child { border-bottom: none; }
-    .fu-points li::before { content: ''; display: block; width: 5px; height: 5px; border-radius: 50%; background: var(--green); margin-top: 7px; flex-shrink: 0; }
-
-    /* ONE-STOP */
-    .flow-block { background: var(--bg); border-radius: 20px; padding: 64px; border: 1px solid rgba(0,0,0,.05); }
-    .flow-body { font-size: 15px; line-height: 2.1; color: #555; margin-bottom: 40px; }
-    .comparison { width: 100%; border-collapse: collapse; border-radius: 16px; overflow: hidden; margin-bottom: 48px; }
+    /* COMPARISON TABLE */
+    .comparison { width: 100%; border-collapse: collapse; border-radius: 16px; overflow: hidden; margin-top: 48px; }
     .comparison thead tr { background: var(--dark); }
     .comparison thead th { padding: 16px 24px; font-family: 'Rubik', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .1em; text-align: left; }
     .comparison thead th:first-child { color: rgba(255,255,255,.4); width: 140px; }
@@ -81,15 +41,28 @@
     .comparison tbody tr { border-bottom: 1px solid #f0ede8; }
     .comparison tbody tr:last-child { border-bottom: none; }
     .comparison tbody td { padding: 20px 24px; font-size: 13px; line-height: 1.7; vertical-align: top; }
-    .comparison tbody td:first-child { font-weight: 700; font-size: 12px; color: #999; background: #fff; border-right: 1px solid #f0ede8; }
+    .comparison tbody td:first-child { font-weight: 700; font-size: 12px; color: #999; background: var(--bg); border-right: 1px solid #f0ede8; }
     .comparison tbody td.col-general { color: #777; background: #fff; border-right: 1px solid #f0ede8; }
     .comparison tbody td.col-anomaly { color: var(--dark); font-weight: 600; background: rgba(113,188,227,.04); }
-    .flow-steps { display: flex; align-items: center; gap: 0; }
-    .flow-step { flex: 1; text-align: center; position: relative; }
-    .flow-step:not(:last-child)::after { content: '→'; position: absolute; right: -16px; top: 28px; font-size: 20px; color: var(--blue); font-family: 'Rubik', sans-serif; }
-    .flow-step-circle { width: 60px; height: 60px; border-radius: 50%; background: var(--grad); margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-family: 'Rubik', sans-serif; font-size: 11px; font-weight: 600; color: #fff; letter-spacing: .05em; }
-    .flow-step-name { font-size: 14px; font-weight: 600; }
-    .flow-step-desc { font-size: 12px; color: #888; margin-top: 4px; line-height: 1.5; }
+
+    /* PLATFORMS */
+    .platform-block { background: var(--bg); border-radius: 20px; padding: 56px 64px; border: 1px solid rgba(0,0,0,.05); }
+    .sec-white .platform-block { background: var(--bg); }
+    .platform-group { margin-bottom: 40px; }
+    .platform-group:last-child { margin-bottom: 0; }
+    .platform-group-label { font-family: 'Rubik', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: .2em; color: var(--blue); margin-bottom: 16px; }
+    .platform-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+    .platform-tag { padding: 10px 22px; border-radius: 100px; background: #fff; font-size: 14px; font-weight: 600; color: var(--dark); border: 1px solid rgba(0,0,0,.06); }
+
+    /* FLOW PHASES */
+    .flow-phases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: #e8e4df; border-radius: 20px; overflow: hidden; }
+    .flow-phase { background: #fff; padding: 44px 40px; }
+    .flow-phase-en { font-family: 'Rubik', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: .2em; color: var(--blue); margin-bottom: 8px; }
+    .flow-phase-title { font-size: 17px; font-weight: 700; margin-bottom: 24px; line-height: 1.4; }
+    .flow-phase-steps { list-style: none; }
+    .flow-phase-steps li { font-size: 13px; padding: 11px 0; border-bottom: 1px solid #f0ede8; color: #555; display: flex; align-items: center; gap: 10px; line-height: 1.5; }
+    .flow-phase-steps li:last-child { border-bottom: none; }
+    .flow-phase-steps li::before { content: ''; display: block; width: 5px; height: 5px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
 
     /* PARTNERS */
     .partner-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
@@ -100,21 +73,13 @@
     .partner-desc { font-size: 13px; color: #888; line-height: 1.7; }
 
     @media (max-width: 1024px) {
-      .services-grid { grid-template-columns: repeat(2, 1fr); }
-      .mvv-grid { grid-template-columns: repeat(2, 1fr); }
-      .fusion-understanding { grid-template-columns: 1fr; }
+      .split-block { grid-template-columns: 1fr; gap: 40px; }
       .flow-phases { grid-template-columns: 1fr; gap: 1px; }
       .partner-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 768px) {
-      .services-grid { grid-template-columns: repeat(2, 1fr); }
-      .mvv-grid { grid-template-columns: 1fr; }
-      .fusion-block { padding: 40px 24px; }
       .platform-block { padding: 40px 24px; }
-      .flow-block { padding: 40px 24px; }
       .comparison thead th, .comparison tbody td { padding: 12px 14px; font-size: 12px; }
-      .flow-steps { flex-direction: column; gap: 32px; }
-      .flow-step:not(:last-child)::after { content: '↓'; right: auto; top: auto; bottom: -24px; left: 50%; transform: translateX(-50%); }
     }
   </style>
 </head>
@@ -180,7 +145,7 @@
         <a href="/salary/">報酬制度</a>
         <a href="/training/">人材育成</a>
         <a href="/benefits/">制度・オフィス環境</a>
-          <a href="/welfare/">福利厚生</a>
+        <a href="/welfare/">福利厚生</a>
       </div>
     </div>
     <div class="mobile-nav-section">
@@ -202,91 +167,100 @@
     <h1 class="page-hero-title">私たちのミッション・ビジョン・バリューと、提供しているサービス内容を紹介しています。</h1>
   </div>
 
-  <!-- MVV: ベージュ背景 -->
+  <!-- 提供サービス: ベージュ背景 -->
   <section>
     <div class="section-header reveal">
-      <h2 class="section-heading">MVV</h2>
+      <h2 class="section-heading">提供サービス</h2>
     </div>
-    <p class="section-intro reveal">私たちがなぜこの事業をやっているか、どこを目指しているかを最初にお伝えします。</p>
-    <div class="mvv-grid reveal">
-      <div class="mvv-card">
-        <p class="mvv-en">MISSION</p>
-        <p class="mvv-title">Webマーケティングを通じて<br>成果で価値を体現する</p>
-        <p class="mvv-desc">成果を出し続けることが私たちの企業価値です。顧客にとって最適な施策を通じてWebマーケティングで課題解決を行い、業界全体を明るくしていくことを目指しています。</p>
+    <div class="split-block reveal">
+      <div>
+        <div class="callout">
+          <p>Web広告を軸に、クライアントの事業成果を最大化するマーケティング支援。</p>
+        </div>
+        <p class="qa-body">リスティング広告・SNS広告の運用代行が主軸ですが、「広告を出して終わり」ではありません。LP制作・CRM設計・営業支援まで、クライアントの事業全体に関わる支援を行っています。</p>
+        <p class="qa-body">扱うサービスは広告運用にとどまらず、LP制作・改善、SEO・コンテンツ制作、クリエイティブ制作、アクセス解析、インハウス支援まで幅広く対応。クライアントの課題に応じて最適な施策を組み合わせます。</p>
+        <div class="service-tags">
+          <span class="service-tag">Web広告運用</span>
+          <span class="service-tag">SNS広告運用</span>
+          <span class="service-tag">LP制作・改善</span>
+          <span class="service-tag">クリエイティブ制作</span>
+          <span class="service-tag">SEO・コンテンツ</span>
+          <span class="service-tag">営業支援・CRM</span>
+          <span class="service-tag">アクセス解析</span>
+          <span class="service-tag">インハウス支援</span>
+        </div>
       </div>
-      <div class="mvv-card">
-        <p class="mvv-en">VISION</p>
-        <p class="mvv-title">アノマリーな存在で<br>あり続ける</p>
-        <p class="mvv-desc">常識や手段に縛られず、成果の最大化のために常に可能性を追求します。向上心を持ったメンバーが集まり、業界で異質な成果を出し続けることを目指しています。</p>
-      </div>
-      <div class="mvv-card">
-        <p class="mvv-en">VALUE</p>
-        <ul class="mvv-value-list">
-          <li>成果を何よりも重視する</li>
-          <li>顧客にとって何が最適かを追い求める</li>
-          <li>自ら決めて、自ら行動する</li>
-          <li>素直さと謙虚さを忘れない</li>
-        </ul>
-      </div>
+      <div class="split-img"></div>
     </div>
   </section>
 
-  <!-- 事業内容: 白背景 -->
+  <!-- 運用体制: 白背景 -->
   <section class="sec-white">
     <div class="section-header reveal">
-      <h2 class="section-heading">事業内容</h2>
+      <h2 class="section-heading">運用体制</h2>
     </div>
-    <p class="section-intro reveal">ミッションを実現するために、実際にどんな仕事をしているかを紹介します。</p>
-    <div class="services-grid reveal">
-      <div class="service-item">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12h8M8 8h8M8 16h4"/></svg></div>
-        <p class="service-name">Web広告運用（リスティング）</p>
-        <p class="service-desc">Google・Yahoo!の検索広告を軸にした設計・運用・改善</p>
+    <div class="split-block reveal">
+      <div class="split-img"></div>
+      <div>
+        <div class="callout">
+          <p>営業・運用・改善を、一人のコンサルタントが一気通貫で担う。</p>
+        </div>
+        <p class="qa-body">一般的な広告代理店は、営業・運用・入稿・分析が別々の担当者に分かれています。情報は引き継ぎのたびに劣化し、クライアントの本質的な課題が伝わらないまま施策が動き続けることも少なくありません。</p>
+        <p class="qa-body">私たちは一人のコンサルタントが営業から運用・改善まで一貫して担当します。クライアントの事業・商材・顧客を深く理解した状態で広告を設計するため、リード獲得だけでなく契約・売上という最終ゴールに向けた支援が可能です。</p>
       </div>
-      <div class="service-item">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M17 2H7a2 2 0 00-2 2v16a2 2 0 002 2h10a2 2 0 002-2V4a2 2 0 00-2-2z"/><path d="M12 18h.01"/></svg></div>
-        <p class="service-name">SNS広告運用</p>
-        <p class="service-desc">Instagram・Facebook・LINE・X・TikTok・YouTubeの広告運用</p>
+    </div>
+    <table class="comparison reveal">
+      <thead>
+        <tr>
+          <th></th>
+          <th class="col-general">一般的な広告代理店</th>
+          <th class="col-anomaly">アノマリーマーケティング</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>支援範囲</td>
+          <td class="col-general">サイト訪問数からリード獲得（資料請求・お問い合わせ）まで</td>
+          <td class="col-anomaly">契約まで見て広告運用を実施。売上・契約数を最終KPIとして支援</td>
+        </tr>
+        <tr>
+          <td>運用体制</td>
+          <td class="col-general">営業・運用・入稿・分析と、各役割ごとに担当者が分かれて運用</td>
+          <td class="col-anomaly">営業から運用まで、一人のコンサルタントが専任で担当。コミュニケーション齟齬が起きない</td>
+        </tr>
+        <tr>
+          <td>ソリューション</td>
+          <td class="col-general">広告運用の範囲内での改善にとどまる</td>
+          <td class="col-anomaly">LP・クリエイティブはもちろん、マーケティング全体を見て最適なソリューションを提案</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- クライアント理解へのこだわり: ベージュ背景 -->
+  <section>
+    <div class="section-header reveal">
+      <h2 class="section-heading">クライアント理解へのこだわり</h2>
+    </div>
+    <div class="split-block reveal">
+      <div>
+        <div class="callout">
+          <p>展示会同行・営業視察まで行う、徹底したクライアント理解。</p>
+        </div>
+        <p class="qa-body">成果が出るかどうかは、クライアントへの理解度で決まると考えています。私たちは広告の数字を見るだけでなく、クライアントの営業現場・商材・顧客・競合まで実際に体験することを大切にしています。</p>
+        <p class="qa-body">成果の出ているクライアントを分析すると、当社がクライアントの事業を深く理解していること、そしてクライアントも当社のことを理解していただいていること、この双方が揃っているケースがほとんどです。この状態を「クライアントフュージョン」と呼び、すべての案件で実現することを目指しています。</p>
       </div>
-      <div class="service-item">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-        <p class="service-name">LP制作・改善</p>
-        <p class="service-desc">CVR改善を軸にしたランディングページの制作・A/Bテスト</p>
-      </div>
-      <div class="service-item">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
-        <p class="service-name">クリエイティブ制作</p>
-        <p class="service-desc">広告バナー・動画クリエイティブの企画・制作・改善</p>
-      </div>
-      <div class="service-item">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3a15 15 0 010 18M3 12h18"/></svg></div>
-        <p class="service-name">SEO・コンテンツ</p>
-        <p class="service-desc">検索流入の最大化を目的とした記事・コンテンツ制作</p>
-      </div>
-      <div class="service-item">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
-        <p class="service-name">営業支援・CRM</p>
-        <p class="service-desc">獲得リードの商談化・クロージング率向上のための支援</p>
-      </div>
-      <div class="service-item">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-        <p class="service-name">インハウス支援</p>
-        <p class="service-desc">クライアント社内での広告運用内製化を支援するコンサルティング</p>
-      </div>
-      <div class="service-item">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <p class="service-name">アクセス解析</p>
-        <p class="service-desc">GA4・Looker Studioを活用したデータ分析・レポーティング</p>
+      <div class="split-speakerdeck">
+        <iframe class="speakerdeck-iframe" src="https://speakerdeck.com/player/93ff0c9d458a4e52ba3d889e2da23cd8" style="border:0; padding:0; margin:0; background:transparent; width:100%; aspect-ratio:710/399; display:block;" frameborder="0" allowtransparency="true" allowfullscreen="allowfullscreen"></iframe>
       </div>
     </div>
   </section>
 
-  <!-- 対応媒体: ベージュ背景 -->
-  <section>
+  <!-- 対応媒体: 白背景 -->
+  <section class="sec-white">
     <div class="section-header reveal">
       <h2 class="section-heading">対応媒体</h2>
     </div>
-    <p class="section-intro reveal">対応できる広告媒体の一覧です。複数の媒体を横断した支援が可能です。</p>
     <div class="platform-block reveal">
       <div class="platform-group">
         <p class="platform-group-label">SEARCH ADS</p>
@@ -309,12 +283,11 @@
     </div>
   </section>
 
-  <!-- 支援の流れ: 白背景 -->
-  <section class="sec-white">
+  <!-- 支援の流れ: ベージュ背景 -->
+  <section>
     <div class="section-header reveal">
       <h2 class="section-heading">支援の流れ</h2>
     </div>
-    <p class="section-intro reveal">ご契約からレポーティングまで、支援がどのように進むかを紹介します。</p>
     <div class="flow-phases reveal">
       <div class="flow-phase">
         <p class="flow-phase-en">PHASE 01 — PRE-LAUNCH</p>
@@ -350,131 +323,24 @@
     </div>
   </section>
 
-  <!-- Client Fusion: ベージュ背景 -->
-  <section>
-    <div class="fusion-block reveal">
-      <p class="fusion-label">CLIENT FUSION</p>
-      <h3 class="fusion-title">クライアントフュージョン</h3>
-      <div class="fusion-def">
-        <p class="fusion-def-text">クライアントと支援会社（代理店）が成果を出すために共通認識を持ち、それぞれの役割を実行している状態。</p>
-      </div>
-      <p class="fusion-body">アノマリーマーケティングは、支援を行う上でクライアントの理解を最重要視しています。成果の出ているクライアントを分析すると、「当社がクライアントの事業・顧客・会社について深く理解している」と共に「当社のことや成果を出すために重要なことを理解していただいた状態」で取り組みができているケースがほとんどでした。<br><br>そのような成果を出しやすい状態を「クライアントフュージョン」と名付け、すべての案件でお互いが理解した上で取り組みができるように整理しています。</p>
-      <div class="fusion-understanding">
-        <div class="fu-card">
-          <p class="fu-num">UNDERSTANDING 01</p>
-          <p class="fu-title">共通認識</p>
-          <ul class="fu-points">
-            <li>成果を出すために必要な考え方・進め方をすり合わせる</li>
-            <li>お互いが大事にしたいことやスタンスを共有し、相互信頼の基盤を構築する</li>
-          </ul>
-        </div>
-        <div class="fu-card">
-          <p class="fu-num">UNDERSTANDING 02</p>
-          <p class="fu-title">コミュニケーション理解</p>
-          <ul class="fu-points">
-            <li>クライアントの組織慣習・体制を理解する</li>
-            <li>担当者のスタイル・意思決定プロセスまで把握する</li>
-          </ul>
-        </div>
-        <div class="fu-card">
-          <p class="fu-num">UNDERSTANDING 03</p>
-          <p class="fu-title">事業理解</p>
-          <ul class="fu-points">
-            <li>商材・サービスの深い理解</li>
-            <li>ターゲット（消費者）理解</li>
-            <li>競合理解</li>
-            <li>クライアントからの正確な情報提供</li>
-          </ul>
-        </div>
-      </div>
-      <p class="fusion-slide-note reveal">クライアントフュージョンの詳細は、以下のスライドにまとめています。</p>
-      <div class="speakerdeck-wrap reveal">
-        <iframe class="speakerdeck-iframe" src="https://speakerdeck.com/player/93ff0c9d458a4e52ba3d889e2da23cd8" style="border:0; padding:0; margin:0; background:transparent; width:100%; aspect-ratio:710/399; display:block;" frameborder="0" allowtransparency="true" allowfullscreen="allowfullscreen"></iframe>
-      </div>
-    </div>
-  </section>
-
-  <!-- 一気通貫モデル: 白背景 -->
+  <!-- 認定パートナー: 白背景 -->
   <section class="sec-white">
-    <div class="flow-block reveal">
-      <p class="fusion-label">一気通貫モデル</p>
-      <h3 class="fusion-title">リード獲得から契約まで、一気通貫で考える</h3>
-      <p class="flow-body">広告運用をする中でリード獲得（資料請求・お問い合わせ等）だけでなく、契約までを考えてアプローチします。所属するすべての広告運用者が営業を経験する仕組みを持っているため、リード最大化ではなく、契約数最大化をするための運用が可能です。</p>
-      <table class="comparison">
-        <thead>
-          <tr>
-            <th></th>
-            <th class="col-general">一般的な広告代理店</th>
-            <th class="col-anomaly">アノマリーマーケティング</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>支援範囲</td>
-            <td class="col-general">サイト訪問数からリード獲得（資料請求・お問い合わせ）まで</td>
-            <td class="col-anomaly">契約まで見て広告運用を実施。売上・契約数を最終KPIとして支援</td>
-          </tr>
-          <tr>
-            <td>運用体制</td>
-            <td class="col-general">営業・運用・入稿・分析と、各役割ごとに担当者が分かれて運用</td>
-            <td class="col-anomaly">営業から運用まで、一人のコンサルタントが専任で担当。コミュニケーション齟齬が起きない</td>
-          </tr>
-          <tr>
-            <td>ソリューション</td>
-            <td class="col-general">広告運用の範囲内での改善にとどまる</td>
-            <td class="col-anomaly">LP・クリエイティブはもちろん、マーケティング全体を見て最適なソリューションを提案</td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="flow-steps">
-        <div class="flow-step">
-          <div class="flow-step-circle">広告</div>
-          <p class="flow-step-name">広告運用</p>
-          <p class="flow-step-desc">リード獲得</p>
-        </div>
-        <div class="flow-step">
-          <div class="flow-step-circle">LP</div>
-          <p class="flow-step-name">LP最適化</p>
-          <p class="flow-step-desc">CVR改善</p>
-        </div>
-        <div class="flow-step">
-          <div class="flow-step-circle">営業</div>
-          <p class="flow-step-name">営業支援</p>
-          <p class="flow-step-desc">商談化</p>
-        </div>
-        <div class="flow-step">
-          <div class="flow-step-circle">契約</div>
-          <p class="flow-step-name">契約獲得</p>
-          <p class="flow-step-desc">売上向上</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 認定パートナー: ベージュ背景 -->
-  <section>
     <div class="section-header reveal">
       <h2 class="section-heading">認定パートナー</h2>
     </div>
     <div class="partner-grid reveal">
       <div class="partner-card">
-        <div class="partner-badge">
-          <div class="photo-placeholder"></div>
-        </div>
+        <div class="partner-badge"><div class="photo-placeholder"></div></div>
         <p class="partner-name">Google 認定パートナー</p>
         <p class="partner-desc">Google広告の認定パートナー。高い運用品質と専門知識を持つ代理店として認定されています。</p>
       </div>
       <div class="partner-card">
-        <div class="partner-badge">
-          <div class="photo-placeholder"></div>
-        </div>
+        <div class="partner-badge"><div class="photo-placeholder"></div></div>
         <p class="partner-name">LINE Yahoo 認定パートナー</p>
         <p class="partner-desc">LINE広告・Yahoo!広告の公式認定パートナーとして、最新情報と優先サポートを受けています。</p>
       </div>
       <div class="partner-card">
-        <div class="partner-badge">
-          <div class="photo-placeholder"></div>
-        </div>
+        <div class="partner-badge"><div class="photo-placeholder"></div></div>
         <p class="partner-name">HubSpot Solutions Partner</p>
         <p class="partner-desc">CRM・MA領域においてHubSpotの公式ソリューションパートナーとして認定されています。</p>
       </div>
