@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
@@ -8,47 +8,104 @@
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
   <style>
-    /* INTRO */
-    .intro-block {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
-      align-items: center; margin-bottom: 80px;
-      background: #fff; border-radius: 20px; padding: 64px;
-      border: 1px solid rgba(0,0,0,.05);
+    /* CALLOUT BOX */
+    .callout {
+      background: rgba(113, 188, 227, 0.07);
+      border-left: 4px solid var(--blue);
+      border-radius: 0 12px 12px 0;
+      padding: 20px 28px;
+      margin-bottom: 36px;
     }
-    .intro-eyebrow { font-family: 'Noto Sans JP', sans-serif; font-size: 12px; font-weight: 600; color: var(--blue); margin-bottom: 16px; letter-spacing: .05em; }
-    .intro-heading { font-size: clamp(20px, 2.2vw, 30px); font-weight: 700; line-height: 1.5; margin-bottom: 28px; letter-spacing: -.02em; }
-    .intro-body { font-size: 15px; line-height: 2.1; color: #555; margin-bottom: 12px; }
-    .intro-body:last-of-type { margin-bottom: 36px; }
-    .btn-intro { display: inline-block; font-family: 'Noto Sans JP', sans-serif; font-size: 14px; font-weight: 600; color: #fff; background: var(--dark); padding: 14px 32px; border-radius: 100px; text-decoration: none; transition: transform .2s, box-shadow .2s; }
-    .btn-intro:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(62,58,57,.25); }
-
-    /* FEATURES */
-    .features-list { display: flex; flex-direction: column; gap: 0; margin-bottom: 80px; }
-    .feature-item {
-      display: grid; grid-template-columns: 80px 1fr 1fr;
-      gap: 40px; align-items: start;
-      padding: 56px 0; border-bottom: 1px solid #eee;
-    }
-    .feature-item:last-child { border-bottom: none; }
-    .feature-num { font-family: 'Rubik', sans-serif; font-size: 48px; font-weight: 700; color: #eee; line-height: 1; }
-    .feature-heading { font-size: 22px; font-weight: 700; line-height: 1.4; margin-bottom: 8px; }
-    .feature-sub { font-family: 'Rubik', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .15em; color: var(--blue); margin-bottom: 16px; }
-    .feature-body { font-size: 14px; line-height: 2; color: #555; }
-
-    /* CULTURE CODE */
-    .culture-intro { display: block; margin-bottom: 48px; }
-    .culture-intro-heading { font-size: clamp(18px, 2vw, 26px); font-weight: 700; line-height: 1.5; margin-bottom: 24px; }
-    .culture-intro-body { font-size: 14px; line-height: 2.1; color: #555; }
-    .culture-quote { background: var(--grad); border-radius: 16px; padding: 40px 48px; }
-    .culture-quote-mark { font-family: 'Rubik', sans-serif; font-size: 48px; font-weight: 700; color: rgba(255,255,255,.3); line-height: .8; margin-bottom: 16px; }
-    .culture-quote-text { font-size: 16px; font-weight: 700; line-height: 1.8; color: #fff; margin-bottom: 20px; }
-    .culture-quote-note { font-size: 12px; color: rgba(255,255,255,.65); line-height: 1.8; }
-    .speakerdeck-wrap { margin-bottom: 80px; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,.08); }
-    @media (max-width: 768px) {
-      .culture-intro { grid-template-columns: 1fr; gap: 32px; }
+    .callout p {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.7;
+      color: var(--dark);
+      margin: 0;
     }
 
-    /* LINKS */
+    /* QA BODY TEXT */
+    .qa-body {
+      font-size: 15px;
+      line-height: 2.1;
+      color: #555;
+      margin-bottom: 20px;
+      max-width: 740px;
+    }
+    .qa-body:last-of-type { margin-bottom: 0; }
+
+    /* COMPANY FACTS */
+    .company-facts {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 560px;
+      margin-bottom: 40px;
+    }
+    .company-facts tr { border-bottom: 1px solid #eee; }
+    .company-facts tr:first-child { border-top: 1px solid #eee; }
+    .company-facts th {
+      padding: 14px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #999;
+      text-align: left;
+      white-space: nowrap;
+      width: 140px;
+      background: transparent;
+    }
+    .company-facts td {
+      padding: 14px 16px;
+      font-size: 14px;
+      color: var(--dark);
+      background: transparent;
+    }
+
+    /* SALARY EXAMPLES */
+    .salary-examples {
+      display: flex;
+      gap: 16px;
+      margin-top: 36px;
+      flex-wrap: wrap;
+      max-width: 740px;
+    }
+    .salary-example {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px 28px;
+      border: 1px solid rgba(0,0,0,.06);
+      flex: 1;
+      min-width: 180px;
+    }
+    .sec-white .salary-example {
+      background: var(--bg);
+    }
+    .salary-example-label {
+      font-family: 'Rubik', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      color: var(--blue);
+      margin-bottom: 10px;
+    }
+    .salary-example-num {
+      font-family: 'Rubik', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+    .salary-example-sub {
+      font-size: 12px;
+      color: #999;
+    }
+
+    /* ALTERNATING SECTIONS */
+    .sec-white { background: #fff; }
+
+    /* SPEAKERDECK */
+    .speakerdeck-wrap { border-radius: 16px; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,.08); }
+
+    /* MORE GRID */
     .more-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .more-card {
       background: #fff; border-radius: 16px; padding: 36px;
@@ -60,19 +117,12 @@
     .more-card-title { font-size: 16px; font-weight: 700; color: var(--dark); margin-bottom: 8px; line-height: 1.4; }
     .more-card-arrow { font-family: 'Rubik', sans-serif; font-size: 12px; font-weight: 600; color: var(--blue); letter-spacing: .08em; }
 
-    /* RESPONSIVE */
     @media (max-width: 1024px) {
-      .feature-item { grid-template-columns: 60px 1fr; }
-      .feature-body { grid-column: 2; }
       .more-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 768px) {
-      .intro-block { grid-template-columns: 1fr; gap: 32px; padding: 40px 24px; }
-      .feature-item { grid-template-columns: 1fr; gap: 8px; padding: 40px 0; }
-      .feature-num { font-size: 32px; }
-      .fit-grid { grid-template-columns: 1fr; }
-      .fit-card { padding: 36px 24px; }
       .more-grid { grid-template-columns: 1fr; }
+      .salary-examples { flex-direction: column; }
     }
   </style>
 </head>
@@ -138,7 +188,7 @@
         <a href="/salary/">報酬制度</a>
         <a href="/training/">人材育成</a>
         <a href="/benefits/">制度・オフィス環境</a>
-          <a href="/welfare/">福利厚生</a>
+        <a href="/welfare/">福利厚生</a>
       </div>
     </div>
     <div class="mobile-nav-section">
@@ -155,75 +205,84 @@
     <a href="/entry/" class="mobile-nav-entry">エントリーする →</a>
   </div>
 
-  <div class="page-hero dark" style="background:linear-gradient(225deg,#71BCE3,#9EC877); border-bottom:none; min-height:auto; padding-top:120px; padding-bottom:48px;">
-    <div class="hero-deco"></div>
+  <div class="page-hero" style="background:linear-gradient(225deg,#71BCE3,#9EC877);">
     <div class="hero-eyebrow">ABOUT / OVERVIEW</div>
-    <h1 class="page-hero-title">1ページで分かる、アノマリーマーケティングの魅力</h1>
+    <h1 class="page-hero-title">1ページでわかる、アノマリーマーケティング</h1>
   </div>
 
+  <!-- どんな会社？ -->
   <section>
-    <div class="intro-block reveal">
-      <div>
-        <p class="intro-eyebrow">事業概要</p>
-        <h2 class="intro-heading">Web広告運用を軸とした、<br>マーケティング支援会社</h2>
-        <p class="intro-body">アノマリーマーケティングは、リスティング広告・SNS広告の運用代行を中心に、LP制作・CRM支援・コンテンツ制作まで、Webマーケティング全般を手がける会社です。</p>
-        <p class="intro-body">一般的な広告代理店は、リード（問い合わせ・資料請求）の獲得までをゴールとします。しかし実際にクライアントが必要としているのは、リードではなく契約であり、売上です。</p>
-        <p class="intro-body">私たちはその最終ゴールまで責任を持ちます。広告の設計から、LP改善、営業支援まで一気通貫で関わることで、クライアントの事業成果に直結した支援を行っています。</p>
-        <a href="/business/" class="btn-intro">事業内容を見る →</a>
-      </div>
-      <div class="photo-placeholder" style="width:100%;height:100%;min-height:320px;border-radius:12px;"></div>
+    <h2 class="section-heading reveal">どんな会社？</h2>
+    <div class="callout reveal">
+      <p>Webマーケティングを通じて、クライアントの事業成果に責任を持つ代理店。</p>
     </div>
+    <table class="company-facts reveal">
+      <tr><th>社名</th><td>アノマリーマーケティング株式会社</td></tr>
+      <tr><th>設立</th><td>2023年3月</td></tr>
+      <tr><th>所在地</th><td>名古屋本社</td></tr>
+      <tr><th>従業員数</th><td>○名（2026年5月時点）</td></tr>
+    </table>
+    <p class="qa-body reveal">名古屋を拠点に2023年3月に創業。Web広告の運用代行を軸に、LP制作・CRM支援・営業支援まで、マーケティング全体を手がけています。少数精鋭にこだわり、一人ひとりが幅広い領域を担います。</p>
+    <p class="qa-body reveal">一般的な広告代理店はリードの獲得（問い合わせ・資料請求）をゴールとします。しかし私たちがクライアントから求められているのは、契約であり売上です。だからこそ私たちは、広告の設計から営業支援まで、クライアントの事業成果を最終ゴールとして支援しています。</p>
+  </section>
 
-    <div class="section-label reveal">02 <span>——</span> 3 FEATURES</div>
-    <div class="section-header reveal">
-      <h2 class="section-heading">3つの特徴</h2>
+  <!-- どんな仕事をするの？ -->
+  <section class="sec-white">
+    <h2 class="section-heading reveal">どんな仕事をするの？</h2>
+    <div class="callout reveal">
+      <p>営業・提案・運用・改善を、一人のコンサルタントが担う。</p>
     </div>
-    <div class="features-list">
-      <div class="feature-item reveal">
-        <span class="feature-num">01</span>
-        <div>
-          <p class="feature-sub">ALL IN ONE</p>
-          <p class="feature-heading">一気通貫で、事業全体に関わる</p>
-        </div>
-        <p class="feature-body">営業・提案・広告運用・LP改善・CRM支援まで、同一のコンサルタントが担当します。分業体制ではないため、クライアントの事業全体を視野に入れながら仕事ができるのが特徴です。広告の数字だけでなく、売上・契約数という最終ゴールに向き合う経験を積みながら、一般的な広告運用者では身につかない事業視点が自然と鍛えられます。</p>
-      </div>
-      <div class="feature-item reveal">
-        <span class="feature-num">02</span>
-        <div>
-          <p class="feature-sub">DIRECT REWARD</p>
-          <p class="feature-heading">実力主義の環境</p>
-        </div>
-        <p class="feature-body">担当案件の粗利30%がそのまま月収になります。評価面談も、上司への根回しも、年次も関係ありません。成果を出した人が正当に報われる仕組みをシンプルに実現しています。評価制度に時間を使う必要がないぶん、クライアントへの貢献に集中できます。</p>
-      </div>
-      <div class="feature-item reveal">
-        <span class="feature-num">03</span>
-        <div>
-          <p class="feature-sub">SMALL & FAST</p>
-          <p class="feature-heading">少数精鋭で、裁量が大きい</p>
-        </div>
-        <p class="feature-body">少人数だからこそ、一人が担う領域が自然と広がります。広告運用にとどまらず、営業・提案・改善まで一気通貫で関わるのが特徴です。一人ひとりの影響力も大きく、自分のアイデアや行動が組織に直接影響するフェーズで働けます。大企業のように「稟議を通す」「上の判断を待つ」といったことが少なく、マーケター以上の総合力が身につく環境です。</p>
-      </div>
-    </div>
+    <p class="qa-body reveal">リスティング広告・SNS広告の運用代行が主軸です。ただし「広告を出して終わり」ではなく、LP改善・CRM設計・営業支援まで一気通貫で担当します。Google・Yahoo!・Instagram・Facebook・LINE・TikTokなど主要媒体すべてに対応しています。</p>
+    <p class="qa-body reveal">特徴は、営業からクライアント対応・広告運用・分析・改善まで、同一のコンサルタントが一貫して担当する「一気通貫モデル」です。担当が変わるたびに情報が劣化する分業体制とは異なり、クライアントの事業全体を深く理解した上で施策を設計できます。広告の数字だけでなく、売上・契約数という最終ゴールに向き合う経験を積みながら、一般的な広告運用者では身につかない事業視点が自然と鍛えられます。</p>
+  </section>
 
-    <div class="section-label reveal">03 <span>——</span> CULTURE</div>
-    <div class="section-header reveal">
-      <h2 class="section-heading">私たちの価値観</h2>
+  <!-- どんな人が向いている？ -->
+  <section>
+    <h2 class="section-heading reveal">どんな人が向いている？</h2>
+    <div class="callout reveal">
+      <p>自分で考えて動ける人。成果で正当に評価されたい人。</p>
     </div>
-    <div class="culture-intro reveal">
-      <div>
-        <p class="culture-intro-heading">私たちが大切にしていること</p>
-        <p class="culture-intro-body">成果に真剣であること、クライアントに誠実であること、自分で考えて動けること。私たちが組織として大切にしている価値観を、カルチャーコードという形でまとめています。選考前にぜひ目を通してください。</p>
+    <p class="qa-body reveal">「スピード is ゴッド」という言葉が社内で共有されているくらい、スピードと自主性を重視するカルチャーです。指示を待つのではなく、自分で判断して動くことが求められます。少人数だからこそ一人が担う領域が広く、自分のアイデアや行動が組織に直接影響するフェーズで働けます。大企業のように「稟議を通す」「上の判断を待つ」といったことが少なく、マーケター以上の総合力が身につく環境です。</p>
+    <p class="qa-body reveal">一方で、リモートワーク希望の方や、細かい指示のもとで働くことを好む方には合わない可能性があります。全員フル出社・自主的に動くことが前提の環境のため、選考前に正直にお伝えしています。</p>
+    <div style="margin-top:48px;">
+      <p style="font-size:14px; color:#777; margin-bottom:20px;" class="reveal">私たちが組織として大切にしている価値観を、カルチャーコードにまとめています。選考前にぜひ目を通してください。</p>
+      <div class="speakerdeck-wrap reveal">
+        <iframe class="speakerdeck-iframe" src="https://speakerdeck.com/player/afbc0f70394a482686a7c6c14958f59b" style="border:0; padding:0; margin:0; background:transparent; width:100%; aspect-ratio:710/399; display:block;" frameborder="0" allowtransparency="true" allowfullscreen="allowfullscreen"></iframe>
       </div>
     </div>
-    <div class="speakerdeck-wrap reveal">
-      <iframe class="speakerdeck-iframe" src="https://speakerdeck.com/player/afbc0f70394a482686a7c6c14958f59b" style="border:0; padding:0; margin:0; background:transparent; width:100%; aspect-ratio:710/399; display:block;" frameborder="0" allowtransparency="true" allowfullscreen="allowfullscreen"></iframe>
-    </div>
+  </section>
 
-    <div class="section-label reveal">04 <span>——</span> MORE</div>
-    <div class="section-header reveal">
-      <h2 class="section-heading">もっと知りたい人へ</h2>
+  <!-- 給与・評価はどうなっている？ -->
+  <section class="sec-white">
+    <h2 class="section-heading reveal">給与・評価はどうなっている？</h2>
+    <div class="callout reveal">
+      <p>担当案件の粗利30%が、そのまま月収になります。</p>
     </div>
-    <div class="more-grid reveal">
+    <p class="qa-body reveal">評価面談も、上司への印象管理も、年次も関係ありません。担当した案件の粗利の30%が、シンプルに月収に反映されます。成果を出した人が正当に報われる仕組みをシンプルに実現しています。評価制度に時間を使う必要がないぶん、クライアントへの貢献に集中できます。</p>
+    <p class="qa-body reveal">成果を出せば出すほど、そのまま収入に返ってきます。月粗利の額によって年収がどう変わるか、具体的な例を示します。</p>
+    <div class="salary-examples reveal">
+      <div class="salary-example">
+        <p class="salary-example-label">月粗利 150万円</p>
+        <p class="salary-example-num">月収 45万円</p>
+        <p class="salary-example-sub">年収換算 約540万円</p>
+      </div>
+      <div class="salary-example">
+        <p class="salary-example-label">月粗利 200万円</p>
+        <p class="salary-example-num">月収 60万円</p>
+        <p class="salary-example-sub">年収換算 約720万円</p>
+      </div>
+      <div class="salary-example">
+        <p class="salary-example-label">月粗利 250万円</p>
+        <p class="salary-example-num">月収 75万円</p>
+        <p class="salary-example-sub">年収換算 約900万円</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- もっと知りたい人へ -->
+  <section>
+    <h2 class="section-heading reveal">もっと知りたい人へ</h2>
+    <div class="more-grid reveal" style="margin-top:40px;">
       <a href="/business/" class="more-card">
         <p class="more-card-label">BUSINESS</p>
         <p class="more-card-title">事業内容</p>
@@ -242,7 +301,7 @@
     </div>
   </section>
 
-    <footer>
+  <footer>
     <div class="footer-sitemap">
       <div class="footer-col">
         <p class="footer-col-head">会社紹介</p>
