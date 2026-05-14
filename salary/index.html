@@ -8,75 +8,103 @@
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
   <style>
-    /* THOUGHT */
-    .thought-block {
-      background: var(--dark-section); border-radius: 20px; padding: 64px;
-      margin-bottom: 80px; position: relative; overflow: hidden;
+    /* CALLOUT */
+    .callout {
+      background: rgba(113,188,227,.07);
+      border-left: 4px solid var(--blue);
+      border-radius: 0 12px 12px 0;
+      padding: 20px 28px;
+      margin-bottom: 32px;
     }
-    .thought-block::before {
-      content: ''; position: absolute; top: -120px; right: -120px;
-      width: 360px; height: 360px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(113,188,227,.08), transparent 70%);
-    }
-    .thought-quote {
+    .callout p { margin: 0; font-size: 15px; line-height: 2; font-weight: 500; }
+
+    /* FOUNDER QUOTE */
+    .founder-quote {
       font-family: 'Noto Sans JP', sans-serif;
-      font-size: clamp(20px, 2.5vw, 30px); font-weight: 700;
-      color: #fff; line-height: 1.7; margin-bottom: 32px;
-      padding-left: 24px; border-left: 3px solid var(--blue);
-      position: relative; z-index: 1;
+      font-size: clamp(18px, 2.2vw, 24px);
+      font-weight: 700;
+      line-height: 1.8;
+      padding-left: 24px;
+      border-left: 3px solid var(--blue);
+      margin-bottom: 40px;
+      color: var(--dark);
     }
-    .thought-body { font-size: 15px; line-height: 2; color: rgba(255,255,255,.55); max-width: 680px; position: relative; z-index: 1; }
-    .thought-no-eval { margin-top: 40px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,.08); position: relative; z-index: 1; }
-    .thought-no-eval-heading { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 20px; }
-    .no-eval-list { list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; }
-    .no-eval-list li {
-      font-size: 14px; color: rgba(255,255,255,.7);
-      padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.06);
-      display: flex; gap: 12px; align-items: center;
+    .body-text { font-size: 15px; line-height: 2.2; color: #555; margin-bottom: 28px; }
+
+    /* NO-EVAL LIST */
+    .no-eval-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      background: #fff;
+      border-radius: 16px;
+      border: 1px solid rgba(0,0,0,.05);
+      margin-top: 40px;
+      overflow: hidden;
     }
-    .no-eval-list li::before { content: '×'; font-family: 'Rubik', sans-serif; font-weight: 700; color: #e07070; flex-shrink: 0; }
+    .no-eval-item {
+      padding: 20px 24px;
+      border-bottom: 1px solid #f0ede8;
+      border-right: 1px solid #f0ede8;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      font-size: 14px;
+      color: #555;
+    }
+    .no-eval-item:nth-child(even) { border-right: none; }
+    .no-eval-item:nth-last-child(-n+2) { border-bottom: none; }
+    .no-eval-item::before { content: '×'; font-family: 'Rubik', sans-serif; font-weight: 700; color: #e07070; flex-shrink: 0; font-size: 13px; }
 
     /* MECHANISM */
     .mechanism-card {
-      background: #fff; border-radius: 20px; padding: 64px;
-      margin-bottom: 24px; border: 1px solid rgba(0,0,0,.05);
-      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+      background: var(--dark-section);
+      border-radius: 20px;
+      padding: 64px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      margin-bottom: 40px;
     }
     .mechanism-left { position: relative; padding-left: 20px; }
     .mechanism-left::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--grad); border-radius: 4px; }
     .mechanism-label { font-family: 'Rubik', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .15em; color: var(--blue); margin-bottom: 16px; }
-    .mechanism-big { font-size: clamp(28px, 3.5vw, 44px); font-weight: 700; line-height: 1.4; }
+    .mechanism-big { font-size: clamp(20px, 2.5vw, 28px); font-weight: 700; line-height: 1.4; color: #fff; }
     .mechanism-pct { font-family: 'Rubik', sans-serif; font-size: clamp(72px, 10vw, 108px); font-weight: 700; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; display: inline-block; }
-    .mechanism-body { font-size: 15px; line-height: 2.1; color: #555; }
+    .mechanism-body { font-size: 15px; line-height: 2.1; color: rgba(255,255,255,.6); }
 
     /* SIMULATION */
-    .sim-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 16px; overflow: hidden; border: 1px solid rgba(0,0,0,.05); margin-bottom: 12px; }
+    .sim-table { width: 100%; border-collapse: collapse; border-radius: 16px; overflow: hidden; border: 1px solid rgba(0,0,0,.05); margin-bottom: 12px; }
     .sim-table thead { background: var(--dark-section); }
     .sim-table thead th { padding: 18px 28px; text-align: left; font-family: 'Rubik', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .15em; color: rgba(255,255,255,.5); }
-    .sim-table tbody tr { border-bottom: 1px solid #f0ede8; }
+    .sim-table tbody tr { border-bottom: 1px solid #f0ede8; background: #fff; }
     .sim-table tbody tr:last-child { border-bottom: none; }
     .sim-table tbody td { padding: 22px 28px; font-size: 15px; }
     .sim-table .monthly { font-family: 'Rubik', sans-serif; font-weight: 600; color: var(--blue); }
     .sim-table .formula { font-size: 13px; color: #aaa; font-family: 'Rubik', sans-serif; }
     .sim-table .annual { font-family: 'Rubik', sans-serif; font-size: 22px; font-weight: 700; color: var(--dark); }
-    .sim-note { font-size: 12px; color: #aaa; margin-bottom: 80px; }
+    .sim-note { font-size: 12px; color: #aaa; margin-bottom: 48px; }
 
     /* GUARANTEE */
-    .guarantee-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 80px; }
-    .guarantee-card { background: #fff; border-radius: 16px; padding: 40px; border: 1px solid rgba(0,0,0,.05); }
+    .guarantee-intro { font-size: 15px; line-height: 2.2; color: #555; margin-bottom: 48px; }
+    .guarantee-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .guarantee-card { background: var(--bg); border-radius: 16px; padding: 40px; border: 1px solid rgba(0,0,0,.04); }
     .guarantee-num { font-family: 'Rubik', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .15em; color: var(--blue); margin-bottom: 20px; }
     .guarantee-title { font-size: 18px; font-weight: 700; margin-bottom: 12px; line-height: 1.4; }
     .guarantee-val { font-family: 'Rubik', sans-serif; font-size: 28px; font-weight: 700; color: var(--dark); margin: 16px 0 4px; }
-    .guarantee-sub { font-size: 12px; color: #aaa; margin-bottom: 12px; }
-    .guarantee-desc { font-size: 13px; line-height: 1.8; color: #777; }
+    .guarantee-sub { font-size: 12px; color: #aaa; margin-bottom: 16px; }
+    .guarantee-desc { font-size: 14px; line-height: 1.9; color: #666; }
 
     /* RESPONSIVE */
     @media (max-width: 1024px) {
       .guarantee-grid { grid-template-columns: repeat(2, 1fr); }
-      .no-eval-list { grid-template-columns: 1fr; }
+      .no-eval-grid { grid-template-columns: 1fr; }
+      .no-eval-item:nth-child(even) { border-right: none; }
+      .no-eval-item:nth-last-child(-n+2) { border-bottom: 1px solid #f0ede8; }
+      .no-eval-item:last-child { border-bottom: none; }
     }
     @media (max-width: 768px) {
-      .thought-block { padding: 40px 24px; }
       .mechanism-card { grid-template-columns: 1fr; gap: 32px; padding: 40px 24px; }
       .guarantee-grid { grid-template-columns: 1fr; }
       .sim-table thead th { padding: 14px 16px; font-size: 10px; }
@@ -147,7 +175,7 @@
         <a href="/salary/">報酬制度</a>
         <a href="/training/">人材育成</a>
         <a href="/benefits/">制度・オフィス環境</a>
-          <a href="/welfare/">福利厚生</a>
+        <a href="/welfare/">福利厚生</a>
       </div>
     </div>
     <div class="mobile-nav-section">
@@ -169,23 +197,39 @@
     <h1 class="page-hero-title">成果が、そのまま給与になる</h1>
   </div>
 
+  <!-- SECTION 1: なぜ、この仕組みを作ったのか -->
   <section>
-    <div class="section-label reveal">01 <span>——</span> OUR THOUGHT</div>
-    <div class="thought-block reveal">
-      <p class="thought-quote">「頑張った分が正直に返ってくる仕組みは、<br>自分が会社員時代に欲しかったもの。」</p>
-      <p class="thought-body">当社代表の小田が前職の代理店にいた頃、違和感を持っていたことがあります。成果を出しても、給与が上がるかどうかは評価面談の印象次第。頑張りと報酬が直結していない。そのモヤモヤを解消するために、この仕組みを作りました。<br><br>担当案件の粗利30%がそのまま月収になります。計算式はシンプルで、誰が見ても同じ数字です。解釈の余地がありません。それがアノマリーマーケティングの報酬制度です。</p>
-      <div class="thought-no-eval">
-        <p class="thought-no-eval-heading">人事評価をなくした理由</p>
-        <ul class="no-eval-list">
-          <li>年次・役職による給与上限なし</li>
-          <li>評価面談での印象・交渉スキル不要</li>
-          <li>上司の主観的な評価による査定なし</li>
-          <li>給与計算式の「解釈の余地」なし</li>
-        </ul>
-      </div>
+    <div class="section-header reveal">
+      <h2 class="section-heading">なぜ、この仕組みを<br>作ったのか</h2>
     </div>
 
-    <div class="section-label reveal">02 <span>——</span> THE MECHANISM</div>
+    <div class="reveal">
+      <p class="founder-quote">「頑張った分が正直に返ってくる仕組みは、<br>自分が会社員時代に欲しかったもの。」</p>
+    </div>
+
+    <div class="reveal">
+      <p class="body-text">当社代表の小田が前職の代理店にいた頃、ずっと違和感を持ち続けていたことがあります。成果を出しても、給与が上がるかどうかは評価面談の印象次第。頑張りと報酬が直結していない。数字で結果を出した翌年でも、「もう少し様子を見ましょう」と言われた人を何人も見てきました。</p>
+      <p class="body-text">そのモヤモヤを解消するために、アノマリーマーケティングでは創業時から「担当案件の粗利30%がそのまま月収になる」という仕組みを採用しています。計算式はシンプルで、誰が見ても同じ数字です。解釈の余地がありません。上司との関係性も、印象も、交渉スキルも、一切関係ない。それがこの制度を作った理由です。</p>
+    </div>
+
+    <div class="callout reveal">
+      <p>アノマリーマーケティングには「人事評価」がありません。給与を決めるのは、あなたが担当するクライアントの粗利だけです。</p>
+    </div>
+
+    <div class="no-eval-grid reveal">
+      <div class="no-eval-item">年次・役職による給与上限なし</div>
+      <div class="no-eval-item">評価面談での印象・交渉スキル不要</div>
+      <div class="no-eval-item">上司の主観的な評価による査定なし</div>
+      <div class="no-eval-item">給与計算式の「解釈の余地」なし</div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: 給与の仕組み -->
+  <section class="sec-white">
+    <div class="section-header reveal">
+      <h2 class="section-heading">給与の仕組み</h2>
+    </div>
+
     <div class="mechanism-card reveal">
       <div class="mechanism-left">
         <p class="mechanism-label">SALARY FORMULA</p>
@@ -194,14 +238,26 @@
         <p class="mechanism-big">が、給与。</p>
       </div>
       <div>
-        <p class="mechanism-body">当社の給与は「担当案件の月額粗利 × 30%」を12倍した金額が年収になります。<br><br>役職・年次・評価面談の結果は一切関係ありません。あなたが担当するクライアントの成果が、そのまま自分の年収に直結します。<br><br>成果を出した人が正当に報われる仕組みを、シンプルに実現しています。<br><br><small style="color:#aaa;">※ 粗利 = 当社売上 − 媒体費・外注費等の変動費</small></p>
+        <p class="mechanism-body">当社の給与は「担当案件の月額粗利 × 30%」を12倍した金額が年収になります。役職・年次・評価面談の結果は一切関係ありません。あなたが担当するクライアントの成果が、そのまま自分の年収に直結します。<br><br>ここで言う「粗利」とは、当社の売上から媒体費・外注費などの変動費を差し引いた金額のことです。クライアントへの月額請求額からコストを引いたものと考えてもらえれば、直感的に理解しやすいと思います。<br><br><small style="color:rgba(255,255,255,.4);">※ 粗利 = 当社売上 − 媒体費・外注費等の変動費</small></p>
       </div>
     </div>
 
-    <div class="section-label reveal">03 <span>——</span> SIMULATION</div>
+    <div class="reveal">
+      <p class="body-text">たとえば月額粗利100万円のクライアントを3社担当している場合、月収は90万円（300万円 × 30%）になります。担当社数が増えれば増えるほど、また担当クライアントの規模が大きくなるほど、そのまま給与に反映されます。</p>
+      <p class="body-text">成果を出した人が正当に報われる仕組みを、できる限りシンプルに実現したのがこの制度です。</p>
+    </div>
+  </section>
+
+  <!-- SECTION 3: 給与シミュレーション -->
+  <section>
     <div class="section-header reveal">
       <h2 class="section-heading">給与シミュレーション</h2>
     </div>
+
+    <div class="callout reveal">
+      <p>入社1年目で月額粗利100〜150万円規模を担当するケースが多く、実力次第でより早く伸びることも可能です。上限は設けていません。</p>
+    </div>
+
     <table class="sim-table reveal">
       <thead>
         <tr>
@@ -218,38 +274,46 @@
         <tr><td class="monthly">250万円</td><td class="formula">250万 × 30%</td><td>75万円</td><td class="annual">900万円</td></tr>
       </tbody>
     </table>
-    <p class="sim-note">※ 上記は月次の粗利が一定の場合の概算です。</p>
+    <p class="sim-note reveal">※ 上記は月次の粗利が一定の場合の概算です。月々の粗利によって変動します。</p>
+  </section>
 
-    <div class="section-label reveal">04 <span>——</span> SAFETY NET</div>
+  <!-- SECTION 4: 安心して入社できますか？ -->
+  <section class="sec-white">
     <div class="section-header reveal">
-      <h2 class="section-heading">セーフティネット</h2>
+      <h2 class="section-heading">安心して入社できますか？</h2>
     </div>
+
+    <div class="reveal">
+      <p class="body-text">成果連動型の給与と聞くと、「最初のうちは稼げないんじゃないか」「担当が少ないうちはどうなるの」という不安を感じる方もいると思います。その不安に、正直に答えます。</p>
+      <p class="body-text">アノマリーマーケティングでは、入社直後から粗利連動だけで戦ってもらう設計にはしていません。立ち上がり期間を支えるセーフティネットとして、3つの仕組みを用意しています。成果を出せる環境を整えた上で、正当に報われる制度を使ってほしいと考えています。</p>
+    </div>
+
     <div class="guarantee-grid reveal">
       <div class="guarantee-card">
         <p class="guarantee-num">01</p>
         <p class="guarantee-title">最低給与保証</p>
         <p class="guarantee-val">29万円 / 月</p>
-        <p class="guarantee-sub">月収</p>
-        <p class="guarantee-desc">粗利30%の計算結果が29万円を下回った場合でも、月給29万円を保証します。</p>
+        <p class="guarantee-sub">月収下限</p>
+        <p class="guarantee-desc">粗利30%の計算結果が29万円を下回る場合でも、月給29万円を保証します。担当案件が少ない入社初期でも、生活の見通しを立てた上で仕事に集中できます。</p>
       </div>
       <div class="guarantee-card">
         <p class="guarantee-num">02</p>
         <p class="guarantee-title">前職給与保障制度</p>
         <p class="guarantee-val">1年間</p>
         <p class="guarantee-sub">上限：年収540万円まで</p>
-        <p class="guarantee-desc">経験者採用の場合、前職給与を1年間保障します（上限540万円）。安心して移籍できます。</p>
+        <p class="guarantee-desc">経験者採用の場合、前職の給与水準を入社から1年間保障します（上限540万円）。「転職したら最初の1年は収入が下がる」という不安なく、安心してスタートを切ることができます。</p>
       </div>
       <div class="guarantee-card">
         <p class="guarantee-num">03</p>
         <p class="guarantee-title">賞与制度</p>
         <p class="guarantee-val">営業利益の3〜5%</p>
         <p class="guarantee-sub">条件：月額粗利100万円以上</p>
-        <p class="guarantee-desc">月額粗利100万円以上を達成したメンバーに、営業利益の3〜5%を賞与として支給します。</p>
+        <p class="guarantee-desc">月額粗利100万円以上を継続して達成したメンバーに、営業利益の3〜5%を賞与として支給します。会社全体の成長にも貢献した分が、さらなる報酬として返ってくる仕組みです。</p>
       </div>
     </div>
   </section>
 
-    <footer>
+  <footer>
     <div class="footer-sitemap">
       <div class="footer-col">
         <p class="footer-col-head">会社紹介</p>
