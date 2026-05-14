@@ -384,12 +384,60 @@ nav {
   max-width: none;
 }
 
+.page-hero-lead {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, .75);
+  margin-top: 20px;
+  line-height: 1.9;
+  letter-spacing: .01em;
+  max-width: 640px;
+}
+
 .page-hero.dark .page-hero-sub {
   color: rgba(255, 255, 255, .6);
 }
 
 .hero-deco {
   display: none;
+}
+
+/* ============================================================
+   PHOTO PLACEHOLDER
+   ============================================================ */
+.photo-placeholder {
+  background: #e0e0e0;
+  display: block;
+}
+.card-image .photo-placeholder,
+.job-card-left .photo-placeholder,
+.member-card-top .photo-placeholder {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.profile-photo .photo-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+.job-summary-img .photo-placeholder {
+  width: 100%;
+  aspect-ratio: 3/4;
+  display: block;
+}
+.interview-photo .photo-placeholder {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.partner-badge .photo-placeholder {
+  width: 160px;
+  height: 56px;
+  border-radius: 6px;
 }
 
 /* ============================================================

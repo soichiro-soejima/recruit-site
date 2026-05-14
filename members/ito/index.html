@@ -10,7 +10,7 @@
   <style>
     .interview-layout { display: grid; grid-template-columns: 320px 1fr; gap: 64px; align-items: start; margin-bottom: 80px; }
     .interview-sidebar { position: sticky; top: 100px; }
-    .interview-photo { aspect-ratio: 3/4; background: linear-gradient(160deg, #4a8aaa, #3a6e8f); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-family: 'Rubik', sans-serif; font-size: 120px; font-weight: 700; color: rgba(255,255,255,.3); margin-bottom: 28px; }
+    .interview-photo { aspect-ratio: 3/4; background: linear-gradient(160deg, #4a8aaa, #3a6e8f); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-family: 'Rubik', sans-serif; font-size: 120px; font-weight: 700; color: rgba(255,255,255,.3); margin-bottom: 28px; position: relative; overflow: hidden; }
     .interview-role { font-family: 'Rubik', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: .2em; color: var(--blue); margin-bottom: 12px; }
     .interview-name { font-size: 28px; font-weight: 700; margin-bottom: 4px; }
     .interview-en { font-family: 'Rubik', sans-serif; font-size: 12px; letter-spacing: .12em; color: #aaa; margin-bottom: 20px; }
@@ -115,7 +115,7 @@
   <section>
     <div class="interview-layout reveal">
       <div class="interview-sidebar">
-        <div class="interview-photo"><img src="/members/ito/photo.jpg" alt="伊藤一輝"></div>
+        <div class="interview-photo"><div class="photo-placeholder"></div></div>
         <p class="interview-role">CONSULTANT</p>
         <p class="interview-name">伊藤 一輝</p>
         <p class="interview-en">KAZUKI ITO</p>
