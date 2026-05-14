@@ -443,7 +443,7 @@ nav {
    SECTIONS
    ============================================================ */
 section {
-  padding: 120px max(48px, calc((100vw - 1100px) / 2));
+  padding: 80px max(48px, calc((100vw - 1100px) / 2));
 }
 
 .section-label {
@@ -480,7 +480,7 @@ section {
 
 .section-heading {
   font-family: 'Noto Sans JP', sans-serif;
-  font-size: clamp(20px, 2.5vw, 28px);
+  font-size: clamp(28px, 3.5vw, 44px);
   font-weight: 700;
   line-height: 1.3;
   letter-spacing: -.02em;
@@ -986,7 +986,7 @@ footer {
   }
 
   section {
-    padding: 100px 40px;
+    padding: 72px 40px;
   }
 
   .page-hero {
