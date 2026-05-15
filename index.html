@@ -108,10 +108,11 @@
 
     /* ── SYSTEM ICON CARDS ── */
     .system-icon-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .system-icon-card { background: #f5f3f0; border-radius: 20px; padding: 48px 32px 36px; text-align: center; text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 24px; transition: transform .25s, box-shadow .25s; }
-    .system-icon-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,.08); }
+    .system-icon-card { background: #fff; border-radius: 20px; padding: 48px 32px 36px; text-align: center; text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 20px; border: 1px solid rgba(0,0,0,.07); box-shadow: 0 4px 16px rgba(0,0,0,.06); transition: transform .25s, box-shadow .25s; }
+    .system-icon-card:hover { transform: translateY(-6px); box-shadow: 0 20px 48px rgba(0,0,0,.12); }
     .system-icon-card svg { width: 72px; height: 72px; }
     .system-icon-label { font-size: 15px; font-weight: 700; color: var(--dark); }
+    .system-icon-more { font-family: 'Rubik', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: .08em; color: var(--blue); }
     @media (max-width: 768px) { .system-icon-grid { grid-template-columns: 1fr; gap: 12px; } }
 
     /* ── JOB ── */
@@ -397,6 +398,7 @@
           <polyline points="58,26 62,26 62,30" stroke="#9EC877" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
         </svg>
         <span class="system-icon-label">人材育成</span>
+        <span class="system-icon-more">詳しく見る →</span>
       </a>
       <a href="/benefits/" class="system-icon-card">
         <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -413,6 +415,7 @@
           <rect x="12" y="17" width="48" height="5" rx="2.5" fill="#9EC877"/>
         </svg>
         <span class="system-icon-label">制度・オフィス環境</span>
+        <span class="system-icon-more">詳しく見る →</span>
       </a>
       <a href="/welfare/" class="system-icon-card">
         <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -426,6 +429,7 @@
           <path d="M36 34l2.9 8.9H48l-7.5 5.4 2.9 8.9L36 52.8l-7.4 4.4 2.9-8.9L24 42.9h9.1L36 34z" fill="white"/>
         </svg>
         <span class="system-icon-label">福利厚生</span>
+        <span class="system-icon-more">詳しく見る →</span>
       </a>
     </div>
   </section>
