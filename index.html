@@ -30,7 +30,6 @@
       position: relative;
       z-index: 1;
     }
-    .hero-eyebrow {
       display: flex;
       align-items: center;
       gap: 14px;
@@ -41,7 +40,6 @@
       color: #aaa;
       margin-bottom: 32px;
     }
-    .hero-eyebrow::before {
       content: '';
       display: block;
       width: 36px; height: 1px;
@@ -117,8 +115,6 @@
 
     /* ── JOB ── */
     #job { background: var(--dark-section); }
-    #job .section-label { color: rgba(113,188,227,.7); }
-    #job .section-label span { color: rgba(255,255,255,.2); }
     #job .section-heading { color: #fff; }
     .job-card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: 20px; overflow: hidden; display: grid; grid-template-columns: 380px 1fr; transition: transform .3s, box-shadow .3s; }
     .job-card:hover { transform: translateY(-4px); box-shadow: 0 24px 64px rgba(0,0,0,.3); }
@@ -144,8 +140,6 @@
 
     /* ── SELECTION ── */
     #selection { background: var(--dark-section); }
-    #selection .section-label { color: rgba(113,188,227,.7); }
-    #selection .section-label span { color: rgba(255,255,255,.2); }
     #selection .section-heading { color: #fff; }
     .selection-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
     .selection-card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08); border-radius: 20px; padding: 48px; transition: transform .3s, box-shadow .3s; cursor: pointer; }
@@ -300,7 +294,6 @@
   <section id="hero">
     <div class="hero-inner">
       <div class="hero-left">
-        <p class="hero-eyebrow">RECRUITMENT 2026</p>
         <h1 class="hero-headline">成果がそのまま<br>給与になる</h1>
         <a href="/entry/" class="btn-hero">エントリーする →</a>
       </div>
