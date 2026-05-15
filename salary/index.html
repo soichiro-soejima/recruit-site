@@ -96,6 +96,10 @@
     .guarantee-sub { font-size: 12px; color: #aaa; margin-bottom: 16px; }
     .guarantee-desc { font-size: 14px; line-height: 1.9; color: #666; }
 
+    /* SPLIT BLOCK */
+    .split-block { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .split-img { border-radius: 16px; background: #e0e0e0; aspect-ratio: 4/3; width: 100%; display: block; }
+
     /* RESPONSIVE */
     @media (max-width: 1024px) {
       .guarantee-grid { grid-template-columns: repeat(2, 1fr); }
@@ -103,6 +107,7 @@
       .no-eval-item:nth-child(even) { border-right: none; }
       .no-eval-item:nth-last-child(-n+2) { border-bottom: 1px solid #f0ede8; }
       .no-eval-item:last-child { border-bottom: none; }
+      .split-block { grid-template-columns: 1fr; gap: 40px; }
     }
     @media (max-width: 768px) {
       .mechanism-card { grid-template-columns: 1fr; gap: 32px; padding: 40px 24px; }
@@ -203,17 +208,16 @@
       <h2 class="section-heading" style="white-space: nowrap;">なぜ、この仕組みを作ったのか</h2>
     </div>
 
-    <div class="reveal">
-      <p class="founder-quote">「頑張った分が正直に返ってくる仕組みは、<br>自分が会社員時代に欲しかったもの。」</p>
-    </div>
-
-    <div class="reveal">
-      <p class="body-text">当社代表の小田が前職の代理店にいた頃、ずっと違和感を持ち続けていたことがあります。成果を出しても、給与が上がるかどうかは評価面談の印象次第。頑張りと報酬が直結していない。数字で結果を出した翌年でも、「もう少し様子を見ましょう」と言われた人を何人も見てきました。</p>
-      <p class="body-text">そのモヤモヤを解消するために、アノマリーマーケティングでは創業時から「担当案件の粗利30%がそのまま月収になる」という仕組みを採用しています。計算式はシンプルで、誰が見ても同じ数字です。解釈の余地がありません。上司との関係性も、印象も、交渉スキルも、一切関係ない。それがこの制度を作った理由です。</p>
-    </div>
-
-    <div class="callout reveal">
-      <p>アノマリーマーケティングには「人事評価」がありません。給与を決めるのは、あなたが担当するクライアントの粗利だけです。</p>
+    <div class="split-block reveal">
+      <div>
+        <p class="founder-quote">「頑張った分が正直に返ってくる仕組みは、<br>自分が会社員時代に欲しかったもの。」</p>
+        <p class="body-text">当社代表の小田が前職の代理店にいた頃、ずっと違和感を持ち続けていたことがあります。成果を出しても、給与が上がるかどうかは評価面談の印象次第。頑張りと報酬が直結していない。数字で結果を出した翌年でも、「もう少し様子を見ましょう」と言われた人を何人も見てきました。</p>
+        <p class="body-text">そのモヤモヤを解消するために、アノマリーマーケティングでは創業時から「担当案件の粗利30%がそのまま月収になる」という仕組みを採用しています。計算式はシンプルで、誰が見ても同じ数字です。解釈の余地がありません。上司との関係性も、印象も、交渉スキルも、一切関係ない。それがこの制度を作った理由です。</p>
+        <div class="callout">
+          <p>アノマリーマーケティングには「人事評価」がありません。給与を決めるのは、あなたが担当するクライアントの粗利だけです。</p>
+        </div>
+      </div>
+      <div class="split-img"></div>
     </div>
 
     <div class="no-eval-grid reveal">
@@ -242,9 +246,12 @@
       </div>
     </div>
 
-    <div class="reveal">
-      <p class="body-text">たとえば月額粗利100万円のクライアントを3社担当している場合、月収は90万円（300万円 × 30%）になります。担当社数が増えれば増えるほど、また担当クライアントの規模が大きくなるほど、そのまま給与に反映されます。</p>
-      <p class="body-text">成果を出した人が正当に報われる仕組みを、できる限りシンプルに実現したのがこの制度です。</p>
+    <div class="split-block reveal">
+      <div>
+        <p class="body-text">たとえば月額粗利100万円のクライアントを3社担当している場合、月収は90万円（300万円 × 30%）になります。担当社数が増えれば増えるほど、また担当クライアントの規模が大きくなるほど、そのまま給与に反映されます。</p>
+        <p class="body-text">成果を出した人が正当に報われる仕組みを、できる限りシンプルに実現したのがこの制度です。</p>
+      </div>
+      <div class="split-img"></div>
     </div>
   </section>
 
@@ -283,9 +290,12 @@
       <h2 class="section-heading">安心して入社できますか？</h2>
     </div>
 
-    <div class="reveal">
-      <p class="body-text">成果連動型の給与と聞くと、「最初のうちは稼げないんじゃないか」「担当が少ないうちはどうなるの」という不安を感じる方もいると思います。その不安に、正直に答えます。</p>
-      <p class="body-text">アノマリーマーケティングでは、入社直後から粗利連動だけで戦ってもらう設計にはしていません。立ち上がり期間を支えるセーフティネットとして、3つの仕組みを用意しています。成果を出せる環境を整えた上で、正当に報われる制度を使ってほしいと考えています。</p>
+    <div class="split-block reveal">
+      <div>
+        <p class="body-text">成果連動型の給与と聞くと、「最初のうちは稼げないんじゃないか」「担当が少ないうちはどうなるの」という不安を感じる方もいると思います。その不安に、正直に答えます。</p>
+        <p class="body-text">アノマリーマーケティングでは、入社直後から粗利連動だけで戦ってもらう設計にはしていません。立ち上がり期間を支えるセーフティネットとして、3つの仕組みを用意しています。成果を出せる環境を整えた上で、正当に報われる制度を使ってほしいと考えています。</p>
+      </div>
+      <div class="split-img"></div>
     </div>
 
     <div class="guarantee-grid reveal">

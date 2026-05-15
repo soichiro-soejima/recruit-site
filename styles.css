@@ -452,6 +452,9 @@ nav {
 section {
   padding: 80px max(48px, calc((100vw - 1100px) / 2));
 }
+.sec-white {
+  background: #fff;
+}
 
 .section-label {
   font-family: 'Rubik', sans-serif;
