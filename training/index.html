@@ -8,49 +8,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
   <style>
-    .concept-block { background: var(--dark-section); border-radius: 20px; padding: 80px 64px; margin-bottom: 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-    .concept-label { font-family: 'Rubik', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: .2em; color: rgba(113,188,227,.8); margin-bottom: 16px; }
-    .concept-heading { font-size: clamp(24px, 3vw, 40px); font-weight: 700; color: #fff; line-height: 1.4; margin-bottom: 24px; }
-    .concept-body { font-size: 15px; line-height: 2; color: rgba(255,255,255,.55); }
-    .concept-stat { display: flex; flex-direction: column; gap: 24px; }
-    .concept-stat-item { background: rgba(255,255,255,.06); border-radius: 14px; padding: 28px 32px; border: 1px solid rgba(255,255,255,.08); }
-    .concept-stat-num { font-family: 'Rubik', sans-serif; font-size: 36px; font-weight: 700; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 6px; }
-    .concept-stat-label { font-size: 13px; color: rgba(255,255,255,.5); line-height: 1.6; }
+    .split-block { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .split-img { border-radius: 16px; background: #e0e0e0; aspect-ratio: 4/3; width: 100%; display: block; }
+    .body-text { font-size: 15px; line-height: 2.2; color: #555; margin-bottom: 28px; }
+    .callout { background: rgba(113,188,227,.07); border-left: 4px solid var(--blue); border-radius: 0 12px 12px 0; padding: 20px 28px; margin-bottom: 48px; }
+    .callout p { margin: 0; font-size: 15px; line-height: 2; font-weight: 500; }
 
-    .policy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 80px; }
-    .policy-card { background: #fff; border-radius: 16px; padding: 36px; border: 1px solid rgba(0,0,0,.05); }
+    .policy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .policy-card { background: var(--bg); border-radius: 16px; padding: 36px; border: 1px solid rgba(0,0,0,.04); }
     .policy-num { font-family: 'Rubik', sans-serif; font-size: 32px; font-weight: 700; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 16px; }
-    .policy-title { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
-    .policy-desc { font-size: 13px; line-height: 1.8; color: #777; }
-
-    .skill-table { background: #fff; border-radius: 20px; overflow: hidden; border: 1px solid rgba(0,0,0,.05); margin-bottom: 80px; }
-    .skill-table-header { display: grid; grid-template-columns: 200px 1fr 1fr 1fr; background: var(--dark); padding: 20px 32px; gap: 16px; }
-    .skill-table-header span { font-family: 'Rubik', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .1em; color: rgba(255,255,255,.5); }
-    .skill-table-header span:first-child { color: rgba(255,255,255,.3); }
-    .skill-row { display: grid; grid-template-columns: 200px 1fr 1fr 1fr; padding: 24px 32px; gap: 16px; border-bottom: 1px solid #f0ede8; align-items: center; }
-    .skill-row:last-child { border-bottom: none; }
-    .skill-name { font-size: 14px; font-weight: 600; }
-    .skill-bar-wrap { }
-    .skill-bar { height: 6px; background: #f0ede8; border-radius: 100px; overflow: hidden; margin-bottom: 6px; }
-    .skill-bar-fill { height: 100%; border-radius: 100px; background: var(--grad); }
-    .skill-bar-label { font-size: 11px; color: #aaa; }
-
-    .tools-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 80px; }
-    .tool-item { background: #fff; border-radius: 12px; padding: 20px; border: 1px solid rgba(0,0,0,.05); text-align: center; }
-    .tool-name { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
-    .tool-category { font-size: 11px; color: #aaa; }
+    .policy-title { font-size: 17px; font-weight: 700; margin-bottom: 12px; }
+    .policy-desc { font-size: 14px; line-height: 1.9; color: #666; }
 
     @media (max-width: 1024px) {
+      .split-block { grid-template-columns: 1fr; gap: 40px; }
       .policy-grid { grid-template-columns: repeat(2, 1fr); }
-      .tools-grid { grid-template-columns: repeat(3, 1fr); }
     }
     @media (max-width: 768px) {
-      .concept-block { grid-template-columns: 1fr; gap: 40px; padding: 48px 24px; }
       .policy-grid { grid-template-columns: 1fr; }
-      .skill-table-header { display: none; }
-      .skill-row { grid-template-columns: 1fr 1fr; gap: 12px; padding: 20px 24px; }
-      .skill-name { grid-column: 1 / -1; }
-      .tools-grid { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
@@ -138,129 +113,46 @@
     <h1 class="page-hero-title">人材育成</h1>
   </div>
 
+  <!-- SECTION 1: アノマリーが考える「育成」 -->
   <section>
-    <div class="section-label reveal">01 <span>——</span> CONCEPT</div>
-    <div class="concept-block reveal">
-      <div>
-        <p class="concept-label">TRAINING CONCEPT</p>
-        <h3 class="concept-heading">クライアントの事業成長に<br>コミットできる人材へ。</h3>
-        <p class="concept-body">広告を運用できるだけでは足りません。クライアントの事業全体を把握し、課題を見つけ、自分で打ち手を考えて動ける——そういう「事業責任者レベルの思考」を持つ人材を育てることが、当社の育成の定義です。<br><br>クライアントの成長に本気でコミットし続ける中で、人は事業の本質を学んでいきます。それが当社の育成思想です。</p>
-      </div>
-      <div class="concept-stat">
-        <div class="concept-stat-item">
-          <p class="concept-stat-num">一気通貫</p>
-          <p class="concept-stat-label">広告設計からLP改善・営業支援まで<br>一人のコンサルタントが担当する</p>
-        </div>
-        <div class="concept-stat-item">
-          <p class="concept-stat-num">自走型</p>
-          <p class="concept-stat-label">指示を待つのではなく、自分でPDCAを回す<br>セルフマネジメント文化</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="section-label reveal">02 <span>——</span> POLICY</div>
     <div class="section-header reveal">
-      <h2 class="section-heading">育成の考え方</h2>
-      <p class="section-desc">マニュアル通りではなく、実戦から学びます。それが当社の基本スタンスです。</p>
+      <h2 class="section-heading">アノマリーが考える「育成」</h2>
+    </div>
+    <div class="split-block reveal">
+      <div>
+        <p class="body-text">広告を運用できるだけでは足りない——これが当社の出発点です。クライアントの事業全体を把握し、課題を見つけ、自分で打ち手を考えて動ける。そういう「事業責任者レベルの思考」を持つ人材を育てることが、アノマリーマーケティングにおける育成の定義です。</p>
+        <p class="body-text">研修プログラムや座学カリキュラムを整備するより、実際のクライアントと向き合いながら成長することを重視しています。失敗も含めてすべてが経験になる環境で、早くから責任ある仕事を任せることが、もっとも確実な育成だと考えています。</p>
+        <div class="callout">
+          <p>クライアントの事業成長にコミットし続ける中で、人は事業の本質を学んでいく。それが当社の育成思想です。</p>
+        </div>
+      </div>
+      <div class="split-img"></div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: 育成の3つの考え方 -->
+  <section class="sec-white">
+    <div class="section-header reveal">
+      <h2 class="section-heading">育成の3つの考え方</h2>
+    </div>
+    <div class="reveal">
+      <p class="body-text">マニュアルを読んで覚える育成ではなく、実戦の中で考え、失敗し、フィードバックを受けて身につける。アノマリーマーケティングの育成は、この3つの考え方を軸に設計されています。</p>
     </div>
     <div class="policy-grid reveal">
       <div class="policy-card">
         <p class="policy-num">01</p>
-        <p class="policy-title">OJT中心</p>
-        <p class="policy-desc">座学より実務。入社後はすぐに実案件に関わりながら、先輩のフィードバックを受けて成長していきます。失敗も含めて経験が資産になる環境です。</p>
+        <p class="policy-title">OJT中心で、早く実務に入る</p>
+        <p class="policy-desc">入社後はすぐに実案件に関わります。最初から完璧にこなせなくていい。先輩のサポートを受けながら、実際のクライアントと向き合う中で成長スピードが上がっていきます。失敗も含めて経験が資産になる環境です。</p>
       </div>
       <div class="policy-card">
         <p class="policy-num">02</p>
-        <p class="policy-title">自分で考えて動く</p>
-        <p class="policy-desc">「次は何をすればいいですか？」と聞く前に、自分で仮説を立てて動くことを求めます。壁にぶつかったときに初めて、一緒に考える時間を持ちます。</p>
+        <p class="policy-title">自分で考えて、動いてみる</p>
+        <p class="policy-desc">「次は何をすればいいですか？」と聞く前に、まず自分で仮説を立てて動くことを求めます。壁にぶつかったとき、迷ったときに初めて一緒に考える。その繰り返しが、自走できる人材をつくります。</p>
       </div>
       <div class="policy-card">
         <p class="policy-num">03</p>
-        <p class="policy-title">素直に吸収する</p>
-        <p class="policy-desc">フィードバックを素直に受け取り、すぐ試す。それだけで成長スピードは大きく変わります。「言われたことをやる」ではなく「なぜそうするか」まで理解する姿勢を大切にしています。</p>
-      </div>
-    </div>
-
-    <div class="section-label reveal">03 <span>——</span> SKILL MAP</div>
-    <div class="section-header reveal">
-      <h2 class="section-heading">習得できるスキル</h2>
-      <p class="section-desc">一気通貫モデルで担当するため、広告運用にとどまらない広範なスキルを積むことができます。</p>
-    </div>
-    <div class="skill-table reveal">
-      <div class="skill-table-header">
-        <span>スキル</span>
-        <span>入社〜3ヶ月</span>
-        <span>3〜12ヶ月</span>
-        <span>1年以上</span>
-      </div>
-      <div class="skill-row">
-        <p class="skill-name">広告運用（Google・Meta）</p>
-        <div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-bar-fill" style="width:60%"></div></div><p class="skill-bar-label">基本操作・入稿</p></div>
-        <div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div><p class="skill-bar-label">改善・最適化</p></div>
-        <div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-bar-fill" style="width:100%"></div></div><p class="skill-bar-label">戦略設計</p></div>
-      </div>
-      <div class="skill-row">
-        <p class="skill-name">LP改善・CVR分析</p>
-        <div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-bar-fill" style="width:40%"></div></div><p class="skill-bar-label">課題発見</p></div>
-        <div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-bar-fill" style="width:70%"></div></div><p class="skill-bar-label">改善提案・実行</p></div>
-        <div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-bar-fill" style="width:95%"></div></div><p class="skill-bar-label">A/Bテスト設計</p></div>
-      </div>
-      <div class="skill-row">
-        <p class="skill-name">データ分析（GA4・Looker）</p>
-        <div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-bar-fill" style="width:50%"></div></div><p class="skill-bar-label">基本指標の読み取り</p></div>
-        <div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div><p class="skill-bar-label">レポート作成</p></div>
-        <div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-bar-fill" style="width:100%"></div></div><p class="skill-bar-label">ダッシュボード設計</p></div>
-      </div>
-      <div class="skill-row">
-        <p class="skill-name">クライアント折衝・営業支援</p>
-        <div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-bar-fill" style="width:30%"></div></div><p class="skill-bar-label">報告・連絡</p></div>
-        <div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-bar-fill" style="width:65%"></div></div><p class="skill-bar-label">提案・折衝</p></div>
-        <div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-bar-fill" style="width:90%"></div></div><p class="skill-bar-label">商談同席・営業設計</p></div>
-      </div>
-      <div class="skill-row">
-        <p class="skill-name">事業思考・KPI設計</p>
-        <div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-bar-fill" style="width:20%"></div></div><p class="skill-bar-label">概念理解</p></div>
-        <div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-bar-fill" style="width:55%"></div></div><p class="skill-bar-label">KPI把握・提案</p></div>
-        <div class="skill-bar-wrap"><div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div><p class="skill-bar-label">戦略立案・実行</p></div>
-      </div>
-    </div>
-
-    <div class="section-label reveal">04 <span>——</span> TOOLS</div>
-    <div class="section-header reveal">
-      <h2 class="section-heading">使用ツール</h2>
-    </div>
-    <div class="tools-grid reveal">
-      <div class="tool-item">
-        <p class="tool-name">Google 広告</p>
-        <p class="tool-category">広告運用</p>
-      </div>
-      <div class="tool-item">
-        <p class="tool-name">Meta 広告</p>
-        <p class="tool-category">広告運用</p>
-      </div>
-      <div class="tool-item">
-        <p class="tool-name">Yahoo! 広告</p>
-        <p class="tool-category">広告運用</p>
-      </div>
-      <div class="tool-item">
-        <p class="tool-name">GA4</p>
-        <p class="tool-category">アクセス解析</p>
-      </div>
-      <div class="tool-item">
-        <p class="tool-name">Looker Studio</p>
-        <p class="tool-category">レポーティング</p>
-      </div>
-      <div class="tool-item">
-        <p class="tool-name">Google Tag Manager</p>
-        <p class="tool-category">タグ管理</p>
-      </div>
-      <div class="tool-item">
-        <p class="tool-name">Notion</p>
-        <p class="tool-category">ナレッジ管理</p>
-      </div>
-      <div class="tool-item">
-        <p class="tool-name">Slack</p>
-        <p class="tool-category">コミュニケーション</p>
+        <p class="policy-title">素直に吸収し、すぐに試す</p>
+        <p class="policy-desc">フィードバックを素直に受け取り、すぐ試してみる。それだけで成長スピードは大きく変わります。「言われたことをやる」ではなく「なぜそうするのか」まで理解しようとする姿勢が、長期的な実力につながります。</p>
       </div>
     </div>
   </section>
