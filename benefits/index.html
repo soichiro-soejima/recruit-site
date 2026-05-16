@@ -37,6 +37,12 @@
     .detail-table th { background: var(--bg); padding: 24px 32px; text-align: left; font-size: 14px; font-weight: 700; width: 200px; vertical-align: top; white-space: nowrap; color: var(--dark); }
     .detail-table td { padding: 24px 32px; font-size: 14px; line-height: 2; color: #555; }
 
+    /* Section 1 split layout */
+    .intro-split { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; margin-top: 48px; }
+    .intro-photo { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 4/5; background: linear-gradient(135deg, #71BCE3 0%, #9EC877 100%); }
+    .intro-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .intro-photo-placeholder { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.5); font-family: 'Rubik', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: .1em; }
+
     @media (max-width: 1024px) { .value-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 768px) {
       .value-grid { grid-template-columns: 1fr; }
@@ -45,6 +51,7 @@
       .flow-list::before { left: 29px; }
       .detail-table th { width: 120px; padding: 18px 20px; white-space: normal; font-size: 13px; }
       .detail-table td { padding: 18px 20px; }
+      .intro-split { grid-template-columns: 1fr; gap: 40px; }
     }
   </style>
 </head>
@@ -137,9 +144,17 @@
     <div class="section-header reveal">
       <h2 class="section-heading" style="white-space: nowrap;">入社前に、実際の仕事を体験できます</h2>
     </div>
-    <p class="body-text reveal">転職を考えるとき、一番怖いのは「入ってみたら思っていた会社と違った」という失敗です。面接では見えない部分——実際の仕事の進め方、チームの空気、自分との相性——は、働いてみるまで分かりません。</p>
-    <p class="body-text reveal">アノマリーマーケティングでは、その不安をなくすために「お試し入社制度」を設けています。いきなり正社員として入社しなくても、業務委託として実際のクライアント案件に関わることができます。在職中のまま副業として参加できるので、今の仕事を辞めるリスクもありません。</p>
-    <p class="body-text reveal">実際に働いてみて、「ここで続けたい」と思えたら正社員へ。「やっぱり違う」と感じたなら、無理に進める必要はありません。会社側の評価だけで決まるのではなく、あなた自身が納得して選べる仕組みです。</p>
+    <div class="intro-split">
+      <div class="intro-text">
+        <p class="body-text reveal">転職を考えるとき、一番怖いのは「入ってみたら思っていた会社と違った」という失敗です。面接では見えない部分——実際の仕事の進め方、チームの空気、自分との相性——は、働いてみるまで分かりません。</p>
+        <p class="body-text reveal">アノマリーマーケティングでは、その不安をなくすために「お試し入社制度」を設けています。いきなり正社員として入社しなくても、業務委託として実際のクライアント案件に関わることができます。在職中のまま副業として参加できるので、今の仕事を辞めるリスクもありません。</p>
+        <p class="body-text reveal">実際に働いてみて、「ここで続けたい」と思えたら正社員へ。「やっぱり違う」と感じたなら、無理に進める必要はありません。会社側の評価だけで決まるのではなく、あなた自身が納得して選べる仕組みです。</p>
+      </div>
+      <div class="intro-photo reveal">
+        <img src="/assets/trial-member.jpg" alt="社員写真" onerror="this.style.display='none'">
+        <div class="intro-photo-placeholder">PHOTO</div>
+      </div>
+    </div>
   </section>
 
   <!-- SECTION 2: メリット -->
@@ -167,7 +182,7 @@
   </section>
 
   <!-- SECTION 3: 流れ -->
-  <section class="sec-white">
+  <section>
     <div class="section-header reveal">
       <h2 class="section-heading">制度の流れ</h2>
     </div>
@@ -215,10 +230,6 @@
     </div>
     <table class="detail-table reveal">
       <tr>
-        <th>期間</th>
-        <td>1〜3ヶ月（双方の状況に応じて応相談）</td>
-      </tr>
-      <tr>
         <th>雇用形態</th>
         <td>業務委託契約（副業・複業としての参加OK）</td>
       </tr>
@@ -234,16 +245,11 @@
         <th>正社員切り替え</th>
         <td>期間終了後、双方の合意のもとで正社員雇用へ切り替え。強制ではなく、お互いが「一緒にやっていきたい」と思えることが前提です</td>
       </tr>
-      <tr>
-        <th>応募方法</th>
-        <td>通常のエントリーフォームから応募のうえ、備考欄に「お試し入社希望」とご記入ください</td>
-      </tr>
     </table>
   </section>
 
   <!-- CTA -->
   <section class="sec-white" style="text-align:center; padding-top:80px; padding-bottom:80px;">
-    <p style="font-size:13px; font-weight:600; color:var(--blue); letter-spacing:.05em; margin-bottom:16px;">TRIAL EMPLOYMENT</p>
     <h2 class="section-heading reveal" style="white-space:nowrap; margin:0 auto 16px;">まず、試してみてください</h2>
     <p class="reveal" style="font-size:15px; color:#777; margin-bottom:40px; line-height:2;">エントリーフォームの備考欄に「お試し入社希望」とご記入ください。</p>
     <a href="/entry/" class="reveal" style="display:inline-block; padding:16px 48px; background:var(--dark); color:#fff; border-radius:100px; font-size:15px; font-weight:600; text-decoration:none; transition:opacity .2s;" onmouseover="this.style.opacity='.8'" onmouseout="this.style.opacity='1'">エントリーする →</a>
