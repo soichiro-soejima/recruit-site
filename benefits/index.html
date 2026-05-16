@@ -3,36 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <link rel="icon" href="/favicon.png" type="image/png"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>制度・オフィス環境 | アノマリーマーケティング採用</title>
+  <title>お試し入社制度 | アノマリーマーケティング採用</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
   <style>
-    .benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 80px; }
-    .benefit-card { background: #fff; border-radius: 16px; padding: 36px; border: 1px solid rgba(0,0,0,.05); }
-    .benefit-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--grad); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
-    .benefit-icon svg { width: 24px; height: 24px; stroke: #fff; fill: none; stroke-width: 2; }
-    .benefit-name { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
-    .benefit-desc { font-size: 13px; line-height: 1.8; color: #777; }
+    .body-text { font-size: 15px; line-height: 2.2; color: #555; margin-bottom: 28px; }
 
-    .office-block { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 80px; }
-    .office-map { background: var(--grad); border-radius: 20px; min-height: 320px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 12px; overflow: hidden; }
-    .office-map img { width: 100%; height: 100%; object-fit: cover; border-radius: 20px; }
-    .office-map-inner { display: flex; flex-direction: column; align-items: center; gap: 12px; }
-    .office-map-label { font-family: 'Rubik', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: .15em; color: rgba(255,255,255,.7); }
-    .office-map-text { font-size: 18px; font-weight: 700; color: #fff; }
-    .office-info { background: #fff; border-radius: 20px; padding: 48px; border: 1px solid rgba(0,0,0,.05); }
-    .office-info-title { font-size: 22px; font-weight: 700; margin-bottom: 24px; }
-    .office-info-item { padding: 14px 0; border-bottom: 1px solid #f0ede8; display: flex; gap: 16px; }
-    .office-info-item:last-child { border-bottom: none; }
-    .office-info-key { font-size: 13px; font-weight: 600; color: #aaa; width: 80px; flex-shrink: 0; }
-    .office-info-val { font-size: 14px; line-height: 1.7; }
+    /* 3 value cards */
+    .value-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px; }
+    .value-card { background: #fff; border-radius: 16px; padding: 36px; border: 1px solid rgba(0,0,0,.05); }
+    .value-num { font-family: 'Rubik', sans-serif; font-size: 32px; font-weight: 700; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 16px; }
+    .value-title { font-size: 16px; font-weight: 700; margin-bottom: 10px; line-height: 1.5; }
+    .value-desc { font-size: 13px; line-height: 1.9; color: #666; }
 
-    @media (max-width: 1024px) { .benefits-grid { grid-template-columns: repeat(2, 1fr); } }
+    /* Flow steps */
+    .flow-list { display: flex; flex-direction: column; gap: 0; position: relative; }
+    .flow-list::before { content: ''; position: absolute; left: 39px; top: 40px; bottom: 40px; width: 2px; background: linear-gradient(to bottom, var(--blue), var(--green)); z-index: 0; }
+    .flow-item { display: grid; grid-template-columns: 80px 1fr; gap: 32px; padding: 40px 0; position: relative; z-index: 1; border-bottom: 1px solid #f0ede8; }
+    .flow-item:last-child { border-bottom: none; }
+    .flow-circle { width: 80px; height: 80px; border-radius: 50%; background: var(--grad); display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 0 0 6px var(--bg); }
+    .flow-circle-text { font-family: 'Rubik', sans-serif; font-size: 10px; font-weight: 700; color: #fff; letter-spacing: .06em; text-align: center; line-height: 1.4; }
+    .flow-content { padding-top: 16px; }
+    .flow-step-label { font-family: 'Rubik', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: .2em; color: var(--blue); margin-bottom: 8px; }
+    .flow-name { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+    .flow-desc { font-size: 14px; line-height: 2; color: #666; }
+    .flow-note { display: inline-block; margin-top: 12px; background: rgba(113,188,227,.08); border-radius: 8px; padding: 8px 16px; font-size: 13px; color: #555; }
+
+    /* Detail table */
+    .detail-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 16px; overflow: hidden; border: 1px solid rgba(0,0,0,.05); }
+    .detail-table tr { border-bottom: 1px solid #f0ede8; }
+    .detail-table tr:last-child { border-bottom: none; }
+    .detail-table th { background: var(--bg); padding: 24px 32px; text-align: left; font-size: 14px; font-weight: 700; width: 200px; vertical-align: top; white-space: nowrap; color: var(--dark); }
+    .detail-table td { padding: 24px 32px; font-size: 14px; line-height: 2; color: #555; }
+
+    @media (max-width: 1024px) { .value-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 768px) {
-      .benefits-grid { grid-template-columns: 1fr; }
-      .office-block { grid-template-columns: 1fr; }
-      .office-info { padding: 32px 24px; }
+      .value-grid { grid-template-columns: 1fr; }
+      .flow-item { grid-template-columns: 60px 1fr; gap: 20px; }
+      .flow-circle { width: 60px; height: 60px; }
+      .flow-list::before { left: 29px; }
+      .detail-table th { width: 120px; padding: 18px 20px; white-space: normal; font-size: 13px; }
+      .detail-table td { padding: 18px 20px; }
     }
   </style>
 </head>
@@ -58,7 +70,7 @@
         <div class="nav-drop">
           <a href="/salary/">報酬制度</a>
           <a href="/training/">人材育成</a>
-          <a href="/benefits/">制度・オフィス環境</a>
+          <a href="/benefits/">お試し入社制度</a>
           <a href="/welfare/">福利厚生</a>
         </div>
       </div>
@@ -97,8 +109,8 @@
       <div class="mobile-nav-sub">
         <a href="/salary/">報酬制度</a>
         <a href="/training/">人材育成</a>
-        <a href="/benefits/">制度・オフィス環境</a>
-          <a href="/welfare/">福利厚生</a>
+        <a href="/benefits/">お試し入社制度</a>
+        <a href="/welfare/">福利厚生</a>
       </div>
     </div>
     <div class="mobile-nav-section">
@@ -116,104 +128,112 @@
   </div>
 
   <div class="page-hero">
-    <div class="hero-eyebrow">SYSTEM / ENVIRONMENT</div>
-    <h1 class="page-hero-title">制度・オフィス環境</h1>
+    <div class="hero-eyebrow">SYSTEM / TRIAL EMPLOYMENT</div>
+    <h1 class="page-hero-title">お試し入社制度</h1>
   </div>
 
+  <!-- SECTION 1: 制度の概要 -->
   <section>
     <div class="section-header reveal">
-      <h2 class="section-heading">制度・オフィス環境</h2>
+      <h2 class="section-heading">まず、試してみてください。</h2>
     </div>
-    <div class="benefits-grid reveal">
-      <div class="benefit-card">
-        <div class="benefit-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-        <p class="benefit-name">PC・デバイス支給</p>
-        <p class="benefit-desc">業務用PCを会社支給。必要なソフトウェア・ツールは会社負担で導入します。</p>
+    <p class="body-text reveal">「社風が合うか不安」「転職のリスクを下げたい」——そう感じている方のために、アノマリーマーケティングではいきなり正社員として入社しなくても、業務委託として実際の仕事を体験できる制度を設けています。</p>
+    <p class="body-text reveal">実際に働いてみて、「この会社で続けたい」と思えたら正社員へ。一方的な評価で決めるのではなく、あなた自身が納得した上で選べる仕組みです。</p>
+    <div class="value-grid reveal">
+      <div class="value-card">
+        <p class="value-num">01</p>
+        <p class="value-title">今の仕事を続けながら参加できる</p>
+        <p class="value-desc">副業・複業としての参加もOK。在職中のまま、リスクなく試せます。退職してから後悔する必要がありません。</p>
       </div>
-      <div class="benefit-card">
-        <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div>
-        <p class="benefit-name">書籍購入補助</p>
-        <p class="benefit-desc">業務に関係する書籍は会社負担で購入可能。すすめられた本はその場で買えるような環境です。</p>
+      <div class="value-card">
+        <p class="value-num">02</p>
+        <p class="value-title">実際のクライアント案件で判断できる</p>
+        <p class="value-desc">面接だけでは分からない「現場の空気」を体験できます。実務を通じて、仕事の進め方・チームの雰囲気を確かめてください。</p>
       </div>
-      <div class="benefit-card">
-        <div class="benefit-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
-        <p class="benefit-name">交通費支給</p>
-        <p class="benefit-desc">通勤にかかる交通費は全額会社負担。クライアント先への移動費用も支給します。</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
-        <p class="benefit-name">フレックス対応</p>
-        <p class="benefit-desc">コアタイムを設けつつ、業務状況に応じた柔軟な勤務時間に対応。メリハリのある働き方を推奨しています。</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
-        <p class="benefit-name">少数精鋭チーム</p>
-        <p class="benefit-desc">10名規模を目標とした精鋭組織。一人ひとりの影響力が大きく、意思決定が速い環境です。</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <p class="benefit-name">ツール環境完備</p>
-        <p class="benefit-desc">Notion・Slack・Google Workspace・各種広告管理画面など、必要なツールはすべて会社導入済み。</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <p class="benefit-name">社会保険完備</p>
-        <p class="benefit-desc">健康保険・厚生年金保険・雇用保険・労災保険に完全加入。安心して働ける基盤を整えています。</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
-        <p class="benefit-name">有給休暇（半日単位）</p>
-        <p class="benefit-desc">有給休暇は半日単位での取得が可能。年末年始・夏季休暇・GW休暇も完備しています。</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
-        <p class="benefit-name">服装・髪型自由</p>
-        <p class="benefit-desc">クライアント訪問時以外は服装・髪型の制限なし。自分らしいスタイルで働けます。</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
-        <p class="benefit-name">名古屋中心部オフィス</p>
-        <p class="benefit-desc">伏見駅から徒歩5分のアクセス良好なオフィス。周辺に飲食店・カフェが充実しています。</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-        <p class="benefit-name">前職給与保障</p>
-        <p class="benefit-desc">入社時、前職給与水準を一定期間保障する制度あり。安心して新しい環境に飛び込めます。</p>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
-        <p class="benefit-name">副業可</p>
-        <p class="benefit-desc">業務に支障をきたさない範囲での副業・フリーランス活動を認めています。自己成長の機会を広げてください。</p>
+      <div class="value-card">
+        <p class="value-num">03</p>
+        <p class="value-title">双方が納得してから正式入社</p>
+        <p class="value-desc">「続けたい」と思えたら正社員へ切り替え。会社側だけでなく、あなた自身が合うと感じることが前提です。</p>
       </div>
     </div>
+  </section>
 
-    <div class="office-block reveal">
-      <!-- 写真が届いたら: .office-map 内の .office-map-inner を削除して <img src="/benefits/office.jpg" alt="オフィス"> を追加 -->
-      <div class="office-map">
-        <div class="office-map-inner">
-          <p class="office-map-label">NAGOYA / FUSHIMI</p>
-          <p class="office-map-text">伏見駅 徒歩5分</p>
+  <!-- SECTION 2: 流れ -->
+  <section class="sec-white">
+    <div class="section-header reveal">
+      <h2 class="section-heading">制度の流れ</h2>
+    </div>
+    <div class="flow-list reveal">
+      <div class="flow-item">
+        <div class="flow-circle"><div class="flow-circle-text">ENTRY</div></div>
+        <div class="flow-content">
+          <p class="flow-step-label">STEP 01</p>
+          <p class="flow-name">エントリー・面談</p>
+          <p class="flow-desc">通常の選考と同じく、エントリーフォームからご応募ください。面談では、お試し入社を希望する旨をお伝えください。</p>
         </div>
       </div>
-      <div class="office-info">
-        <p class="office-info-title">オフィス情報</p>
-        <div class="office-info-item">
-          <span class="office-info-key">住所</span>
-          <span class="office-info-val">愛知県名古屋市中区栄2丁目2-17</span>
+      <div class="flow-item">
+        <div class="flow-circle"><div class="flow-circle-text">START</div></div>
+        <div class="flow-content">
+          <p class="flow-step-label">STEP 02</p>
+          <p class="flow-name">業務委託契約スタート</p>
+          <p class="flow-desc">業務委託契約を締結し、実際のクライアント案件に関わっていただきます。副業・複業としての参加もOKです。</p>
+          <span class="flow-note">期間：1〜3ヶ月（応相談）</span>
         </div>
-        <div class="office-info-item">
-          <span class="office-info-key">アクセス</span>
-          <span class="office-info-val">地下鉄東山線・鶴舞線「伏見駅」5番出口より徒歩約5分</span>
+      </div>
+      <div class="flow-item">
+        <div class="flow-circle"><div class="flow-circle-text">CHECK</div></div>
+        <div class="flow-content">
+          <p class="flow-step-label">STEP 03</p>
+          <p class="flow-name">お試し期間中</p>
+          <p class="flow-desc">実務を通じて、業務内容・チームの雰囲気・働き方を体験していただきます。担当した業務に応じた業務委託料をお支払いします。</p>
         </div>
-        <div class="office-info-item">
-          <span class="office-info-key">エリア</span>
-          <span class="office-info-val">名古屋市中心部・栄エリア。周辺に飲食店・カフェ多数。</span>
+      </div>
+      <div class="flow-item">
+        <div class="flow-circle"><div class="flow-circle-text">JOIN</div></div>
+        <div class="flow-content">
+          <p class="flow-step-label">STEP 04</p>
+          <p class="flow-name">双方合意のうえ正社員へ</p>
+          <p class="flow-desc">期間終了後、双方の合意のもとで正社員への切り替えを検討します。「続けたい」と思えるかどうかを、あなた自身が判断してください。</p>
         </div>
       </div>
     </div>
   </section>
 
-    <footer>
+  <!-- SECTION 3: 詳細 -->
+  <section>
+    <div class="section-header reveal">
+      <h2 class="section-heading">制度の詳細</h2>
+    </div>
+    <table class="detail-table reveal">
+      <tr>
+        <th>期間</th>
+        <td>1〜3ヶ月（双方の状況に応じて応相談）</td>
+      </tr>
+      <tr>
+        <th>雇用形態</th>
+        <td>業務委託契約（副業・複業としての参加OK）</td>
+      </tr>
+      <tr>
+        <th>業務内容</th>
+        <td>実際のクライアント案件への関与。広告運用・提案・クライアント対応など、担当できる範囲から始めます</td>
+      </tr>
+      <tr>
+        <th>報酬</th>
+        <td>担当した業務量・内容に応じた業務委託料をお支払いします（詳細は面談時にご確認ください）</td>
+      </tr>
+      <tr>
+        <th>正社員切り替え</th>
+        <td>期間終了後、双方の合意のもとで正社員雇用へ切り替え。強制ではなく、お互いが「一緒にやっていきたい」と思えることが前提です</td>
+      </tr>
+      <tr>
+        <th>応募方法</th>
+        <td>通常のエントリーフォームから応募のうえ、備考欄に「お試し入社希望」とご記入ください</td>
+      </tr>
+    </table>
+  </section>
+
+  <footer>
     <div class="footer-sitemap">
       <div class="footer-col">
         <p class="footer-col-head">会社紹介</p>
@@ -229,7 +249,7 @@
         <p class="footer-col-head">制度・環境</p>
         <a href="/salary/">報酬制度</a>
         <a href="/training/">人材育成</a>
-        <a href="/benefits/">制度・オフィス環境</a>
+        <a href="/benefits/">お試し入社制度</a>
         <a href="/welfare/">福利厚生</a>
       </div>
       <div class="footer-col">
